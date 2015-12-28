@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>allyson kate</title>
+    <description>A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff.</description>
+    <link>https://allysonkate.github.io//</link>
+    <atom:link href="https://allysonkate.github.io//feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>The YouTube Thing</title>
+        <description>&lt;p&gt;I haven’t made a video in well over a year now, I never had an audience big enough for any real notice, and what YouTube has become is so much different than the small community that got me interested in it in 2007.&lt;/p&gt;
+
+&lt;p&gt;I still consider myself a YouTuber, several of my closest friends originated from my YouTube friendships, and YouTube provided/aided in most if not all of my design jobs since then (not to mention couches all over the world.)&lt;/p&gt;
+
+&lt;p&gt;So, I’m still asking myself the same question I was in 2007, “What does YouTube mean to me?”&lt;/p&gt;
+
+&lt;p&gt;The YouTube community was and is home. This remains.&lt;/p&gt;
+
+&lt;p&gt;Algorithms, fangirls, brand sponsorships aside, there remains many small but mighty YouTube communities out of the spotlight. The ones using it as a creative outlet or a platform for dicussion, that’s where the true value lies. Money? Maybe not. But authentic relatonships and meaningful discussion? Absolutely. That’s what YouTube meant to me. That’s where my passion lies: in the cultivation and preservation of those communities.&lt;/p&gt;
+
+&lt;h2 id=&quot;see-you-at-vidcon-nerds&quot;&gt;See you at VidCon, nerds.&lt;/h2&gt;
+</description>
+        <pubDate>Mon, 05 Oct 2015 01:42:00 -0500</pubDate>
+        <link>https://allysonkate.github.io//personal/2015/10/05/youtube/</link>
+        <guid isPermaLink="true">https://allysonkate.github.io//personal/2015/10/05/youtube/</guid>
+      </item>
+    
+      <item>
+        <title>She Hacks Tumblr</title>
+        <description>&lt;p&gt;I had the privilage of attending an all female hackathon to get young girls interested in STEM… How rad is that.&lt;/p&gt;
+
+&lt;p&gt;My team’s pitch?
+An unitimidating playground that teaches young girls how to customize their Tumblr theme. (Also, pretty rad)&lt;/p&gt;
+
+&lt;p&gt;Tumblr remains the only widely used social platform that lets you customize the code, unlike 10 years ago when many of us learned by customizing Neopets or Myspace layouts.&lt;/p&gt;
+
+&lt;p&gt;The result? She Hacks Tumblr (luckily not known as: tumblher)&lt;/p&gt;
+
+&lt;p&gt;Built using HTML, CSS, and Javascript, our team built a bare bones Tumblr theme using minimal code. I was responsible for the UI &amp;amp; UX and partnered up for the HTML &amp;amp;CSS.&lt;/p&gt;
+
+&lt;p&gt;Did you win, though? After 8 hours of coding, we presented in front of a team of judges and won the Quit Your Day Job Award. I can’t say any of us have taken that literally yet.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 02 Oct 2015 01:42:00 -0500</pubDate>
+        <link>https://allysonkate.github.io//work/2015/10/02/she-hacks-tumblr/</link>
+        <guid isPermaLink="true">https://allysonkate.github.io//work/2015/10/02/she-hacks-tumblr/</guid>
+      </item>
+    
+      <item>
+        <title>echo</title>
+        <description>&lt;p&gt;In the spring of 2013 I served as Art Director over a team of 30 designers and writers for the Summer/Fall 2013 issue circulating 30,000 copies in the Greater Chicago area.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/echocover.jpg&quot; alt=&quot;cover&quot; /&gt;
+&lt;em&gt;&lt;img src=&quot;/images/hiddentruths1.jpg&quot; alt=&quot;page 1&quot; /&gt;&lt;/em&gt;
+&lt;em&gt;&lt;img src=&quot;/images/hiddentruths2.jpg&quot; alt=&quot;page 2&quot; /&gt;&lt;/em&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 02 Oct 2015 01:42:00 -0500</pubDate>
+        <link>https://allysonkate.github.io//work/2015/10/02/ipsum-click%202/</link>
+        <guid isPermaLink="true">https://allysonkate.github.io//work/2015/10/02/ipsum-click%202/</guid>
+      </item>
+    
+      <item>
+        <title>ipsumclick</title>
+        <description>&lt;p&gt;Built using HTML, CSS, Javascript, I was responsible for the UI &amp;amp; UX and partnered up for the HTML &amp;amp; CSS.&lt;/p&gt;
+
+&lt;p&gt;Logo and illustrations by: Subi Shah&lt;/p&gt;
+</description>
+        <pubDate>Fri, 02 Oct 2015 01:42:00 -0500</pubDate>
+        <link>https://allysonkate.github.io//work/2015/10/02/ipsum-click/</link>
+        <guid isPermaLink="true">https://allysonkate.github.io//work/2015/10/02/ipsum-click/</guid>
+      </item>
+    
+  </channel>
+</rss>
