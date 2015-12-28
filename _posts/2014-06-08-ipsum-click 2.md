@@ -1,9 +1,9 @@
 ---
 layout:     post
-title:      echo
+title:      echo magazine
 date:       2015-10-02 06:42:00
 tag:		work
-summary:    ui & ux | html & css
+summary:    art direction | 2013
 categories: work
 ---
 In the spring of 2013 I served as Art Director over a team of 30 designers and writers for the Summer/Fall 2013 issue circulating 30,000 copies in the Greater Chicago area.

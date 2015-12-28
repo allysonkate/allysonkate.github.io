@@ -824,7 +824,7 @@ small,
 
 .site-header {
   padding-top: 0.5rem;
-  padding-bottom: 1rem; }
+  padding-bottom: 4rem; }
 
 .site-header a {
   color: #333;
@@ -1116,7 +1116,7 @@ blockquote footer {
     text-align: left; }
 
   .social-icons-right {
-    text-align: right; } }
+    text-align: center; } }
 @media screen and (min-width: 48em) {
   html {
     font-size: 18px; } }

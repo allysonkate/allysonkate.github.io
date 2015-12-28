@@ -1,0 +1,38 @@
+---
+layout: default
+permalink: /words/
+---
+
+
+<div class="home">
+  <div class="posts">
+
+{% for tag in site.tags %}
+  {% assign t = tag | first %}
+  {% assign posts = tag | last %}
+
+{% for post in posts %}
+  <div class="post py3">
+
+  {% if post.tags contains 'words' %}
+
+ <p class="post-meta">{{ post.date | date: site.date_format }}</p>
+ 
+     <a href="{{ post.url }}" class="post-link">
+     	<h3 class="h1 post-title"> {{ post.title }}</h3>
+     </a>
+        <p class="post-summary">
+          {% if post.summary %}
+            {{ post.summary }}
+          {% else %}
+            {{ post.excerpt }}
+          {% endif %}
+        </p>
+ </div>
+
+  {% endif %}
+{% endfor %}
+{% endfor %}
+
+</div>
+</div>

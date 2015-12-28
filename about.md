@@ -9,16 +9,6 @@ permalink: /about/
   </div>
 
 
-## hi, I'm allyson. you can find my resume here.
-_![about](/images/resizeselfie.jpg)_
+## Hi, I'm Allyson, a ux designer and front-end eveloper. I'm most easily found on twitter and via the electronic mail system.
 
-...one of those designer/coder gals based in Chicago, IL.
-
-* Deeply in love with and daily driven by community.
-
-* Passionate about girls in tech and STEM fields.
-
-* Old-internet _(can I call 2006/2007 old internet?)_ YouTuber. Still dearly in love with the platform and the people.
-
-* Aspiring step-dad.
-
+## These days, you can find me designing at The Second City, coding with Girl Develop It, or hanging out with Chicago Web Friends.
