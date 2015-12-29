@@ -2,29 +2,10 @@
 layout: default
 ---
 
-<div class="home">
-  <div class="posts">
+<h1 class="h1">
+Hi, I'm Allyson, a ux designer and front-end developer in Chicago. I'm most easily found on <a href="http://twitter.com/allysonkate">twitter</a> and via <a href="mailto:allysonkatew@gmail.com">electronic mail</a>.
+</h1>
+<h1 class="h1">
+These days, you can find me designing at <a href="http://secondcity.com">The Second City</a>, coding with <a href="https://www.girldevelopit.com/chapters/chicago">Girl Develop It</a>, or hanging out with <a href="http://www.chicagofriends.website/">Chicago Web Friends</a>.
+</h1>
 
-    {% for post in paginator.posts %}
-     
-      <div class="post py3">
-        
-        <p class="post-meta">{{ post.date | date: site.date_format }}</p>
-        
-        <a href="{{ post.url | prepend: site.baseurl }}" class="post-link">
-
-          <h3 class="h1 post-title">{{ post.title }}</h3></a>
-
-        <p class="post-summary">
-          {% if post.summary %}
-            {{ post.summary }}
-          {% else %}
-            {{ post.excerpt }}
-          {% endif %}
-        </p>
-      </div>
-    {% endfor %}
-  </div>
-
-  {% include pagination.html %}
-</div>
