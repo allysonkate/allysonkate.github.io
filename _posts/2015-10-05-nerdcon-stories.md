@@ -2,9 +2,8 @@
 layout:     post
 title:		nerdcon stories
 date:       2015-10-05 06:42:00
-tag:		text
+tag:		words
 summary:    nerdcon stories
-categories: words
 ---
 
 I haven't made a video in well over a year now, I never had an audience big enough for any real notice, and what YouTube has become is so much different than the small community that got me interested in it in 2007. 
