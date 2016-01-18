@@ -1,21 +1,35 @@
 ---
 layout:     post
 title:      She Hacks Tumblr
-date:       2015-10-02 06:42:00
+date:       2015-10-31 06:42:00
 tag:		work
-summary:    ui & ux | html & css | 2014
+summary:    ui & ux | html & css | 2015
 categories: work
 ---
 
-I had the privilage of attending an all female hackathon to get young girls interested in STEM... How rad is that.
+I had the privilege of attending an all female hackathon at Cleverbridge in Chicago to get young girls interested in STEM. My group set out to build an unitimidating playground that teaches young girls how to customize their Tumblr theme.
 
-My team's pitch?
-An unitimidating playground that teaches young girls how to customize their Tumblr theme. (Also, pretty rad)
+>Tumblr remains the only widely used social platform that lets you customize the code, unlike years ago when many of us became familiar with code by customizing Neopets or Myspace layouts.
 
-Tumblr remains the only widely used social platform that lets you customize the code, unlike 10 years ago when many of us learned by customizing Neopets or Myspace layouts.
+And there it was. We had our passion product. We were going to build not just a tutorial, but a Tumblr playground. A low-steaks environment to learn, mess up, add personality, and instantly see the effects of _your_ code on _your_ site.
 
-The result? She Hacks Tumblr (luckily not known as: tumblher)
+Thanks to the generous social reach of one of our group members, we were able to do some quick field research regarding interest in the product and features they'd like to see.
 
-Built using HTML, CSS, and Javascript, our team built a bare bones Tumblr theme using minimal code. I was responsible for the UI & UX and partnered up for the HTML &CSS.
+<center>
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/AnnaRussett">@AnnaRussett</a> yes &amp; no :/ im still learning how to code</p>&mdash; toni-gayle (@dumbchie) <a href="https://twitter.com/dumbchie/status/655177118494687232">October 17, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Did you win, though? After 8 hours of coding, we presented in front of a team of judges and won the Quit Your Day Job Award. I can't say any of us have taken that literally yet. 
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/AnnaRussett">@AnnaRussett</a> I&#39;ve copy and pasted themes but I&#39;ve never made my own it seems too hard 😂</p>&mdash; Lil-E (@lelilliann) <a href="https://twitter.com/lelilliann/status/655176946972798980">October 17, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/AnnaRussett">@AnnaRussett</a> music!! I don&#39;t know how to put a player on there.</p>&mdash; kris (@kristenlongg) <a href="https://twitter.com/kristenlongg/status/655185262553657344">October 17, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</center>
+
+***
+
+####Together, we spent our Saturday creating She Hacks Tumblr.
+
+Built using HTML, CSS, and Javascript, our team built a bare bones Tumblr theme using minimal code. I was responsible for the UI & UX and partnered up for the HTML & CSS. The biggest challenge during any hackathon is always time, but we were able to develop the first few tutorial steps and push live for the demo on [shehacks.tumblr.com](http://shehacks.tumblr.com/ "She Hacks Tumblr").
+
+####After 8 hours of coding, we presented in front of a panel of judges and won the "Quit Your Day Job" Award. Although we do plan on developing the product further, I can't say any of us have taken that award literally yet. &#x2727;
