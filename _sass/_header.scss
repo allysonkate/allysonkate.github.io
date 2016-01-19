@@ -29,7 +29,24 @@
   color: #666;
   opacity: 1;
   border-bottom: 2px solid #CC33FF;
+  box-shadow: inset 0 -10px 0 0 #CC33FF;
+
+
 }
+
+
+// .site-header nav a:hover:after {
+//     content:' hey';
+//     // display:block;
+//     // position:absolute;
+//     left:0;
+//     top:0;
+//     right:0;
+//     bottom:5px;
+//     border-bottom:7px solid red;
+// }
+
+
 
 .site-nav a + a {
   margin-left: 1em;
