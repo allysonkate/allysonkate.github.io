@@ -18,9 +18,9 @@ permalink: /words/
   <div class="post py3">
 
  <p class="post-meta">{{ post.date | date: site.date_format }}</p>
- 
+
      <a href="{{ post.url }}" class="post-link">
-     	<h3 class="h1 post-title"> {{ post.title }}</h3>
+     	<h3 class="h2 post-title"> {{ post.title }}</h3>
      </a>
         <p class="post-summary">
           {% if post.summary %}
@@ -37,3 +37,22 @@ permalink: /words/
 
 </div>
 </div>
+
+<div class="clearfix mb1 mt4">
+  <div class="left">
+    {% if page.previous %}
+      <a rel="prev" href="{{ site.baseurl }}{{ page.previous.url }}">
+      <span class="pagination-item disabled"> &larr; older</span>
+      </a>
+    {% endif %}
+  </div>
+
+    <div class="right">
+          {% if page.next %}
+        <a rel="next" href="{{ site.baseurl }}{{ page.next.url }}">
+          <span class="pagination-item disabled">newer &rarr;</span>
+        </a>
+      {% endif %}
+    </div>
+
+  </div>

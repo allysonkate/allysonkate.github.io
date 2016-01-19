@@ -33,14 +33,17 @@
 .post-footer {
   @extend .italic;
 
-  margin-top: .75rem;
-  text-align: center;
+  margin-top: 0;
+  text-align: left;
 }
 
 .post-footer .avatar {
-  margin: 2rem 0;
+  // margin: 1rem 0;
   width: 100px;
   border-radius: 50%;
+  float: left;
+  padding-right: 2em;
+  padding-left: 1em;
 }
 
 .meta,

@@ -3,7 +3,7 @@ layout:     post
 title:      The Second City
 date:       2015-10-31 06:42:00
 tag:		work
-summary:    print & digital | ui & ux | wordpress | 2014-present
+summary:    print & digital | ui & ux | wordpress 
 categories: work
 ---
 

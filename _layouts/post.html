@@ -9,10 +9,14 @@ layout: default
 
 <div class="post-header mb2">
   <h1>{{ page.title }}</h1>
-  <span class="post-meta">{{ page.date | date: site.date_format }}</span><br>
+
+  <span class="post-meta">{{ page.date | date: site.date_format }}</span>
   {% if page.update_date %}
-    <span class="post-meta">Updated: {{ page.update_date | date: site.date_format }}</span><br>
+    <span class="post-meta">Updated: {{ page.update_date | date: site.date_format }}</span>
   {% endif %}
+  <span class="post-meta"> | {{ page.summary }}</span><br>
+
+
   <!-- <span class="post-meta small">
   {% if page.minutes %}
     {{ page.minutes }} minute read
@@ -21,6 +25,8 @@ layout: default
   {% endif %}
   </span> -->
 </div>
+
+<hr />
 
 <article class="post-content">
   {{ content }}
@@ -51,20 +57,21 @@ layout: default
 {% endif %}
 
 
-
-<div class="pagination clearfix mb1 mt4">
+<div class="clearfix mb1 mt4">
   <div class="left">
-        {% if page.next %}
-      <a rel="next" href="{{ site.baseurl }}{{ page.next.url }}">
-        <span class="pagination-item disabled">&rarr;</span>
-      </a>
-    {% endif %}
-  </div>
-  <div class="right">
     {% if page.previous %}
       <a rel="prev" href="{{ site.baseurl }}{{ page.previous.url }}">
-      <span class="pagination-item disabled"> &larr;</span>
+      <span class="pagination-item disabled"> &larr; older</span>
       </a>
     {% endif %}
   </div>
-</div>
+
+    <div class="right">
+          {% if page.next %}
+        <a rel="next" href="{{ site.baseurl }}{{ page.next.url }}">
+          <span class="pagination-item disabled">newer &rarr;</span>
+        </a>
+      {% endif %}
+    </div>
+
+  </div>

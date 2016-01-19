@@ -18,9 +18,9 @@ permalink: /work/
 
 
  <p class="post-meta">{{ post.date | date: site.date_format }}</p>
- 
+
      <a href="{{ post.url }}" class="post-link">
-     	<h3 class="h1 post-title"> {{ post.title }}</h3>
+     	<h3 class="h2 post-title"> {{ post.title }}</h3>
      </a>
         <p class="post-summary">
           {% if post.summary %}
@@ -36,4 +36,25 @@ permalink: /work/
 {% endfor %}
 
 </div>
+</div>
+
+<div class="pagination clearfix mb1 mt4">
+  <div class="left">
+    {% if paginator.previous_page %}
+      {% if paginator.page == 2 %}
+        <a class="pagination-item" href="{{ site.baseurl }}/">{{ site.text.pagination.newer }}</a>
+      {% else %}
+        <a class="pagination-item" href="{{ site.baseurl }}/page{{paginator.previous_page}}/">{{ site.text.pagination.newer }}</a>
+      {% endif %}
+    {% else %}
+      <span class="pagination-item disabled">{{ site.text.pagination.newer }}</span>
+    {% endif %}
+  </div>
+  <div class="right">
+    {% if paginator.next_page %}
+      <a class="pagination-item" href="{{ site.baseurl }}/page{{paginator.next_page}}/">{{ site.text.pagination.older }}</a>
+    {% else %}
+      <span class="pagination-item disabled">{{ site.text.pagination.older }}</span>
+    {% endif %}
+  </div>
 </div>
