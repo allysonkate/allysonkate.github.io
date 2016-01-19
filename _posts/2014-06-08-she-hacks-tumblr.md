@@ -3,7 +3,7 @@ layout:     post
 title:      She Hacks Tumblr
 date:       2015-10-31 06:42:00
 tag:		work
-summary:    ui & ux | html & css 
+summary:    ui & ux | html & css
 categories: work
 ---
 
@@ -32,6 +32,6 @@ Thanks to the generous social reach of one of our group members, we were able to
 
 Built using HTML, CSS, and Javascript, our team built a bare bones Tumblr theme using minimal code. I was responsible for the UI & UX and partnered up for the HTML & CSS. The biggest challenge during any hackathon is always time, but we were able to develop the first few tutorial steps and push live for the demo on [shehacks.tumblr.com](http://shehacks.tumblr.com/ "She Hacks Tumblr").
 
-![quit award](/images/quit_award.png)
+![quit award](/images/QuitAward.png)
 
 ####After 8 hours of coding, we presented in front of a panel of judges and won the "Quit Your Day Job" Award. Although we do plan on developing the product further, I can't say any of us have taken that award literally yet. &#x2727;
