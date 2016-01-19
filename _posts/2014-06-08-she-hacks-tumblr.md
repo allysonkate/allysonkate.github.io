@@ -3,7 +3,7 @@ layout:     post
 title:      She Hacks Tumblr
 date:       2015-10-31 06:42:00
 tag:		work
-  summary:    ui & ux | html & css 
+summary:    ui & ux | html & css 
 categories: work
 ---
 
