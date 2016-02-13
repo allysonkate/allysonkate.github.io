@@ -3,7 +3,7 @@ layout:     post
 title:      The Second City
 date:       2015-10-31 06:42:00
 tag:		work
-summary:    print & digital | ui & ux | wordpress 
+summary:    print & digital | ui & ux | wordpress
 categories: work
 ---
 
@@ -13,11 +13,15 @@ In January of 2014, I was hired at The Second City, a world-renowned comedy club
 
 ###secondcity.com
 
+(desktop network page, mobile hotels)
+
 As a grew within the company, I showed interest in the redesign of the website on Wordpress, a project that had been contracted out before I was hired. I saw a great need for project management, UX knowledge, and communication within our company regarding this redesign. Along with the VP of New Media at The Second City, I became a point person for the project. I started researching client needs, wireframing pages, helping with quality control & page speed, and discussing our user experience needs and information architecture with the contractor. Featured above are a few of the pages I hand in redesigning.
 
 ---
 
 ###sctv.com
+
+(desktop cast page, mobile martin bio)
 
 Our producer in Toronto expressed the need for a website for
 
@@ -25,6 +29,8 @@ Our producer in Toronto expressed the need for a website for
 ---
 
 ###The Second City Network
+
+(desktop youtube page, mobile end card)
 
 Another project I expressed early interest in was our YouTube channel, SecondCityNetwork. I helped rebrand and create a variety of end cards
 
