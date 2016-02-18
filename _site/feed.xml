@@ -7,25 +7,6 @@
     <atom:link href="https://allysonkate.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Online Communities</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/images/neopets.png&quot; alt=&quot;neopets banner&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;There’s one thing I’ve known about myself ever since I was introduced to the internet itself, and that’s how important online communities are to me. If you tried to visualize that, it would resemble an embarrassing, emotional overlapping timeline from everything from Neopets, YA novel forums, to (a much more mature?) YouTube and Twitter. Each had me just as passionate and committed as the last.&lt;/p&gt;
-
-&lt;p&gt;While many of these communities still hold true in my daily life, the recent entrance of one in 2015 has fueled me in so many ways that I simply must speak on the value it of my life.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;The beauty of Slack for me lies in the diversity in content, community, and discussion that you have the opportunity to be welcome and a part of, regardless of your status.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I belong to a Slack community about the future of podcasting, web friends in Chicago, UX designers, and women with careers in product. The talent and intelligence I’m surrounded everyday within the Slack communities is incredible, humbling, and one of the purest forms of positive online communities today.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 05 Jan 2016 00:43:00 -0600</pubDate>
-        <link>https://allysonkate.github.io//words/2016/01/05/slack/</link>
-        <guid isPermaLink="true">https://allysonkate.github.io//words/2016/01/05/slack/</guid>
-      </item>
-    
-      <item>
         <title>The Second City</title>
         <description>&lt;p&gt;In January of 2014, I was hired at The Second City, a world-renowned comedy club, theatre and school of improvisation,  as an in-house design intern. Since then, I have grown from intern, to Jr. Designer, to Designer, to my current title, Sr. Designer on a team of 5.  As part of a small design team in a multi-fasicted company, I’ve been able to have a hand in almost every department across the globe and cater my position to areas I’ve seen need, potential, and had personal interest. A few of my favorite projects and products are discussed below.&lt;/p&gt;
 
@@ -57,9 +38,78 @@
 
 &lt;h3 id=&quot;marketing-campaigns&quot;&gt;Marketing Campaigns&lt;/h3&gt;
 </description>
-        <pubDate>Sat, 31 Oct 2015 01:42:00 -0500</pubDate>
-        <link>https://allysonkate.github.io//work/2015/10/31/the-second-city/</link>
-        <guid isPermaLink="true">https://allysonkate.github.io//work/2015/10/31/the-second-city/</guid>
+        <pubDate>Mon, 15 Feb 2016 01:00:00 -0600</pubDate>
+        <link>https://allysonkate.github.io//work/2016/02/15/the-second-city/</link>
+        <guid isPermaLink="true">https://allysonkate.github.io//work/2016/02/15/the-second-city/</guid>
+      </item>
+    
+      <item>
+        <title>SND Makes Invitational</title>
+        <description>&lt;p&gt;&lt;em&gt;&lt;img src=&quot;/images/SND_user.jpg&quot; alt=&quot;SND User&quot; /&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;When you get invited to a prototyping event focusing on problems facing modern media companies and news organizations… you throw yourself at it. When I got the invitation from Chris, co-founder of CodePen, I was instantly interested in the Society of News Design and the awesome premise of this event.&lt;/p&gt;
+
+&lt;h3&gt; “How might we grow community around games, the artists who make them, the fans that love them?” &lt;/h3&gt;
+
+&lt;p&gt;I was teamed up with Chris; Charlie, a features writer at Polygon; and Nicole, a fellow at the Knight Lab. We set out to create a marketplace to bridge the gap between playtesters and potential playtesters. Being one of the members of the team who was more familiar with the gaming community, I focused on the user interviews and UI over the course of the weekend.  One of the things that makes SNDMakes so great is that it’s not a competition, so teams are able to focus more on answering what the problem is, why it’s worth solving, and for whom.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Players are hungry for new experiences, and developers are starved for playtesters — especially in the early stages of design. ‘I Want In’ presents developers with a community of players who are given the opportunity to identify their interest in a given game project, and ask a developer to be included in a playtest cycle. Developers can select who they’re letting into their tests, and can reward the best playtesters with badges and other tokens - including retail game codes - to raise their profile in the community making them more likely to be included in other projects.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;
+The most incredible part of the weekend for me was our user research process. Thanks to Charlie’s intimate network of game developers, we were able to interview several developers all over the world and really pinpoint what our goals, like sourcing playtesters with a diverse experience level, and focus on the hurdles our platform had to overcome, such as the benefit of in-person playtesting.&lt;/p&gt;
+
+&lt;center&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;“I want in” from Team Printer&amp;#39;s Row &lt;a href=&quot;https://twitter.com/hashtag/SNDMakes?src=hash&quot;&gt;#SNDMakes&lt;/a&gt;-Chi &lt;a href=&quot;https://t.co/E9lWtLgo8n&quot;&gt;pic.twitter.com/E9lWtLgo8n&lt;/a&gt;&lt;/p&gt;&amp;mdash; SND (@SND) &lt;a href=&quot;https://twitter.com/SND/status/696481476708212736&quot;&gt;February 7, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/center&gt;
+
+&lt;h4&gt;I Want In was built in GitHub, deployed using Heroku, and our research and demo slides can be found here. My teammate Nicole also wrote a great post about the weekend here.&lt;/h4&gt;
+</description>
+        <pubDate>Sun, 07 Feb 2016 00:42:00 -0600</pubDate>
+        <link>https://allysonkate.github.io//work/2016/02/07/SND-Makes/</link>
+        <guid isPermaLink="true">https://allysonkate.github.io//work/2016/02/07/SND-Makes/</guid>
+      </item>
+    
+      <item>
+        <title>Online Communities</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/images/neopets.png&quot; alt=&quot;neopets banner&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There’s one thing I’ve known about myself ever since I was introduced to the internet itself, and that’s how important online communities are to me. If you tried to visualize that, it would resemble an embarrassing, emotional overlapping timeline from everything from Neopets, YA novel forums, to (a much more mature?) YouTube and Twitter. Each had me just as passionate and committed as the last.&lt;/p&gt;
+
+&lt;p&gt;While many of these communities still hold true in my daily life, the recent entrance of one in 2015 has fueled me in so many ways that I simply must speak on the value it of my life.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The beauty of Slack for me lies in the diversity in content, community, and discussion that you have the opportunity to be welcome and a part of, regardless of your status.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I belong to a Slack community about the future of podcasting, web friends in Chicago, UX designers, and women with careers in product. The talent and intelligence I’m surrounded everyday within the Slack communities is incredible, humbling, and one of the purest forms of positive online communities today.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 05 Jan 2016 00:43:00 -0600</pubDate>
+        <link>https://allysonkate.github.io//words/2016/01/05/slack/</link>
+        <guid isPermaLink="true">https://allysonkate.github.io//words/2016/01/05/slack/</guid>
+      </item>
+    
+      <item>
+        <title>Big Frame &amp; Youtube</title>
+        <description>&lt;p&gt;&lt;em&gt;&lt;img src=&quot;/images/Youtube_Work.png&quot; alt=&quot;Big Frame&quot; /&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Since 2013, I’ve been working with and as talent at &lt;a href=&quot;http://www.bigfra.me/&quot; title=&quot;Big Frame&quot;&gt;Big Frame&lt;/a&gt;, a multi-channel YouTube network in Los Angeles. Youtube has been a huge part of my life since 2007, which I talk about a little more &lt;a href=&quot;https://allysonkate.github.io/word/2015/10/05/youtube%203/&quot; title=&quot;What Youtube Means to Me&quot;&gt;here&lt;/a&gt;. In 2013 I signed with Big Frame for two years as a content creator, producing videos on my personal channel in conjunction with a all-female vertical network initiative. As it became clearer to me that I didn’t want to pursue YouTube as a career, I began fostering a design freelance relationship with Big Frame (now owned by DreamWorks/AwesomenessTV), which has now grown beyond my contract as talent.&lt;/p&gt;
+
+&lt;p&gt;A few of the YouTubers I’ve worked with include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Sarah Penna &lt;em&gt;(Big Frame co-founder, now with AwesomenessTV)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Joe Penna &lt;em&gt;(&lt;a href=&quot;https://www.youtube.com/user/MysteryGuitarMan&quot; title=&quot;MysteryGuitarMan&quot;&gt;MysteryGuitarMan&lt;/a&gt; → 2.85 mil)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Jimmy Tatro &lt;em&gt;(&lt;a href=&quot;https://www.youtube.com/user/lifeaccordingtojimmy&quot; title=&quot;LifeAccordingToJimmy&quot;&gt;LifeAccordingToJimmy&lt;/a&gt; → 2.5 mil)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Rebecca Black &lt;em&gt;(&lt;a href=&quot;https://www.youtube.com/user/rebecca&quot; title=&quot;rebecca&quot;&gt;rebecca&lt;/a&gt; → 1.25 mil)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Jenn McAllister &lt;em&gt;(&lt;a href=&quot;https://www.youtube.com/user/jennxpenn&quot; title=&quot;jennxpenn&quot;&gt;jennxpenn&lt;/a&gt; → 2.25 mil)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Arden Rose &lt;em&gt;(&lt;a href=&quot;https://www.youtube.com/user/ARose186&quot; title=&quot;rebecca&quot;&gt;ARose186&lt;/a&gt;  → 1.3 mil)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 14 Nov 2015 23:00:00 -0600</pubDate>
+        <link>https://allysonkate.github.io//work/2015/11/14/big-frame3/</link>
+        <guid isPermaLink="true">https://allysonkate.github.io//work/2015/11/14/big-frame3/</guid>
       </item>
     
       <item>
@@ -98,75 +148,6 @@
         <pubDate>Sat, 31 Oct 2015 01:42:00 -0500</pubDate>
         <link>https://allysonkate.github.io//work/2015/10/31/she-hacks-tumblr/</link>
         <guid isPermaLink="true">https://allysonkate.github.io//work/2015/10/31/she-hacks-tumblr/</guid>
-      </item>
-    
-      <item>
-        <title>Big Frame &amp; Youtube</title>
-        <description>&lt;p&gt;&lt;em&gt;&lt;img src=&quot;/images/Youtube_Work.png&quot; alt=&quot;Big Frame&quot; /&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Since 2013, I’ve been working with and as talent at &lt;a href=&quot;http://www.bigfra.me/&quot; title=&quot;Big Frame&quot;&gt;Big Frame&lt;/a&gt;, a multi-channel YouTube network in Los Angeles. Youtube has been a huge part of my life since 2007, which I talk about a little more &lt;a href=&quot;https://allysonkate.github.io/word/2015/10/05/youtube%203/&quot; title=&quot;What Youtube Means to Me&quot;&gt;here&lt;/a&gt;. In 2013 I signed with Big Frame for two years as a content creator, producing videos on my personal channel in conjunction with a all-female vertical network initiative. As it became clearer to me that I didn’t want to pursue YouTube as a career, I began fostering a design freelance relationship with Big Frame (now owned by DreamWorks/AwesomenessTV), which has now grown beyond my contract as talent.&lt;/p&gt;
-
-&lt;p&gt;A few of the YouTubers I’ve worked with include:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Sarah Penna &lt;em&gt;(Big Frame co-founder, now with AwesomenessTV)&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;Joe Penna &lt;em&gt;(&lt;a href=&quot;https://www.youtube.com/user/MysteryGuitarMan&quot; title=&quot;MysteryGuitarMan&quot;&gt;MysteryGuitarMan&lt;/a&gt; → 2.85 mil)&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;Jimmy Tatro &lt;em&gt;(&lt;a href=&quot;https://www.youtube.com/user/lifeaccordingtojimmy&quot; title=&quot;LifeAccordingToJimmy&quot;&gt;LifeAccordingToJimmy&lt;/a&gt; → 2.5 mil)&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;Rebecca Black &lt;em&gt;(&lt;a href=&quot;https://www.youtube.com/user/rebecca&quot; title=&quot;rebecca&quot;&gt;rebecca&lt;/a&gt; → 1.25 mil)&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;Jenn McAllister &lt;em&gt;(&lt;a href=&quot;https://www.youtube.com/user/jennxpenn&quot; title=&quot;jennxpenn&quot;&gt;jennxpenn&lt;/a&gt; → 2.25 mil)&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;Arden Rose &lt;em&gt;(&lt;a href=&quot;https://www.youtube.com/user/ARose186&quot; title=&quot;rebecca&quot;&gt;ARose186&lt;/a&gt;  → 1.3 mil)&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sat, 31 Oct 2015 01:42:00 -0500</pubDate>
-        <link>https://allysonkate.github.io//work/2015/10/31/big-frame3/</link>
-        <guid isPermaLink="true">https://allysonkate.github.io//work/2015/10/31/big-frame3/</guid>
-      </item>
-    
-      <item>
-        <title>The YouTube Thing</title>
-        <description>&lt;p&gt;&lt;em&gt;&lt;img src=&quot;/images/Youtube_Face.jpg&quot; alt=&quot;Youtube&quot; /&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;When asked about my involvement with YouTube, I always seem to begin with “Well, it started as a hobby…” In high school I would come home from school and watch my favorite vloggers on YouTube. In 2016, this sounds relatively commonplace. In 2007, this wasn’t something you said to people without accepting the fact that you would have to explain what you just said for a good five minutes and still be met with confusion and sarcastic comments.&lt;/p&gt;
-
-&lt;p&gt;Through the years, I watched these people grow up, go through struggles, start college, get into relationships and ultimately regret talking telling the internet about their relationships. No production value concerns, no brand sponsorships, no such thing as “YouTube Stars.” I was extremely passionate about YouTube as a online community platform, and I wanted in. These people understood me.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;In 2007 YouTube was something special, and I was quickly becoming an introvert IRL simply because no one could understand what the hell I was passionate about.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Video responses were the heart and soul of the community, so that’s usually how you got your in. People could put a face to a username. From there, it kind of just snowballed. We were just friends with a cool thing in common. Soon my Friday nights were spent on BlogTV streams and skype was a daily fixture in my life. Gifs starting happening. I was doing collabs left and right. In 2013 I asked people to post a 10 second video giving a pun, calling it “Pun Run 2k13.” There were 40 video responses. I signed with multi-channel network, Big Frame, for two years before I slowly made making videos much less of a priority and decided I wasn’t going to play the YouTube algorithm game.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;img src=&quot;/images/VidCon_2013a.jpg&quot; alt=&quot;VidCon&quot; /&gt;&lt;/em&gt;
-&lt;em&gt;&lt;img src=&quot;/images/VidCon_2013b.jpg&quot; alt=&quot;VidCon&quot; /&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;It’s 2016 and things are insanely different. Insanely different. But that’s okay. To be living through a period of time where we can reflect and watch the rise and fall of online communities, social platforms, and brand adoption… that’s cool as heck.&lt;/p&gt;
-
-&lt;p&gt;I haven’t made a video in well over a year now, but I still consider myself a YouTuber. I still go to Anaheim for VidCon, the YouTube convention John and Hank Green started in 2010. Several of my closest friends originated from my YouTube friendships and YouTube provided/aided in most if not all of my design jobs since then (not to mention couches all over the world.) Algorithms, fangirls, brand sponsorships aside, there remains many small but mighty YouTube communities out of the spotlight. The ones using it as a creative outlet or a platform for discussion, that’s where the true value lies. Is there money there? Maybe not. But authentic relationships and meaningful discussion? Absolutely. That’s what YouTube meant to me. That’s where my passion lies: in the cultivation and preservation of those communities. I’d love to talk your ear off about it over coffee.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;img src=&quot;/images/NerdCon_2015_001.jpg&quot; alt=&quot;NerdCon&quot; /&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;So, I’m still asking myself the same question I was in 2007, “What does YouTube mean to me?”&lt;/p&gt;
-
-&lt;p&gt;The YouTube community was and is home. I have a feeling this will always remain.&lt;/p&gt;
-
-&lt;h2 id=&quot;see-you-at-vidcon-nerds&quot;&gt;See you at VidCon, nerds.&lt;/h2&gt;
-</description>
-        <pubDate>Mon, 05 Oct 2015 01:42:00 -0500</pubDate>
-        <link>https://allysonkate.github.io//words/2015/10/05/youtube%202/</link>
-        <guid isPermaLink="true">https://allysonkate.github.io//words/2015/10/05/youtube%202/</guid>
-      </item>
-    
-      <item>
-        <title>Nerdcon Stories</title>
-        <description>&lt;p&gt;A couple years ago, one of the women in media I admire most, Margaret Kramer, said&lt;/p&gt;
-
-&lt;h2 id=&quot;see-you-at-vidcon-nerds&quot;&gt;See you at VidCon, nerds.&lt;/h2&gt;
-</description>
-        <pubDate>Mon, 05 Oct 2015 01:42:00 -0500</pubDate>
-        <link>https://allysonkate.github.io//2015/10/05/nerdcon-stories/</link>
-        <guid isPermaLink="true">https://allysonkate.github.io//2015/10/05/nerdcon-stories/</guid>
       </item>
     
       <item>
