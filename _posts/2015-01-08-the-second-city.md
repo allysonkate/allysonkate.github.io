@@ -19,20 +19,19 @@ As a grew within the company, I showed interest in the redesign of the website o
 
 ---
 
+_![SCTV](/images/SC_SCTV.png)_
+
 ###sctv.com
 
-(desktop cast page, mobile martin bio)
-
-Our producer in Toronto expressed the need for a website for
-
+Our theater in Toronto expressed the need for a product that showed off SCTV to potential clients interested in our SCTV archive. The goal was to showcase the history of SCTV Network, the actors, and the legacy the show and actors have left behind. I served as the lead creative director for the project and and sole designer and developer. Using an existing Wordpress theme, I reworked the site with custom code to better fit the needs of the client.
 
 ---
 
+_![Second City Network](/images/SC_Network.png)_
+
 ###The Second City Network
 
-(desktop youtube page, mobile end card)
-
-Another project I expressed early interest in was our YouTube channel, SecondCityNetwork. I helped rebrand and create a variety of end cards
+Another project I expressed early interest in was our YouTube channel, SecondCityNetwork. I helped rebrand the channel and create a variety of end cards to increase audience retention and engagement.  
 
 ---
 

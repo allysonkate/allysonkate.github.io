@@ -5,7 +5,9 @@ author:      Allyson Wakeman
 description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
 baseurl:     ""
 url:         "https://allysonkate.github.io/"
-date_format: "%b %-d, %Y"
+date_format: "%Y"
+
+# %b %-d,
 
 # Google services
 google_analytics:
@@ -35,6 +37,8 @@ medium_id:
 bitcoin_url:
 paypal_url:
 flattr_button:
+dribbble_username: allysonkate
+medium_id: allysonkate
 
 # Post sharing icons
 show_sharing_icons: false
