@@ -5,7 +5,7 @@ layout: default
 Currently, I'm:  
 
 
-* Part of a small team from The Second City collaborating with IDEO Chicago in weekly workshops, trading insight and process from our unique perspectives.
+* Part of a small team from The Second City collaborating with [IDEO](https://www.ideo.com/) Chicago in weekly workshops, trading insight and process from our unique perspectives.
 
 * Working with two clients on design and YouTube strategy, and **not** taking any more freelance at the moment.
 

@@ -16,14 +16,15 @@ And there it was. We had our passion product. We were going to build not just a 
 Thanks to the generous social reach of one of our group members, we were able to do some quick field research regarding interest in the product and features they'd like to see.
 
 <center>
+
 <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/AnnaRussett">@AnnaRussett</a> yes &amp; no :/ im still learning how to code</p>&mdash; toni-gayle (@dumbchie) <a href="https://twitter.com/dumbchie/status/655177118494687232">October 17, 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/AnnaRussett">@AnnaRussett</a> I&#39;ve copy and pasted themes but I&#39;ve never made my own it seems too hard 😂</p>&mdash; Lil-E (@lelilliann) <a href="https://twitter.com/lelilliann/status/655176946972798980">October 17, 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/AnnaRussett">@AnnaRussett</a> music!! I don&#39;t know how to put a player on there.</p>&mdash; kris (@kristenlongg) <a href="https://twitter.com/kristenlongg/status/655185262553657344">October 17, 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 </center>
 
 <br>

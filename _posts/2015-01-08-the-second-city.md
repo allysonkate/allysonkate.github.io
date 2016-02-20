@@ -7,19 +7,14 @@ summary:    print & digital | ui & ux | wordpress
 categories: work
 ---
 
-<br>
+![SC Logo](/images/SC_2014_logo_blk.png)
+
 
 In January of 2014, I was hired at [The Second City](http://secondcity.com), a world-renowned comedy club, theatre and school of improvisation,  as an in-house design intern. Since then, I have grown from intern, to Jr. Designer, to Designer on a team of 5.  As part of a small design team in a multi-fasicted company, I've been able to have a hand in almost every department across the globe and cater my position to areas I've seen need, potential, and had personal interest. A few of my favorite projects and products are discussed below.
 
-<br>
 
----
-
-<br>
 
 _![SCTV](/images/SC_SCTV.png)_
-
-<br>
 
 <h3>sctv.com</h3>
 
@@ -29,11 +24,9 @@ Our theater in Toronto expressed the need for a product that showed off SCTV to 
 
 ---
 
-<br>
 
 _![The Second City](/images/SC_Main.png)_
 
-<br>
 
 <h3>secondcity.com</h3>
 
@@ -43,18 +36,10 @@ As a grew within the company, I showed interest in the redesign of the website o
 
 ---
 
-<br>
 
 _![Second City Network](/images/SC_Network.png)_
 
-<br>
 
 <h3>The Second City Network</h3>
 
-Another project I expressed early interest in was our YouTube channel, SecondCityNetwork. I helped rebrand the channel and create a variety of end cards to increase audience retention and engagement.  
-<br>
-
-
----
-
-<h4>Marketing Campaigns<h4>
+Another project I expressed early interest in was our YouTube channel, SecondCityNetwork. I helped rebrand the channel and create a variety of end cards to increase audience retention and engagement.
