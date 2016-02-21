@@ -7,7 +7,7 @@ summary:    ui & ux | html & css
 categories: work
 ---
 
-I had the privilege of attending an all female hackathon at Cleverbridge in Chicago to get young girls interested in STEM. My group set out to build an unitimidating playground that teaches young girls how to customize their Tumblr theme.
+I had the privilege of attending an all female hackathon at Cleverbridge in Chicago focused on the goal of getting more young girls interested in STEM. My group set out to build a beginner-friendly playground that teaches young girls how to customize their Tumblr theme.
 
 >Tumblr remains the only widely used social platform that lets you customize the code, unlike years ago when many of us became familiar with code by customizing Neopets or Myspace layouts.
 
@@ -33,7 +33,7 @@ Thanks to the generous social reach of one of our group members, we were able to
 
 _![She Hacks Tumblr](/images/SheHacks_Screens.png)_
 
-####Together, we spent our Saturday creating She Hacks Tumblr.
+<h4>Together, we spent our Saturday creating She Hacks Tumblr.</h4>
 
 Built using HTML, CSS, and Javascript, our team built a bare bones Tumblr theme using minimal code. The interface features two interactive drawers, one with the step by step instructions and definitions and one where the user writes the code, which is then reflected on the page in real time. I was responsible for the UI & UX and partnered up for the HTML & CSS. The biggest challenge during any hackathon is always time, but we were able to develop the first few tutorial steps and push live for the demo on [shehacks.tumblr.com](http://shehacks.tumblr.com/ "She Hacks Tumblr").
 

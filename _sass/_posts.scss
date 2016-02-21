@@ -9,7 +9,7 @@
 }
 
 .posts .post:hover {
-   border-left: .5em solid $purple;
+   border-left: .5em solid $blue;
    padding-left: 1em;
 }
 
@@ -22,12 +22,12 @@
 .post-link .post-title {
   margin-top: 0;
   font-weight: 600;
-  color: #333;
+  color: $purple;
 }
 
 .post-link .post-title:hover {
-  color: $purple;
-  transition: .1s ease;
+  color: $blue;
+  transition: .2s ease;
 }
 
 .post-footer {
