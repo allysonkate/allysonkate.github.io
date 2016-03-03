@@ -665,10 +665,6 @@ hr {
   margin-top: 0;
   margin-bottom: 1.5em; }
 
-.clearfix:before, .clearfix:after {
-  content: ' ';
-  display: table; }
-
 .clearfix:after {
   clear: both; }
 
@@ -1009,7 +1005,7 @@ footer {
   color: #7a7a7a;
   font-size: 0.75rem;
   font-weight: 300;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center; }
 
 .footertext {

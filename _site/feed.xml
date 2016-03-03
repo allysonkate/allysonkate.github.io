@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>allyson kate</title>
-    <description>A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff.</description>
+    <description>Allyson Wakeman&#39;s Website Online</description>
     <link>https://allysonkate.github.io//</link>
     <atom:link href="https://allysonkate.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
@@ -51,7 +51,7 @@
 
 &lt;h3&gt; “How might we grow community around games, the artists who make them, the fans that love them?” &lt;/h3&gt;
 
-&lt;p&gt;I was teamed up with Chris; &lt;a href=&quot;http://twitter.com/charlie_l_hall&quot;&gt;Charlie&lt;/a&gt;, a features writer at &lt;a href=&quot;Polygon&quot;&gt;Polygon&lt;/a&gt;; and &lt;a href=&quot;http://twitter.com/nicolezhu&quot;&gt;Nicole&lt;/a&gt;, a fellow at the &lt;a href=&quot;http://knightlab.northwestern.edu/&quot;&gt;NU Knight Lab&lt;/a&gt;. We set out to create a marketplace to bridge the gap between playtesters and potential playtesters. Being one of the members of the team who was more familiar with the gaming community, I focused on the user interviews and UI over the course of the weekend.  One of the things that makes SNDMakes so great is that it’s not a competition, so teams are able to focus more on answering what the problem is, why it’s worth solving, and for whom. Our product? I Want In.&lt;/p&gt;
+&lt;p&gt;I was teamed up with Chris; &lt;a href=&quot;http://twitter.com/charlie_l_hall&quot;&gt;Charlie&lt;/a&gt;, a features writer at &lt;a href=&quot;http://polygon.com&quot;&gt;Polygon&lt;/a&gt;; and &lt;a href=&quot;http://twitter.com/nicolezhu&quot;&gt;Nicole&lt;/a&gt;, a fellow at the &lt;a href=&quot;http://knightlab.northwestern.edu/&quot;&gt;NU Knight Lab&lt;/a&gt;. We set out to create a marketplace to bridge the gap between playtesters and potential playtesters. Being one of the members of the team who was more familiar with the gaming community, I focused on the user interviews and UI over the course of the weekend.  One of the things that makes SNDMakes so great is that it’s not a competition, so teams are able to focus more on answering what the problem is, why it’s worth solving, and for whom. Our product? I Want In.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Players are hungry for new experiences, and developers are starved for playtesters — especially in the early stages of design. ‘I Want In’ presents developers with a community of players who are given the opportunity to identify their interest in a given game project, and ask a developer to be included in a playtest cycle. Developers can select who they’re letting into their tests, and can reward the best playtesters with badges and other tokens - including retail game codes - to raise their profile in the community making them more likely to be included in other projects.&lt;/p&gt;
@@ -68,7 +68,7 @@ The most incredible part of the weekend for me was our user research process. Th
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;I Want In was built in &lt;a href=&quot;https://github.com/nicolezhu/playtesting&quot;&gt;GitHub&lt;/a&gt;, deployed using &lt;a href=&quot;https://iwantingames.herokuapp.com/&quot;&gt;Heroku&lt;/a&gt;, and our research and demo slides can be found here. My teammate Nicole also wrote a great post about the weekend &lt;a href=&quot;https://docs.google.com/presentation/d/1NV5ndEDgpt_2JxhuT4tpmnt8O5G5PCvU8VeOufZ71Dc/pub?slide=id.g831555176_0_277&quot;&gt;here&lt;/a&gt;.&lt;/em&gt; ✧&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;I Want In was built in &lt;a href=&quot;https://github.com/nicolezhu/playtesting&quot;&gt;GitHub&lt;/a&gt;, deployed using &lt;a href=&quot;https://iwantingames.herokuapp.com/&quot;&gt;Heroku&lt;/a&gt;, and our research and demo slides can be found &lt;a href=&quot;https://docs.google.com/presentation/d/1NV5ndEDgpt_2JxhuT4tpmnt8O5G5PCvU8VeOufZ71Dc/pub?slide=id.g831555176_0_277&quot;&gt;here&lt;/a&gt;. My teammates Charlie and Nicole also wrote great posts about the weekend &lt;a href=&quot;http://blog.codepen.io/2016/02/20/experience-sndmakes-chicago/&quot;&gt;here&lt;/a&gt; and &lt;a href=&quot;https://medium.com/learning-journalism-tech/why-you-should-do-sndmakes-45b017f6fd4c#.yz9dr6qbw&quot;&gt;here&lt;/a&gt;.&lt;/em&gt; ✧&lt;/p&gt;
 </description>
         <pubDate>Sun, 07 Feb 2016 00:42:00 -0600</pubDate>
         <link>https://allysonkate.github.io//work/2016/02/07/SND-Makes/</link>
@@ -161,7 +161,7 @@ The most incredible part of the weekend for me was our user research process. Th
     
       <item>
         <title>Echo Magazine</title>
-        <description>&lt;p&gt;In the spring of 2013 I served as Art Director over a team of 30 designers and writers for the Summer/Fall 2013 issue circulating 30,000 copies in the Greater Chicago area.&lt;/p&gt;
+        <description>&lt;p&gt;In the spring of 2013 I served as Art Director over a team of 30 designers and writers for the Summer/Fall 2013 issue circulating 30,000 copies in the Greater Chicago area. See the full edition &lt;a href=&quot;https://issuu.com/echomag/docs/echomagfall13&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/echocover.jpg&quot; alt=&quot;cover&quot; /&gt;
 &lt;em&gt;&lt;img src=&quot;/images/hiddentruths1.jpg&quot; alt=&quot;page 1&quot; /&gt;&lt;/em&gt;
