@@ -10,7 +10,7 @@
         <title>The Second City</title>
         <description>&lt;p&gt;&lt;img src=&quot;/images/SC_2014_logo_blk.png&quot; alt=&quot;SC Logo&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;In January of 2014, I was hired at &lt;a href=&quot;http://secondcity.com&quot;&gt;The Second City&lt;/a&gt;, a world-renowned comedy club, theatre and school of improvisation,  as design intern. Since then, I have grown from intern to Jr. Designer, and Jr Designer to Designer on a team of 5.  As part of a small design team in a multi-fasicted company, I’ve been able to have a hand in almost every department across the globe and cater my position to areas I’ve seen need, potential, and had personal interest. A few of my favorite projects and products are discussed below.&lt;/p&gt;
+&lt;p&gt;In January of 2014, I was hired at &lt;a href=&quot;http://www.secondcity.com/&quot;&gt;The Second City&lt;/a&gt;, a world-renowned comedy club, theatre and school of improvisation,  as design intern. Since then, I have grown from intern to Jr. Designer, and Jr Designer to Designer on a team of 5.  As part of a small design team in a multi-fasicted company, I’ve been able to have a hand in almost every department across the globe and cater my position to areas I’ve seen need, potential, and had personal interest. A few of my favorite projects and products are discussed below.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;&lt;img src=&quot;/images/SC_SCTV.png&quot; alt=&quot;SCTV&quot; /&gt;&lt;/em&gt;&lt;/p&gt;
 
@@ -47,11 +47,11 @@
         <title>SND Makes Invitational</title>
         <description>&lt;p&gt;&lt;em&gt;&lt;img src=&quot;/images/SND_Desktop.png&quot; alt=&quot;SND I Want In Desktop&quot; /&gt;&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;When you get invited to a prototyping event focusing on problems facing modern media companies and news organizations… you throw yourself at it. When I got the invitation from &lt;a href=&quot;http://twitter.com/chriscoyier&quot;&gt;Chris&lt;/a&gt;, co-founder of &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;, I was instantly interested in the Society of News Design and the awesome premise of this event.&lt;/p&gt;
+&lt;p&gt;When you get invited to a prototyping event focusing on problems facing modern media companies and news organizations… you throw yourself at it. When I got the invitation from &lt;a href=&quot;http://www.twitter.com/chriscoyier/&quot;&gt;Chris&lt;/a&gt;, co-founder of &lt;a href=&quot;http://www.codepen.io/&quot;&gt;CodePen&lt;/a&gt;, I was instantly interested in the Society of News Design and the awesome premise of this event.&lt;/p&gt;
 
 &lt;h3&gt; “How might we grow community around games, the artists who make them, the fans that love them?” &lt;/h3&gt;
 
-&lt;p&gt;I was teamed up with Chris; &lt;a href=&quot;http://twitter.com/charlie_l_hall&quot;&gt;Charlie&lt;/a&gt;, a features writer at &lt;a href=&quot;http://polygon.com&quot;&gt;Polygon&lt;/a&gt;; and &lt;a href=&quot;http://twitter.com/nicolezhu&quot;&gt;Nicole&lt;/a&gt;, a fellow at the &lt;a href=&quot;http://knightlab.northwestern.edu/&quot;&gt;NU Knight Lab&lt;/a&gt;. We set out to create a marketplace to bridge the gap between playtesters and potential playtesters. Being one of the members of the team who was more familiar with the gaming community, I focused on the user interviews and UI over the course of the weekend.  One of the things that makes SNDMakes so great is that it’s not a competition, so teams are able to focus more on answering what the problem is, why it’s worth solving, and for whom. Our product? I Want In.&lt;/p&gt;
+&lt;p&gt;I was teamed up with Chris; &lt;a href=&quot;http://www.twitter.com/charlie_l_hall/&quot;&gt;Charlie&lt;/a&gt;, a features writer at &lt;a href=&quot;http://www.polygon.com/&quot;&gt;Polygon&lt;/a&gt;; and &lt;a href=&quot;http://www.twitter.com/nicolezhu/&quot;&gt;Nicole&lt;/a&gt;, a fellow at the &lt;a href=&quot;http://www.knightlab.northwestern.edu/&quot;&gt;NU Knight Lab&lt;/a&gt;. We set out to create a marketplace to bridge the gap between playtesters and potential playtesters. Being one of the members of the team who was more familiar with the gaming community, I focused on the user interviews and UI over the course of the weekend.  One of the things that makes SNDMakes so great is that it’s not a competition, so teams are able to focus more on answering what the problem is, why it’s worth solving, and for whom. Our product? I Want In.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Players are hungry for new experiences, and developers are starved for playtesters — especially in the early stages of design. ‘I Want In’ presents developers with a community of players who are given the opportunity to identify their interest in a given game project, and ask a developer to be included in a playtest cycle. Developers can select who they’re letting into their tests, and can reward the best playtesters with badges and other tokens - including retail game codes - to raise their profile in the community making them more likely to be included in other projects.&lt;/p&gt;
@@ -68,7 +68,7 @@ The most incredible part of the weekend for me was our user research process. Th
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;I Want In was built in &lt;a href=&quot;https://github.com/nicolezhu/playtesting&quot;&gt;GitHub&lt;/a&gt;, deployed using &lt;a href=&quot;https://iwantingames.herokuapp.com/&quot;&gt;Heroku&lt;/a&gt;, and our research and demo slides can be found &lt;a href=&quot;https://docs.google.com/presentation/d/1NV5ndEDgpt_2JxhuT4tpmnt8O5G5PCvU8VeOufZ71Dc/pub?slide=id.g831555176_0_277&quot;&gt;here&lt;/a&gt;. My teammates Charlie and Nicole also wrote great posts about the weekend &lt;a href=&quot;http://blog.codepen.io/2016/02/20/experience-sndmakes-chicago/&quot;&gt;here&lt;/a&gt; and &lt;a href=&quot;https://medium.com/learning-journalism-tech/why-you-should-do-sndmakes-45b017f6fd4c#.yz9dr6qbw&quot;&gt;here&lt;/a&gt;.&lt;/em&gt; ✧&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;I Want In was built in &lt;a href=&quot;https://www.github.com/nicolezhu/playtesting/&quot;&gt;GitHub&lt;/a&gt;, deployed using &lt;a href=&quot;https://iwantingames.herokuapp.com/&quot;&gt;Heroku&lt;/a&gt;, and our research and demo slides can be found &lt;a href=&quot;https://docs.google.com/presentation/d/1NV5ndEDgpt_2JxhuT4tpmnt8O5G5PCvU8VeOufZ71Dc/pub?slide=id.g831555176_0_277&quot;&gt;here&lt;/a&gt;. My teammates Charlie and Nicole also wrote great posts about the weekend &lt;a href=&quot;http://www.blog.codepen.io/2016/02/20/experience-sndmakes-chicago/&quot;&gt;here&lt;/a&gt; and &lt;a href=&quot;https://www.medium.com/learning-journalism-tech/why-you-should-do-sndmakes-45b017f6fd4c#.yz9dr6qbw/&quot;&gt;here&lt;/a&gt;.&lt;/em&gt; ✧&lt;/p&gt;
 </description>
         <pubDate>Sun, 07 Feb 2016 00:42:00 -0600</pubDate>
         <link>https://allysonkate.github.io//work/2016/02/07/SND-Makes/</link>
@@ -79,17 +79,17 @@ The most incredible part of the weekend for me was our user research process. Th
         <title>Big Frame &amp; Youtube</title>
         <description>&lt;p&gt;&lt;em&gt;&lt;img src=&quot;/images/Youtube_Work.png&quot; alt=&quot;Big Frame&quot; /&gt;&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;Since 2013, I’ve been working with and as talent at &lt;a href=&quot;http://www.bigfra.me/&quot; title=&quot;Big Frame&quot;&gt;Big Frame&lt;/a&gt;, a multi-channel YouTube network in Los Angeles. Youtube has been a huge part of my life since 2007, which I talk about a little more &lt;a href=&quot;https://medium.com/@allysonkate/my-youtube-c07682d16efa#.vrqvjemfp&quot;&gt;here&lt;/a&gt;. In 2013 I signed with Big Frame for two years as a content creator, producing videos on my personal channel in conjunction with a all-female vertical network initiative. As it became clearer to me that I didn’t want to pursue YouTube as a career, I began fostering a design freelance relationship with Big Frame (now owned by DreamWorks/AwesomenessTV), which has now grown beyond my contract as talent. ✧&lt;/p&gt;
+&lt;p&gt;Since 2013, I’ve been working with and as talent at &lt;a href=&quot;http://www.bigfra.me/&quot; title=&quot;Big Frame&quot;&gt;Big Frame&lt;/a&gt;, a multi-channel YouTube network in Los Angeles. Youtube has been a huge part of my life since 2007, which I talk about a little more &lt;a href=&quot;https://medium.com/@allysonkate/my-youtube-c07682d16efa#.vrqvjemfp/&quot;&gt;here&lt;/a&gt;. In 2013 I signed with Big Frame for two years as a content creator, producing videos on my personal channel in conjunction with a all-female vertical network initiative. As it became clearer to me that I didn’t want to pursue YouTube as a career, I began fostering a design freelance relationship with Big Frame (now owned by DreamWorks/AwesomenessTV), which has now grown beyond my contract as talent. ✧&lt;/p&gt;
 
 &lt;p&gt;A few of the YouTubers I’ve worked with include:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Sarah Penna &lt;em&gt;(Big Frame co-founder, now with AwesomenessTV)&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;Joe Penna &lt;em&gt;(&lt;a href=&quot;https://www.youtube.com/user/MysteryGuitarMan&quot; title=&quot;MysteryGuitarMan&quot;&gt;MysteryGuitarMan&lt;/a&gt; → 2.85 mil)&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;Jimmy Tatro &lt;em&gt;(&lt;a href=&quot;https://www.youtube.com/user/lifeaccordingtojimmy&quot; title=&quot;LifeAccordingToJimmy&quot;&gt;LifeAccordingToJimmy&lt;/a&gt; → 2.5 mil)&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;Rebecca Black &lt;em&gt;(&lt;a href=&quot;https://www.youtube.com/user/rebecca&quot; title=&quot;rebecca&quot;&gt;rebecca&lt;/a&gt; → 1.25 mil)&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;Jenn McAllister &lt;em&gt;(&lt;a href=&quot;https://www.youtube.com/user/jennxpenn&quot; title=&quot;jennxpenn&quot;&gt;jennxpenn&lt;/a&gt; → 2.25 mil)&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;Arden Rose &lt;em&gt;(&lt;a href=&quot;https://www.youtube.com/user/ARose186&quot; title=&quot;rebecca&quot;&gt;ARose186&lt;/a&gt;  → 1.3 mil)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Joe Penna &lt;em&gt;(&lt;a href=&quot;https://www.youtube.com/user/MysteryGuitarMan/&quot; title=&quot;MysteryGuitarMan&quot;&gt;MysteryGuitarMan&lt;/a&gt; → 2.85 mil)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Jimmy Tatro &lt;em&gt;(&lt;a href=&quot;https://www.youtube.com/user/lifeaccordingtojimmy/&quot; title=&quot;LifeAccordingToJimmy&quot;&gt;LifeAccordingToJimmy&lt;/a&gt; → 2.5 mil)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Rebecca Black &lt;em&gt;(&lt;a href=&quot;https://www.youtube.com/user/rebecca/&quot; title=&quot;rebecca&quot;&gt;rebecca&lt;/a&gt; → 1.25 mil)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Jenn McAllister &lt;em&gt;(&lt;a href=&quot;https://www.youtube.com/user/jennxpenn/&quot; title=&quot;jennxpenn&quot;&gt;jennxpenn&lt;/a&gt; → 2.25 mil)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Arden Rose &lt;em&gt;(&lt;a href=&quot;https://www.youtube.com/user/ARose186/&quot; title=&quot;rebecca&quot;&gt;ARose186&lt;/a&gt;  → 1.3 mil)&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Sat, 14 Nov 2015 23:00:00 -0600</pubDate>
@@ -150,7 +150,7 @@ The most incredible part of the weekend for me was our user research process. Th
 
 &lt;p&gt;Our million dollar idea? Don’t Read The Ipsum. We created a web app that generates artisan jumbled words based on Reddit threads, Twitter handles, and New York Times article searches, for a much more enjoyable Lorum Ipsum experience. I was responsible for the UI &amp;amp; UX and partnered up for the HTML &amp;amp; CSS. After presenting in front of a panel of judges, we ended up a finalist.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.comedyhackday.org/demosmade/2015/10/5/dont-read-the-ipsum&quot;&gt;Read more about it&lt;/a&gt; and &lt;a href=&quot;http://ipsum.click&quot;&gt;try it out yourself.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.comedyhackday.org/demosmade/2015/10/5/dont-read-the-ipsum/&quot;&gt;Read more about it&lt;/a&gt; and &lt;a href=&quot;http://ipsum.click&quot;&gt;try it out yourself.&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Logo and illustrations: &lt;a href=&quot;https://twitter.com/kalehummus&quot;&gt;Subi Shah&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 </description>

@@ -10,7 +10,7 @@ categories: work
 ![SC Logo](/images/SC_2014_logo_blk.png)
 
 
-In January of 2014, I was hired at [The Second City](http://secondcity.com), a world-renowned comedy club, theatre and school of improvisation,  as design intern. Since then, I have grown from intern to Jr. Designer, and Jr Designer to Designer on a team of 5.  As part of a small design team in a multi-fasicted company, I've been able to have a hand in almost every department across the globe and cater my position to areas I've seen need, potential, and had personal interest. A few of my favorite projects and products are discussed below.
+In January of 2014, I was hired at [The Second City](http://www.secondcity.com/), a world-renowned comedy club, theatre and school of improvisation,  as design intern. Since then, I have grown from intern to Jr. Designer, and Jr Designer to Designer on a team of 5.  As part of a small design team in a multi-fasicted company, I've been able to have a hand in almost every department across the globe and cater my position to areas I've seen need, potential, and had personal interest. A few of my favorite projects and products are discussed below.
 
 
 
