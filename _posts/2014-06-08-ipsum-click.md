@@ -11,7 +11,7 @@ categories: work
 ![Comedy Hack Day](/images/Ipsum1.png)
 
 
-In 2015 I had the absolute pleasure to be accepted to participate in Chicago's first [Comedy Hack Day](http://comedyhackday.com "Comedy Hack Day"), a hackathon started by [Cultivated Wit](http://www.cultivatedwit.com/ "Cultivated Wit") in SF. By far one of the most incredible weekends of my year. I laughed and learned an incredible amount with our diverse group.
+In 2015 I had the absolute pleasure of being accepted to participate in Chicago's first [Comedy Hack Day](http://comedyhackday.com "Comedy Hack Day"), a hackathon started by [Cultivated Wit](http://www.cultivatedwit.com/ "Cultivated Wit") in SF. By far one of the most incredible weekends of my year. I laughed and learned an incredible amount with our diverse group.
 
 ![Comedy Hack Day](/images/Ipsum_Click.png)
 

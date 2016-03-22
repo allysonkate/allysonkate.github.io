@@ -7,11 +7,13 @@ summary:    ui & ux | html & css
 categories: work
 ---
 
+![She Hacks Chi Sketches](/images/SheHacks_Sketches.png)
+
 I had the privilege of attending an all female hackathon at Cleverbridge in Chicago focused on the goal of getting more young girls interested in STEM. My group set out to build a beginner-friendly playground that teaches young girls how to customize their Tumblr theme.
 
 >Tumblr remains the only widely used social platform that lets you customize the code, unlike years ago when many of us became familiar with code by customizing Neopets or Myspace layouts.
 
-And there it was. We had our passion product. We were going to build not just a tutorial, but a Tumblr playground. A low-steaks environment to learn, mess up, add personality, and instantly see the effects of _your_ code on _your_ site.
+And there it was. We had our passion product. We were going to build not just a tutorial, but a Tumblr playground. A low-stakes environment to learn, mess up, add personality, and instantly see the effects of _your_ code on _your_ site.
 
 Thanks to the generous social reach of one of our group members, we were able to do some quick field research regarding interest in the product and features they'd like to see.
 
