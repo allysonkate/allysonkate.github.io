@@ -10,7 +10,11 @@ _![Spirits](/images/Spirits_Twitter.png)_
 
 * Sending out the occasional [tiny letter](http://tinyletter.com/allysonkate/).
 
-* Reading [Product Design for the Web](https://www.amazon.com/Product-Design-Web-Principles-Designing/dp/0321929039) and [Creativity, Inc.](https://www.amazon.com/Creativity-Inc-Overcoming-Unseen-Inspiration/dp/0812993012)
+* Reading [Magic and Loss](https://www.amazon.com/Magic-Loss-Internet-as-Art/dp/1439191700)
+
+* Participating in the upcoming [Nerdery Overnight Website Challenge](http://chi2017.overnightwebsitechallenge.com/) in March
+
+
 
 
 *page inspired by [nownownow](http://nownownow.com/)*
