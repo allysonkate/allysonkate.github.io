@@ -28,7 +28,7 @@ _![SCTV](/images/SC_Brand.png)_
 
 <h3>Brand, Marketing & Art Direction</h3>
 
-I was fortunate enough to have a hand in shaping a major rebrand across all branches of the company. One of my primary roles on the team is as the lead designer of the general second city brand and stages for both Chicago and Toronto. Under this role I have collaborated with our marketing team to develop and execute several brand awareness and show campaigns for various target audiences.
+I was fortunate enough to have a hand in shaping a major rebrand across all branches of the company. One of my primary roles on the team is as the lead designer of the general second city brand and stages for both Chicago and Toronto. Under this role I have collaborated with our marketing team to develop and execute several brand awareness and show campaigns for various target audiences. In-depth campaigns upon request.
 
 <br>
 
