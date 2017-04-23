@@ -3,7 +3,7 @@ layout:     post
 title:      The Second City
 date:       2016-02-15 07:00:00
 tag:		work
-summary:    brand & marketing | ui & ux | wordpress
+summary:    brand & marketing | art direction | ui & ux 
 categories: work
 ---
 
@@ -14,21 +14,22 @@ In January of 2014, I was hired at [The Second City](http://www.secondcity.com/)
 
 
 
-_![SCTV](/images/SC_SCTV.png)_
-
-<h3>sctv.com</h3>
-
-Our theater in Toronto expressed the need for a product that showed off SCTV to potential clients interested in our SCTV archive. The goal was to showcase the history of SCTV Network, its actors, and the legacy the show and actors have left behind. I served as the lead creative director for the project and the sole designer and developer. Using an existing WordPress theme, I reworked the site with custom code to better fit the needs of the client.
-
-<br>
-
----
 
 _![SCTV](/images/SC_Brand.png)_
 
 <h3>Brand, Marketing & Art Direction</h3>
 
 I was fortunate enough to have a hand in shaping a major rebrand across all branches of the company. One of my primary roles on the team is as the lead designer of the general second city brand and stages for both Chicago and Toronto. Under this role I have collaborated with our marketing team to develop and execute several brand awareness and show campaigns for various target audiences. In-depth campaigns upon request.
+
+<br>
+
+---
+
+_![SCTV](/images/SC_SCTV.png)_
+
+<h3>sctv.com</h3>
+
+Our theater in Toronto expressed the need for a product that showed off SCTV to potential clients interested in our SCTV archive. The goal was to showcase the history of SCTV Network, its actors, and the legacy the show and actors have left behind. I served as the lead creative director for the project and the sole designer and developer. Using an existing WordPress theme, I reworked the site with custom code to better fit the needs of the client.
 
 <br>
 
