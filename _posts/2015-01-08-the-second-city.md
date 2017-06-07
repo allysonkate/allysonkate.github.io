@@ -10,7 +10,7 @@ categories: work
 ![SC Logo](/images/SC_2014_logo_blk.png)
 
 
-In 2014, I was hired at [The Second City](http://www.secondcity.com/), the historic comedy club, theatre and school of improvisation,  as a design intern. Since then, I have grown from intern, to Jr. Designer, to Designer and mentor on a team of five.  As part of a small design team in a multifaceted company, I've been able to have a hand in almost every department across the globe and cater my position to areas I've seen need, potential, and had personal interest with both internal and external clients and collaborations. Some of those clients and collaborations include the Emmy Award winning Canadian sketch comedy show, Second City TV; the company’s digital video and blogging presence, The Second City Network; The Kennedy Center in Washington D.C.; Slate Magazine; and NBC Universal. A few of my favorite projects and products are discussed below.
+In 2014, I was hired at [The Second City](http://www.secondcity.com/), the historic comedy club, theatre and school of improvisation,  as a design intern. Since then, I have grown from intern, to Jr. Designer, to Designer and mentor on a team of five.  As part of a small design team in a multifaceted company, I've been able to have a hand in almost every department across the globe and cater my position to areas I've seen need, potential, and had personal interest with both internal and external clients and collaborations. A few of those include the Emmy Award winning Canadian sketch comedy show, Second City TV; the company’s digital video and blog presence, The Second City Network; The Kennedy Center; Slate Magazine; and NBC Universal. A few of my favorite projects and products are discussed below.
 
 
 
