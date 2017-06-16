@@ -3,7 +3,7 @@ layout:     post
 title:      Don't Read The Ipsum
 date:       2015-10-02 06:42:00
 tag:		work
-summary:    ui & ux | html & css
+summary:    ui | html & css
 categories: work
 ---
 
