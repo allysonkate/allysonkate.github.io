@@ -2,15 +2,14 @@
 layout: default
 ---
 
-Currently, I'm:  
+Currently, I...  
 
 
-* Working on a mixed media side-project that exploits your early online presence. :]
+... just launched a rebrand project I lead for Marvel Entertainment, for the [Women of Marvel Podcast] (https://marvel.com/podcasts).
 
-* Doing my part to keep the internet [weird](http://tinyletter.com/allysonkate/).
+... recently completed a 10 week part-time User Experience course at General Assembly, and working on adding those projects to this portfolio.
 
-* Reading [Magic and Loss](https://www.amazon.com/Magic-Loss-Internet-as-Art/dp/1439191700)
-
+... am reading (The Road Back to You) (https://www.amazon.com/dp/B01CNZG896/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1).
 
 
 
