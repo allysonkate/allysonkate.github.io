@@ -7,10 +7,12 @@ summary:    creative direction | design | marketing | strategy
 categories: work
 ---
 
-<br>
+![Solstice](/images/solstice_logo.png)
+
 
 Since 2017, I've had the opportunity to build and lead the global design team for brand & marketing at Solstice, a digital innovation firm that helps Fortune 500 companies seize new opportunities through digital solutions.
 
+<br>
 
 
 _![Trends](/images/Solstice_Trend_Digital_shadow.png)_
