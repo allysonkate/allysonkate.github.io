@@ -40,7 +40,7 @@ _![SCTV](/images/SC_SCTV.png)_
 
 <h3>sctv.com</h3>
 
-Under the SolsticeFWD also lives our thought leadership platform, which houses our blogs, podcast, whitepapers, and press. The old page was outdated and nearly impossible to digest from a UX perspective. In 2018 I led a redesign of the content hub from the ground up including strategy, user flow, hierarchy, wireframes, UI & visual design.
+Under the SolsticeFWD also lives our thought leadership platform, which houses our blogs, podcast, whitepapers, and press. The old page was outdated and nearly impossible to digest from a UX perspective. In 2018 I led a redesign of the content hub from the ground up including strategy, user flow, hierarchy, wireframes, UI & visual design
 
 
 <br>
