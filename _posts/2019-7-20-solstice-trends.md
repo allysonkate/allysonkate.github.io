@@ -26,14 +26,12 @@ In 2018 and 2019, I had the opportunity to concept, lead, and execute Solstice's
 
 ---
 
-_![Second City Network](/images/SC_Network2.png)_
+_![FWD 2018](/images/FWD_2018.png)_
 
 
 <h3>SolsticeFWD Conference</h3>
 
-FWD is an interactive summit with revealing explorations of bold, innovative ideas and immersive, emerging tech experiences designed for forward-thinking executives. I've led both digital and physical brand and design experiences for both Chicago and New York FWD conferences.
-
-See last years recap [here](https://youtu.be/9a238zN2ioo).
+FWD is an interactive summit with revealing explorations of bold, innovative ideas and immersive, emerging tech experiences designed for forward-thinking executives. I've led both digital and physical brand and design experiences for both Chicago and New York FWD conferences. More coming soon, see last years recap [here](https://youtu.be/9a238zN2ioo).
 
 
 
@@ -41,11 +39,11 @@ See last years recap [here](https://youtu.be/9a238zN2ioo).
 
 ---
 
-_![SCTV](/images/SC_SCTV.png)_
+_![SCTV](/images/Solstice_FWD_Desktop.png)_
 
 <h3>solstice.com/fwd</h3>
 
-Under the SolsticeFWD also lives our thought leadership platform, which houses our blogs, podcast, whitepapers, and press. The old page was outdated and nearly impossible to digest from a UX perspective. In 2018 I led a redesign of the content hub from the ground up including strategy, user flow, hierarchy, wireframes, UI & visual design
+Under the SolsticeFWD also lives our thought leadership platform, which houses our blogs, podcast, whitepapers, and press. The old page was outdated and nearly impossible to digest from a UX perspective. In 2018 I led a redesign of the content hub from the ground up including strategy, user flow, hierarchy, wireframes, UI & visual design.
 
 
 <br>
