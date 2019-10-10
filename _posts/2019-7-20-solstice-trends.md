@@ -12,8 +12,8 @@ Since 2017, I've had the opportunity to build and lead the global design team fo
 
 
 
-_![SCTV](/images/Solstice_Trend_Digital_Shadow.png)_
-_![SCTV](/images/Solstice_Trend_Print.png)_
+_![Trends](/images/Solstice_Trend_Digital_shadow.png)_
+_![Trends](/images/Solstice_Trend_Print.png)_
 
 
 <h3>Creative Direction, Marketing, Visual & Experiential Design</h3>
@@ -27,6 +27,9 @@ _![FWD 2018](/images/FWD_2018.png)_
 
 <br>
 
+---
+
+<br>
 
 <h3>SolsticeFWD Conference</h3>
 
