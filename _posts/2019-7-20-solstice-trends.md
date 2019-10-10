@@ -12,8 +12,6 @@ categories: work
 
 Since 2017, I've had the opportunity to build and lead the global design team for brand & marketing at Solstice, a digital innovation firm that helps Fortune 500 companies seize new opportunities through digital solutions.
 
-<br>
-
 
 _![Trends](/images/Solstice_Trend_Digital_shadow.png)_
 _![Trends](/images/Solstice_Trend_Print.png)_
