@@ -14,7 +14,7 @@ Since 2017, I've had the opportunity to build and lead the global design team fo
 
 
 
-_![SCTV](/images/SC_Brand3.png)_
+_![SCTV](/images/Solstice_Trend_Digital.png)_
 
 <h3>Creative Direction, Marketing, Visual & Experiential Design</h3>
 
@@ -26,7 +26,6 @@ In 2018 and 2019, I had the opportunity to concept, lead, and execute Solstice's
 
 _![Second City Network](/images/SC_Network2.png)_
 
-![alt text](https://www.facebook.com/Solstice111/videos/10156620401329114/)
 
 <h3>SolsticeFWD Conference</h3>
 
@@ -41,6 +40,7 @@ _![SCTV](/images/SC_SCTV.png)_
 
 <h3>sctv.com</h3>
 
-Our Toronto steakholders expressed the need for a product that showed off SCTV to potential clients interested in our SCTV archive. The goal was to showcase the history of SCTV Network, its actors, and the legacy the show and actors have left behind. I served as the lead creative director for the project and the sole designer and developer. Using an existing WordPress theme, I reworked the site with custom code to better fit the needs of the client.
+Under the SolsticeFWD also lives our thought leadership platform, which houses our blogs, podcast, whitepapers, and press. The old page was outdated and nearly impossible to digest from a UX perspective. In 2018 I led a redesign of the content hub from the ground up including strategy, user flow, hierarchy, wireframes, UI & visual design.
+
 
 <br>
