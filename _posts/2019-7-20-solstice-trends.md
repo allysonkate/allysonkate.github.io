@@ -3,7 +3,7 @@ layout:     post
 title:      Solstice
 date:       2019-09-04 07:00:00
 tag:		work
-summary:    creative direction | marketing | strategy
+summary:    creative direction | design | marketing | strategy
 categories: work
 ---
 
@@ -15,6 +15,8 @@ Since 2017, I've had the opportunity to build and lead the global design team fo
 
 
 _![SCTV](/images/Solstice_Trend_Digital.png)_
+_![SCTV](/images/Solstice_Trend_Print.png)_
+
 
 <h3>Creative Direction, Marketing, Visual & Experiential Design</h3>
 
@@ -31,6 +33,9 @@ _![Second City Network](/images/SC_Network2.png)_
 
 FWD is an interactive summit with revealing explorations of bold, innovative ideas and immersive, emerging tech experiences designed for forward-thinking executives. I've led both digital and physical brand and design experiences for both Chicago and New York FWD conferences.
 
+See last years recap [here](https://youtu.be/9a238zN2ioo).
+
+
 
 <br>
 
@@ -38,7 +43,7 @@ FWD is an interactive summit with revealing explorations of bold, innovative ide
 
 _![SCTV](/images/SC_SCTV.png)_
 
-<h3>sctv.com</h3>
+<h3>solstice.com/fwd</h3>
 
 Under the SolsticeFWD also lives our thought leadership platform, which houses our blogs, podcast, whitepapers, and press. The old page was outdated and nearly impossible to digest from a UX perspective. In 2018 I led a redesign of the content hub from the ground up including strategy, user flow, hierarchy, wireframes, UI & visual design
 
