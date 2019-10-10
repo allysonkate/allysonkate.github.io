@@ -3,7 +3,7 @@ layout:     post
 title:      Solstice
 date:       2019-09-04 07:00:00
 tag:		work
-summary:    creative direction | design | marketing | strategy
+summary:    creative direction | design | marketing | strategy | team management
 categories: work
 ---
 
