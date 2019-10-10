@@ -200,7 +200,7 @@ h6,
 
 .button-blue {
   color: white;
-  background-color: #cc33ff;
+  background-color: #cfa688;
   border-radius: 3px;
   transition-duration: .1s;
   transition-timing-function: ease-out;
@@ -296,7 +296,7 @@ h6,
   color: #00ab37; }
 
 .highlight .ss {
-  color: #cc33ff; }
+  color: #cfa688; }
 
 .hljs-built_in {
   color: #00369f; }
@@ -644,7 +644,7 @@ body {
   -webkit-box-sizing: border-box; }
 
 a {
-  color: #cc33ff; }
+  color: #cfa688; }
 
 a:hover,
 a:focus,
@@ -841,7 +841,7 @@ small,
 
 .site-header .site-title {
   font-size: 2rem;
-  color: #cc33ff;
+  color: #cfa688;
   font-weight: 700; }
 
 .site-nav {
@@ -1027,7 +1027,7 @@ footer {
 
 .social-icons a.fa:hover {
   opacity: 1;
-  color: #CC33FF; }
+  color: #cfa688; }
 
 .social-icons iframe[title=Flattr] {
   position: relative;
@@ -1068,7 +1068,7 @@ blockquote footer {
 .post-link .post-title {
   margin-top: 0;
   font-weight: 600;
-  color: #cc33ff; }
+  color: #cfa688; }
 
 .post-link .post-title:hover {
   color: #66ffff;
