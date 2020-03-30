@@ -27,14 +27,14 @@ In 2018 and 2019, I had the opportunity to concept, lead, and execute Solstice's
 
 <br>
 
-_![FWD 2018](/images/FWD_2018.png)_
+[![FWD19](/images/fwd.png)](https://youtu.be/VLQJMgoW5Lg)
 
 <br>
 
 
 <h3>SolsticeFWD Conference</h3>
 
-FWD is an interactive summit with revealing explorations of bold, innovative ideas and immersive, emerging tech experiences designed for forward-thinking executives. I've led both digital and physical brand and design experiences for both Chicago and New York FWD conferences. More coming soon, see last years recap [here](https://youtu.be/9a238zN2ioo).
+FWD is an interactive summit with revealing explorations of bold, innovative ideas and immersive, emerging tech experiences designed for forward-thinking executives. I've led both creative direction and design across all digital and physical brand experiences in both Chicago and New York.
 
 
 
