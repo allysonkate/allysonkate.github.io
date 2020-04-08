@@ -5,9 +5,10 @@ layout: default
 Recently, I...  
 
 
-... launched a rebrand project I lead for Marvel Entertainment, for the [Women of Marvel Podcast](https://marvel.com/podcasts).
-
 ... started reading [Radical Candor](https://www.radicalcandor.com/).
+
+... have been volunteering with [Come Unity](https://www.comeunitynow.org/), a non-profit partnering with East African communities to develop sustainable solutions to poverty.
+
 
 
 
