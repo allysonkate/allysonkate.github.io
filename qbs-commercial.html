@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QBS Commercial · Allyson</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f3efee;
+    --surface: #ffffff;
+    --ink: #1a1a1a;
+    --ink-soft: #5c5c5c;
+    --muted: #9a9a9a;
+    --line: #e7e3e0;
+    --accent: #4D56F2;
+    --tag-bg: rgba(243,239,238,0.7);
+    --btn-bg: #000000;
+    --btn-fg: #ffffff;
+    --pill-bg: #f3efee;
+    --case-color: #4D56F2;
+    --case-fg: #ffffff;
+  }
+  body.dark {
+    --bg: #14161a;
+    --surface: #1c1f24;
+    --ink: #f1f1f1;
+    --ink-soft: #a8a8a8;
+    --muted: #6c6f75;
+    --line: #2b2e33;
+    --tag-bg: rgba(255,255,255,0.08);
+    --btn-bg: #f1f1f1;
+    --btn-fg: #14161a;
+    --pill-bg: #262a2f;
+  }
+  body.dark .invert-logo { filter: invert(1) brightness(1.8); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Albert Sans', -apple-system, sans-serif;
+    line-height: 1.5;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+  body, .screen, .highlight, .quote { transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 26px 0;
+  }
+  .brand { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+  .brand .mark { font-size: 18px; line-height: 1; transition: transform .2s ease; }
+  .brand:hover .mark { transform: rotate(-10deg); }
+  .brand .name { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); }
+  nav { display: flex; align-items: center; gap: 30px; }
+  nav a { font-size: 14px; font-weight: 500; text-decoration: none; color: var(--ink-soft); }
+  nav a:hover { color: var(--ink); }
+  .theme-icons { display: none; align-items: center; gap: 10px; } /* dark mode paused */
+  .icon-toggle {
+    background: none; border: none; padding: 0; cursor: pointer;
+    font-size: 16px; line-height: 1; color: var(--ink-soft); font-family: inherit;
+  }
+  .icon-toggle.active { color: var(--accent); }
+
+  /* hero */
+  .hero-case { padding: 20px 0 0; }
+  .eyebrow-case {
+    font-size: 14px; color: var(--ink-soft); margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h1.case-h1 {
+    font-size: 38px; font-weight: 600; line-height: 1.28; letter-spacing: -0.01em;
+    max-width: 780px; margin-bottom: 18px;
+  }
+  .case-subhead { font-size: 16px; color: var(--ink-soft); max-width: 640px; line-height: 1.6; margin-bottom: 36px; }
+  .hero-meta-row {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px; padding-bottom: 32px;
+  }
+  .tag-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .case-tag {
+    font-size: 12.5px; font-weight: 500; color: var(--ink); background: var(--tag-bg);
+    display: inline-block; padding: 5px 12px; border-radius: 100px; width: fit-content;
+  }
+  .client-meta { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--ink-soft); }
+  .client-meta img { height: 14px; width: auto; }
+
+  /* full-bleed hero panel: no padding of its own anymore — the purple margin around
+     the screens is baked into the image itself, so the panel just frames it edge to edge. */
+  .hero-panel {
+    background: var(--case-color);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    display: flex;
+    justify-content: center;
+  }
+  .hero-img { max-width: 760px; width: 100%; height: auto; display: block; }
+
+  .case-main { max-width: 720px; margin: 0 auto; padding: 0 32px; }
+
+  .back-pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 500; color: var(--ink);
+    background: var(--pill-bg); border-radius: 100px; padding: 9px 18px;
+    text-decoration: none; margin: 36px 0 0;
+  }
+
+  .about-row { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--ink-soft); margin-bottom: 16px; margin-top: 48px; }
+  .about-row img { height: 14px; width: auto; }
+
+  h2 { font-size: 23px; font-weight: 600; letter-spacing: -0.01em; margin: 56px 0 16px; }
+  h4 { font-size: 15px; font-weight: 600; margin: 0 0 4px; }
+  p { font-size: 16px; line-height: 1.7; color: var(--ink); margin-bottom: 16px; }
+  p.soft { color: var(--ink-soft); }
+
+  ul.decision-list {
+    list-style: none; margin: 0 0 20px; padding: 0;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  ul.decision-list li { font-size: 15.5px; color: var(--ink); padding-left: 20px; position: relative; line-height: 1.6; }
+  ul.decision-list li::before { content: "–"; position: absolute; left: 0; top: 0; color: var(--ink-soft); }
+  ul.decision-list li strong { font-weight: 600; }
+
+  .highlight { margin: 28px 0 36px; }
+  .highlight .h-label {
+    font-size: 13px; color: var(--ink-soft); display: flex; align-items: center; gap: 6px; margin-bottom: 10px;
+  }
+  .highlight .h-label .spark { color: var(--accent); }
+  .highlight .h-line { font-size: 21px; font-weight: 600; line-height: 1.4; letter-spacing: -0.01em; }
+
+  .screen { background: var(--surface); border-radius: 12px; padding: 40px 24px; margin: 24px 0 8px; }
+  .screen .cs-line { height: 8px; border-radius: 5px; background: var(--tag-bg); margin: 0 auto 10px; }
+  .screen .cs-line.w30 { width: 30%; }
+  .screen .cs-line.w60 { width: 60%; }
+  .screen .cs-line.w90 { width: 90%; }
+  .screen .cs-line:last-child { margin-bottom: 0; }
+  .screen-caption { font-size: 13px; color: var(--muted); text-align: left; line-height: 1.5; margin: 0 0 32px; }
+  /* Real screen photos: full-bleed, no padding — the purple/white composition is baked into
+     the image itself, same pattern as the hero. Fixed to the image's own 656:492 ratio so it
+     scales cleanly at any width instead of being cropped by a container-driven aspect ratio. */
+  .screen-photo { max-width: 656px; width: 100%; height: auto; display: block; margin: 24px 0 8px; border-radius: 12px; }
+  /* AI-concept screen only: a blinking text caret sitting right after "and" in the search field,
+     positioned as a % of the image so it lands in the same spot regardless of rendered width. */
+  .screen-photo-wrap { position: relative; max-width: 656px; width: 100%; margin: 24px 0 8px; }
+  .screen-photo-wrap .screen-photo { margin: 0; }
+  .type-caret {
+    position: absolute;
+    left: 50%;
+    top: 19.3%;
+    width: 1px;
+    height: 2.85%;
+    background: #1a1a1a;
+    animation: caret-blink 1s steps(1, end) infinite;
+  }
+  @keyframes caret-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+
+  /* Industry-grid "after" screen: three full-frame photos (default, hover, selected) stacked
+     exactly on top of each other and crossfaded on a loop, same rule as the QBS homepage card —
+     swap whole frames, never composite a patch on top, so nothing can drift out of alignment.
+     A fake cursor glides from the gutter below the grid up to the Construction card's radio,
+     dwells in the hover state, "clicks", then the selected frame (olive highlight, filled radio,
+     plus the narrowed search field beneath it) fades in and holds before the loop resets. */
+  .industry-demo { position: relative; max-width: 656px; width: 100%; aspect-ratio: 1312 / 984; margin: 24px 0 8px; border-radius: 12px; overflow: hidden; }
+  .industry-demo .demo-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+  /* Base default frame never animates — it's opaque and sits underneath, so it only ever shows
+     through when the frames stacked on top of it are transparent. */
+  .industry-demo .demo-hover { animation: industry-hover 7s ease-in-out infinite; }
+  .industry-demo .demo-selected { animation: industry-selected 7s ease-in-out infinite; }
+  @keyframes industry-hover {
+    0%, 24% { opacity: 0; }
+    32%, 96% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  @keyframes industry-selected {
+    0%, 48% { opacity: 0; }
+    56%, 90% { opacity: 1; }
+    96%, 100% { opacity: 0; }
+  }
+  .industry-demo .demo-cursor {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    z-index: 5;
+    animation: industry-cursor 7s ease-in-out infinite;
+  }
+  .industry-demo .demo-cursor svg { display: block; filter: drop-shadow(0 2px 4px rgba(0,0,0,.35)); }
+  @keyframes industry-cursor {
+    0%, 5% { left: 41.62%; top: 60.77%; opacity: 0; transform: scale(1); }
+    11% { left: 41.62%; top: 60.77%; opacity: 1; transform: scale(1); }
+    32%, 48% { left: 46.34%; top: 44.36%; opacity: 1; transform: scale(1); }
+    50% { left: 46.34%; top: 44.36%; opacity: 1; transform: scale(0.82); }
+    53%, 89% { left: 46.34%; top: 44.36%; opacity: 1; transform: scale(1); }
+    95%, 100% { left: 41.62%; top: 60.77%; opacity: 0; transform: scale(1); }
+  }
+
+  .quote { margin: 32px 0 40px; }
+  .quote .qmark { font-size: 36px; color: var(--accent); line-height: 0.6; display: block; margin-bottom: 12px; font-weight: 700; }
+  .quote p { font-size: 18px; line-height: 1.6; font-weight: 500; margin-bottom: 12px; }
+  .quote cite { font-size: 13px; font-weight: 600; color: var(--ink-soft); font-style: normal; }
+
+  .reflection { padding-top: 28px; border-top: 1px solid var(--line); margin: 8px 0 20px; }
+  .reflection p { margin-bottom: 0; font-size: 16.5px; color: var(--ink-soft); }
+
+  .case-nav-footer {
+    max-width: 720px; margin: 40px auto 0; padding: 32px 32px 0;
+    border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .case-nav-footer a { font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; }
+
+  .view-btn {
+    background: var(--btn-bg); color: var(--btn-fg); border: none;
+    border-radius: 100px; padding: 11px 26px; font-size: 14px; font-weight: 600; cursor: pointer;
+  }
+
+  footer { text-align: center; padding: 60px 24px 80px; margin-top: 40px; }
+  footer .connect-label { font-size: 15px; color: var(--ink); margin-bottom: 14px; }
+  footer .links { display: flex; justify-content: center; gap: 10px; }
+  footer .links a {
+    width: 36px; height: 36px; border-radius: 100px; background: var(--btn-bg);
+    display: flex; align-items: center; justify-content: center; color: var(--btn-fg);
+    text-decoration: none; font-size: 13px; font-weight: 700;
+  }
+
+  @media (max-width: 640px) {
+    h1.case-h1 { font-size: 28px; }
+    .highlight .h-line { font-size: 18px; }
+    .case-main, .case-nav-footer { padding-left: 22px; padding-right: 22px; }
+    nav a:not(.theme-icons) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <a href="index.html" class="brand">
+      <span class="mark">✱</span>
+      <div class="name">allyson</div>
+    </a>
+    <nav>
+      <a href="index.html#work">Work</a>
+      <a href="about.html">About</a>
+      <a href="index.html#contact">Contact</a>
+      <div class="theme-icons">
+        <button id="theme-light" class="icon-toggle" type="button" aria-label="Light mode">☀</button>
+        <button id="theme-dark" class="icon-toggle" type="button" aria-label="Dark mode">☾</button>
+      </div>
+    </nav>
+  </header>
+</div>
+
+<div id="password-gate" style="display:flex; min-height:50vh; align-items:center; justify-content:center; padding:60px 24px;">
+  <form id="gate-form" style="max-width:340px; width:100%; text-align:center;">
+    <div class="case-tag" style="margin:0 auto 16px; display:inline-block;">Protected</div>
+    <h1 style="font-size:22px; font-weight:600; margin-bottom:10px;">This case study is password protected</h1>
+    <p style="color:var(--ink-soft); font-size:14px; margin-bottom:24px;">Enter the password to continue.</p>
+    <input type="password" id="gate-password" placeholder="Password" autocomplete="off"
+      style="width:100%; padding:11px 16px; font-size:15px; font-family:'Albert Sans',sans-serif; border:1px solid var(--line); border-radius:8px; margin-bottom:14px; color:var(--ink); outline:none; background:var(--surface);">
+    <br>
+    <button type="submit" class="view-btn">Unlock</button>
+    <p id="gate-error" style="color:#b3403a; font-size:13px; margin-top:14px; display:none;">Incorrect password. Try again.</p>
+  </form>
+</div>
+
+<main id="main-content" style="display:none;">
+
+  <div class="wrap hero-case">
+    <div class="eyebrow-case">
+      <img src="assets/acrisure-logo.png" alt="Acrisure" class="invert-logo" style="height:14px;">
+    </div>
+    <h1 class="case-h1">Rebuilding a Multi-Carrier Insurance Platform</h1>
+    <p class="case-subhead">Redesigning small business insurance quoting across dozens of carrier rulesets.</p>
+    <div class="hero-meta-row">
+      <div class="tag-row">
+        <span class="case-tag">Case Study</span>
+        <span class="case-tag">Insurance</span>
+        <span class="case-tag">Conversion</span>
+      </div>
+      <div class="client-meta">
+        2024&ndash;2025
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-panel">
+    <img class="hero-img" src="assets/qbs-hero.png" alt="Coverage selection and Payroll Billing screens from the quoting platform, showing the product-line picker and a mid-flow carrier question.">
+  </div>
+
+  <div class="wrap">
+    <a href="index.html#work" class="back-pill">← All case studies</a>
+  </div>
+
+  <div class="case-main">
+
+    <div class="highlight">
+      <div class="h-label"><span class="spark">✦</span> Highlight</div>
+      <div class="h-line">+36% year-over-year increase in conversion to bind</div>
+    </div>
+
+    <h2>The Situation</h2>
+    <p>The platform lets small businesses quote and bind insurance across six product lines: General Liability, Business Owner's Policy, Workers' Comp, Professional Liability, Cyber, and Commercial Property. It has to support fully digital, hybrid, and agent-assisted journeys at once.</p>
+    <p>The experience I inherited was functional but fragile. It had been built to prove a fully digital model worked, then patched after an acquisition to meet new carrier and brand requirements. It couldn't reliably support the mix of journeys the business actually needed. The goal was to redesign it to work across dozens of carrier rulesets, without pushing that complexity onto the customer.</p>
+
+    <div class="quote">
+      <span class="qmark">"</span>
+      <p>This is one of the best user experiences we have seen in the customer-facing realm.</p>
+      <cite>The Hartford, Carrier Partner</cite>
+    </div>
+
+    <h2>The Constraint</h2>
+    <p>Small commercial insurance quoting has a specific kind of complexity that better UI alone doesn't solve.</p>
+    <p>Every product line depends on classifying a customer's industry correctly to determine eligibility and price. There are thousands of possible industry codes, and the naming is inconsistent enough to get strange (cleaning services alone split across half a dozen adjacent categories). Some single-carrier competitors can offer a clean, curated list because they underwrite their own policies end to end. The platform works across many carriers at once, so that shortcut wasn't available. Consolidating the raw data into something friendlier would have taken engineering investment that was never prioritized.</p>
+    <p class="soft">I had to make an inherently messy system feel navigable through UI alone.</p>
+
+    <h2>What I Did</h2>
+    <ul class="decision-list">
+      <li><strong>Rebuilt the flow as a system, not screens.</strong> Mapped question requirements across product lines, carriers, and payment models to see which complexity was unavoidable and which could be abstracted or sequenced differently.</li>
+      <li><strong>Abstracted carrier variation at the system level.</strong> Carrier requirements varied significantly. Exposing that variation directly to users created confusion, so divergence got handled behind the scenes instead of in the UI.</li>
+      <li><strong>Supported both digital completion and agent handoff.</strong> Rather than one "happy path," the flow let customers complete digitally where possible while preserving context if they needed an agent.</li>
+      <li><strong>Extended the design system to support commercial's complexity.</strong> The existing system was built for personal insurance and didn't have the components commercial needed, so I scaled and added to it.</li>
+    </ul>
+    <p class="soft">The redesigned experience launched in September 2024.</p>
+
+    <h2>Industry Classification</h2>
+    <p>Industry classification was the screen causing the most confusion post-launch. High time-on-screen showed people struggling to find their category, made worse by the constraint above: thousands of inconsistent, carrier-specific codes with no budget to simplify them.</p>
+
+    <img class="screen-photo" src="assets/qbs-industry-before.png" alt="Find your business class screen: a plain radio-button list of categories, with an unlabeled Type of Business search field below it.">
+    <p class="screen-caption">Before: radio-button list</p>
+
+    <p>The obvious answer was AI. Let a customer describe their business in plain language and have a model return the closest matches, with a manual fallback for low-confidence cases. We built it. Before it ever reached a customer, we tested it internally against real business data, and the match accuracy didn't clear the bar we needed.</p>
+
+    <div class="screen-photo-wrap">
+      <img class="screen-photo" src="assets/qbs-industry-concept.png" alt="Describe your business in a few words screen: free-text input with AI-matched industry results ranked below it.">
+      <div class="type-caret"></div>
+    </div>
+    <p class="screen-caption">AI concept, tested internally, not shipped</p>
+
+    <p>We didn't ship it. In insurance, getting someone's industry wrong isn't cosmetic: it can misprice or misqualify a customer, and my team runs that E&amp;O calculus by default on anything customer-facing. Walking away from the AI feature was the obvious call, even without a precise technical explanation for why the model underperformed.</p>
+
+    <p>What shipped instead was a visual card grid: broad categories represented with icons and plain-language examples, so a customer could recognize their business instead of parsing formal category names. Selecting a category scopes both the visible list and the search field below it, narrowing roughly 2,000 codes down to the ~100 relevant to that category. Anyone unsure can pick "Other" and search the full set.</p>
+
+    <div class="industry-demo">
+      <img class="demo-img demo-default" src="assets/qbs-industry-after-hover.png" alt="Which industry category best represents your business screen: a visual card grid of broad categories with icons and plain-language examples, plus a search field to narrow further.">
+      <img class="demo-img demo-hover" src="assets/qbs-industry-after-default.png" alt="">
+      <img class="demo-img demo-selected" src="assets/qbs-industry-after-selected.png" alt="">
+      <div class="demo-cursor">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <path d="M4 2L4 20L9 15.5L12.5 22.5L15.5 21L12 14L18.5 14L4 2Z" fill="white" stroke="#1a1a1a" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+    <p class="screen-caption">After: card grid, live today — cursor selects Construction, narrowing the search below</p>
+
+    <div class="highlight">
+      <div class="h-label"><span class="spark">✦</span> Result</div>
+      <div class="h-line">This redesign produced a 3.7% increase in conversion on this step alone, with a corresponding drop in time-on-screen.</div>
+    </div>
+
+    <h2>Carrier Abstraction</h2>
+
+    <img class="screen-photo" src="assets/qbs-coverage-hub-detail.png" alt="Coverage Hub showing two policies bound at once: a General Liability policy from The Hartford in progress, and a Professional Liability policy from Coterie flagged Agent Follow-Up Needed with call and contact options.">
+    <p class="screen-caption">Coverage Hub bind-status card</p>
+
+    <p>Abstracted carrier variation across the entire flow, not just at checkout.</p>
+
+    <p>Binding a policy means answering each carrier's own underwriting questions, and those arrive from engineering as a flat list of API fields, not as questions: whether a location has residential units, what percentage of sales come from alcohol, whether flammable materials are stored in approved containers. Even after engineering narrows the list to what's relevant, a single location can carry dozens of fields.</p>
+
+    <p>My job was turning that list into a conversation: every field became a plain question a business owner or broker could answer without knowing anything about carriers or APIs, mapped back to exactly the format the system needed. New carriers and fields get added constantly, and each one goes through the same translation.</p>
+
+    <p>The same divergence showed up after checkout, too. Carriers integrate through fundamentally different patterns: one resolves near-synchronously, another requires e-signature and asynchronous webhook handling. I designed the Coverage Hub to surface each policy's status (in progress, complete, needs signature) so customers binding multiple coverages at once always know where they stand.</p>
+
+    <h2>Results</h2>
+    <ul class="decision-list">
+      <li>+36% year-over-year increase in average conversion to bind</li>
+      <li>+5% increase in conversion to payment after removing checkout friction</li>
+      <li>+3.7% conversion lift from the industry classification redesign</li>
+      <li>Reduced reliance on phone-only binding</li>
+      <li>Increased confidence from carrier partners</li>
+    </ul>
+
+    <h2>Reflection</h2>
+    <div class="reflection">
+      <p>Designing for scale turned out to be a different problem than designing to prove an idea works. What validated a digital quote-to-bind model early on didn't automatically hold up against the complexity of a multi-carrier platform, and neither did the assumption that AI was automatically the right answer to that complexity. Testing an approach and being willing to walk away from it when it didn't clear the bar mattered as much to the outcome as any interface decision on this project.</p>
+    </div>
+
+  </div>
+
+  <div class="case-nav-footer">
+    <a href="index.html#work">← Back to case studies</a>
+    <a href="index.html#contact">Get in touch →</a>
+  </div>
+
+</main>
+
+<footer id="contact">
+  <div class="connect-label">Connect with me</div>
+  <div class="links">
+    <a href="#" title="LinkedIn">in</a>
+    <a href="mailto:allysonkatew@gmail.com" title="Email">@</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var KEY = 'portfolio_acrisure_unlocked';
+  var CORRECT = '2026';
+  var gate = document.getElementById('password-gate');
+  var content = document.getElementById('main-content');
+  function unlock() { gate.style.display = 'none'; content.style.display = 'block'; }
+  if (localStorage.getItem(KEY) === 'true') { unlock(); }
+  document.getElementById('gate-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var val = document.getElementById('gate-password').value.trim();
+    var errorEl = document.getElementById('gate-error');
+    if (val === CORRECT) {
+      localStorage.setItem(KEY, 'true');
+      errorEl.style.display = 'none';
+      unlock();
+    } else {
+      errorEl.style.display = 'block';
+    }
+  });
+})();
+</script>
+
+<script>
+(function () {
+  var KEY = 'portfolio_theme';
+  var lightBtn = document.getElementById('theme-light');
+  var darkBtn = document.getElementById('theme-dark');
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.body.classList.add('dark');
+      darkBtn.classList.add('active');
+      lightBtn.classList.remove('active');
+    } else {
+      document.body.classList.remove('dark');
+      lightBtn.classList.add('active');
+      darkBtn.classList.remove('active');
+    }
+  }
+  var DARK_MODE_ENABLED = false; // toggle back on when dark mode is ready
+  var saved = localStorage.getItem(KEY);
+  var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(DARK_MODE_ENABLED ? (saved || (prefersDark ? 'dark' : 'light')) : 'light');
+  lightBtn.addEventListener('click', function () { localStorage.setItem(KEY, 'light'); applyTheme('light'); });
+  darkBtn.addEventListener('click', function () { localStorage.setItem(KEY, 'dark'); applyTheme('dark'); });
+})();
+</script>
+
+</body>
+</html>

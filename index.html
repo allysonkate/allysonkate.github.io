@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allyson · Product Design Portfolio</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f3efee;
+    --surface: #ffffff;
+    --ink: #1a1a1a;
+    --ink-soft: #5c5c5c;
+    --muted: #9a9a9a;
+    --line: #e7e3e0;
+    --accent: #4D56F2;
+    --tag-bg: rgba(243,239,238,0.7);
+    --btn-bg: #000000;
+    --btn-fg: #ffffff;
+    --pill-bg: #f3efee;
+    --card-indigo: #4D56F2;
+    --card-purple: #AC5BF7;
+    --card-amber: #FFB238;
+    --card-sky: #17D4E6;
+  }
+  body.dark {
+    --bg: #14161a;
+    --surface: #1c1f24;
+    --ink: #f1f1f1;
+    --ink-soft: #a8a8a8;
+    --muted: #6c6f75;
+    --line: #2b2e33;
+    --tag-bg: rgba(255,255,255,0.08);
+    --btn-bg: #f1f1f1;
+    --btn-fg: #14161a;
+    --pill-bg: #262a2f;
+    --card-purple: #3E1C5F;
+    --card-amber: #3a2c14;
+    --card-sky: #123B3F;
+  }
+  body.dark .invert-logo { filter: invert(1) brightness(1.8); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Albert Sans', -apple-system, sans-serif;
+    line-height: 1.5;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+
+  /* header */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 26px 0;
+  }
+  .brand { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+  .brand .mark { font-size: 18px; line-height: 1; transition: transform .2s ease; }
+  .brand:hover .mark { transform: rotate(-10deg); }
+  .brand .name { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); }
+  nav { display: flex; align-items: center; gap: 30px; }
+  nav a { font-size: 14px; font-weight: 500; text-decoration: none; color: var(--ink-soft); }
+  nav a:hover { color: var(--ink); }
+  .theme-icons { display: none; align-items: center; gap: 10px; } /* dark mode paused */
+  .icon-toggle {
+    background: none; border: none; padding: 0; cursor: pointer;
+    font-size: 16px; line-height: 1; color: var(--ink-soft); font-family: inherit;
+  }
+  .icon-toggle.active { color: var(--accent); }
+  body.dark .icon-toggle.active { color: var(--accent); }
+  .icon-wrap { display: inline-block; transition: transform .45s cubic-bezier(.34,1.56,.64,1); }
+
+  body, .box, .case-card { transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
+
+  /* ---- intro: simple, centered, no card ---- */
+  .box {
+    background: var(--surface);
+    border-radius: 12px;
+  }
+
+  .intro {
+    max-width: 680px;
+    margin: 64px auto 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .status-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    margin-bottom: 26px;
+  }
+  .status-line .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent);
+  }
+  .intro h1 {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 1.28;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 22px;
+  }
+  .intro .meta-line {
+    font-size: 15px;
+    color: var(--ink-soft);
+    max-width: 460px;
+    line-height: 1.6;
+    margin: 0 auto;
+  }
+
+  .contact-box {
+    background: var(--card-indigo);
+    padding: 12px;
+    display: flex;
+  }
+  .phone-screen {
+    background: rgba(255,255,255,0.92);
+    border-radius: 10px;
+    padding: 20px 18px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 220px;
+  }
+  .chat-actions { display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 22px; }
+  .pill-btn {
+    font-size: 12px;
+    font-weight: 500;
+    color: #1a1a1a;
+    background: rgba(0,0,0,0.06);
+    border-radius: 100px;
+    padding: 8px 14px;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background .2s ease, transform .15s ease;
+  }
+  .pill-btn:hover { background: rgba(0,0,0,0.11); }
+  .pill-btn:active { transform: scale(0.96); }
+  .pill-btn.copied { background: rgba(0,0,0,0.11); }
+  .chat-messages {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    margin-top: auto;
+  }
+  .msg-bubble {
+    background: var(--card-indigo);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+    padding: 10px 16px;
+    border-radius: 100px;
+    max-width: 92%;
+    opacity: 0;
+    transform: scale(0.8) translateY(6px);
+    transition: opacity .3s cubic-bezier(.34,1.1,.64,1), transform .3s cubic-bezier(.34,1.1,.64,1);
+  }
+  .msg-bubble.in { opacity: 1; transform: scale(1) translateY(0); }
+  .bubble-link { color: #fff; text-decoration: underline; text-decoration-color: rgba(255,255,255,0.55); text-underline-offset: 2px; transition: text-decoration-color .2s ease; }
+  .bubble-link:hover { text-decoration-color: rgba(255,255,255,0.95); }
+
+  /* row two */
+  .row-two {
+    display: grid;
+    grid-template-columns: 1fr 1.7fr;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  /* row three */
+  .row-three {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+    margin-bottom: 90px;
+  }
+
+  .case-card {
+    border-radius: 12px;
+    padding: 28px 26px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .row-two .case-card { min-height: 460px; }
+  .row-three > .case-card { min-height: 340px; }
+  .case-card:hover { transform: translateY(-2px); }
+  .case-card.light { background: var(--surface); }
+  .case-card.indigo-fill { background: var(--card-indigo); color: #fff; }
+  .case-card.indigo-fill p { color: rgba(255,255,255,0.75); }
+  .case-card.purple-fill { background: var(--card-purple); color: #fff; }
+  .case-card.purple-fill p { color: rgba(255,255,255,0.75); }
+  .case-card.amber-fill { background: var(--card-amber); }
+  .case-card.sky-fill { background: var(--card-sky); }
+  .tag-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; position: relative; z-index: 2; }
+  .tag-row .card-arrow { margin-left: auto; }
+  .case-card h3, .case-card p { position: relative; z-index: 2; }
+  .case-tag {
+    font-size: 12.5px; font-weight: 500;
+    color: var(--ink); background: var(--tag-bg);
+    display: inline-block; padding: 5px 12px; border-radius: 100px; width: fit-content;
+  }
+  .case-card.indigo-fill .case-tag, .case-card.purple-fill .case-tag { background: rgba(255,255,255,0.16); color: #fff; }
+  /* amber-fill (Portal) carries a full-bleed raster background that doesn't repaint for dark mode,
+     so its text is pinned to the light-mode dark-ink treatment rather than following the theme. */
+  .case-card.amber-fill h3 { color: #1a1a1a; }
+  .case-card.amber-fill p { color: rgba(26,26,26,0.72); }
+  .case-card.amber-fill .case-tag { background: rgba(0,0,0,0.08); color: #1a1a1a; }
+  /* sky-fill (Magpie) carries the same kind of full-bleed raster background, pinned for the same reason. */
+  .case-card.sky-fill h3 { color: #1a1a1a; }
+  .case-card.sky-fill p { color: rgba(26,26,26,0.72); }
+  .case-card.sky-fill .case-tag { background: rgba(0,0,0,0.08); color: #1a1a1a; }
+  .case-card img.card-logo { height: 14px; width: auto; max-width: 100px; }
+  .case-card.indigo-fill img.card-logo, .case-card.purple-fill img.card-logo { filter: invert(1) brightness(1.8); }
+  .case-card h3 {
+    font-weight: 600; line-height: 1.3; color: inherit; letter-spacing: -0.01em;
+  }
+  .case-card.light h3, .case-card.purple-fill h3, .case-card.amber-fill h3 { font-size: 20px; }
+  .case-card.indigo-fill h3 { font-size: 25px; }
+  .case-card p { font-size: 14px; color: var(--ink-soft); max-width: 88%; }
+  .card-screen {
+    position: absolute;
+    bottom: -18px;
+    right: -18px;
+    width: 260px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 8px;
+    padding: 14px 16px;
+    box-shadow: 0 16px 30px rgba(0,0,0,0.14);
+    transition: transform .4s cubic-bezier(.34,1.1,.64,1);
+  }
+  .case-card:hover .card-screen { transform: translate(-6px,-6px); }
+  .case-card.light .card-screen { background: var(--surface); }
+  .card-screen .cs-line {
+    height: 7px;
+    border-radius: 4px;
+    background: rgba(0,0,0,0.1);
+    margin-bottom: 7px;
+  }
+  .card-screen .cs-line:last-child { margin-bottom: 0; width: 55%; }
+  .card-screen .cs-line.w40 { width: 40%; }
+  .card-screen .cs-line.w80 { width: 80%; }
+  .case-card.indigo-fill .card-screen .cs-line { background: rgba(0,0,0,0.14); }
+
+  /* card-art-full: full-card designed visual (Al's Figma composition), fills the whole card behind the text */
+  .card-art-full {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s cubic-bezier(.34,1.1,.64,1);
+  }
+  .case-card:hover .card-art-full { transform: scale(1.015); }
+
+  /* QBS card: one wrapper holds BOTH full-card photos (default + hover) stacked exactly on top of
+     each other, plus the cursor, and gets the lift/scale exactly like every other card's art.
+     There is no small overlay patch anymore — the two images are the same 1396x920 export, shot
+     back-to-back, identical in every pixel except the button color, so there's nothing left that
+     can drift out of alignment: swapping between them is a full-image crossfade, not a composite. */
+  /* Locked to the source images' native 1396:920 aspect ratio (not stretched to the card's own
+     box), so both images render at identical size/position no matter how wide the card actually
+     renders. */
+  .qbs-visual {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 1396 / 920;
+    transition: transform .4s cubic-bezier(.34,1.1,.64,1);
+  }
+  #qbs-card:hover .qbs-visual { transform: scale(1.015); }
+  .qbs-visual .qbs-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .qbs-visual .qbs-img-hover {
+    opacity: 0;
+    transition: opacity 0s linear;
+  }
+  #qbs-card:hover .qbs-visual .qbs-img-hover {
+    opacity: 1;
+    transition-delay: .65s;
+  }
+  .qbs-visual .fake-cursor {
+    position: absolute;
+    left: 91.691%;
+    top: 73.913%;
+    width: 26px;
+    height: 26px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 5;
+    transition: left .55s cubic-bezier(.22,.9,.32,1.1),
+                top .55s cubic-bezier(.22,.9,.32,1.1),
+                opacity .25s ease;
+  }
+  #qbs-card:hover .qbs-visual .fake-cursor {
+    opacity: 1;
+    left: 84.096%;
+    top: 87.609%;
+    transition-delay: .15s;
+  }
+  .qbs-visual .fake-cursor svg { display: block; filter: drop-shadow(0 2px 4px rgba(0,0,0,.35)); }
+  .case-card.coming-soon {
+    background: transparent;
+    border: 1.5px dashed var(--line);
+    cursor: default;
+  }
+  .case-card.coming-soon:hover { transform: none; }
+  .case-card.coming-soon .case-tag { background: var(--tag-bg); }
+  .case-card.coming-soon h3 { color: var(--ink-soft); }
+
+  /* stat shot: real project numbers for the Bro'd Trip card */
+  .stat-shot {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 172px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px 18px;
+    box-shadow: 0 16px 30px rgba(0,0,0,0.16);
+    transition: transform .4s cubic-bezier(.34,1.1,.64,1);
+  }
+  .case-card:hover .stat-shot { transform: translate(-6px,-6px); }
+  .stat-shot .stat-number { font-size: 32px; font-weight: 700; color: #1a1a1a; line-height: 1; margin-bottom: 8px; }
+  .stat-shot .stat-label { font-size: 11.5px; color: #6a6a6a; font-weight: 500; line-height: 1.4; }
+  .card-arrow {
+    width: 34px; height: 34px; border-radius: 50%;
+    position: relative; overflow: hidden; flex-shrink: 0;
+    background: rgba(0,0,0,0.06);
+    transition: transform .3s cubic-bezier(.34,1.4,.64,1), background-color .2s ease;
+  }
+  .case-card.indigo-fill .card-arrow, .case-card.purple-fill .card-arrow { background: rgba(255,255,255,0.16); color: #fff; }
+  .case-card.amber-fill .card-arrow { background: rgba(0,0,0,0.08); color: #1a1a1a; }
+  .case-card:hover .card-arrow { transform: rotate(8deg) scale(1.08); }
+  .arrow-glyph {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    transition: transform .4s cubic-bezier(.65,0,.35,1), opacity .35s ease;
+  }
+  .arrow-glyph.a1 { transform: translate(0,0); opacity: 1; }
+  .arrow-glyph.a2 { transform: translate(-130%, 130%); opacity: 0; }
+  .case-card:hover .arrow-glyph.a1 { transform: translate(130%, -130%); opacity: 0; }
+  .case-card:hover .arrow-glyph.a2 { transform: translate(0,0); opacity: 1; }
+
+  .view-all-card {
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .view-all-card span.label { font-weight: 600; font-size: 19px; }
+
+  footer {
+    text-align: center;
+    padding: 0 24px 70px;
+  }
+  footer .connect-label { font-size: 14px; color: var(--ink-soft); margin-bottom: 14px; }
+  footer .links { display: flex; justify-content: center; gap: 10px; }
+  footer .links a {
+    width: 36px; height: 36px; border-radius: 100px;
+    background: var(--btn-bg); color: var(--btn-fg);
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none; font-size: 13px; font-weight: 700;
+  }
+
+  @media (max-width: 900px) {
+    .row-two { grid-template-columns: 1fr; }
+    .row-three { grid-template-columns: 1fr; }
+    .intro h1 { font-size: 28px; }
+  }
+
+  @media (max-width: 640px) {
+    nav a:not(.theme-icons) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <a href="#" class="brand">
+      <span class="mark">✱</span>
+      <div class="name">allyson</div>
+    </a>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="about.html">About</a>
+      <a href="#contact">Contact</a>
+      <div class="theme-icons">
+        <button id="theme-light" class="icon-toggle" type="button" aria-label="Light mode">☀</button>
+        <button id="theme-dark" class="icon-toggle" type="button" aria-label="Dark mode">☾</button>
+      </div>
+    </nav>
+  </header>
+
+  <section class="intro">
+    <div class="status-line"><span class="dot"></span> Product Designer</div>
+    <h1>I turn technical requirements and compliance forms into something a real person can make sense of.</h1>
+    <p class="meta-line">10+ years in design, the last 5+ as a product designer in insurance and fintech. Currently based in Nashville. 🪕</p>
+  </section>
+
+  <section class="row-two" id="work">
+
+    <a href="client-portal.html" class="case-card amber-fill" id="portal-card">
+      <img class="card-art-full" src="assets/client-portal-stack.png" alt="Stacked policy, location, coverage, and building detail cards from the Client Portal">
+      <div class="tag-row">
+        <span class="case-tag">Case Study</span>
+        <span class="case-tag">Information Architecture</span>
+        <div class="card-arrow"><span class="arrow-glyph a1">↗</span><span class="arrow-glyph a2">↗</span></div>
+      </div>
+      <h3>Designing a Portal on Unreliable Data</h3>
+      <p>Unifying every account a client holds, designed around data the system can't reliably surface.</p>
+    </a>
+
+    <a href="qbs-commercial.html" class="case-card indigo-fill" id="qbs-card">
+      <div class="qbs-visual">
+        <img class="qbs-img" src="assets/qbs-coverage-hub-default.png" alt="Coverage Hub bind-status card showing a General Liability policy from The Hartford, in progress">
+        <img class="qbs-img qbs-img-hover" src="assets/qbs-coverage-hub-hover.png" alt="">
+        <div class="fake-cursor">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+            <path d="M4 2L4 20L9 15.5L12.5 22.5L15.5 21L12 14L18.5 14L4 2Z" fill="white" stroke="#1a1a1a" stroke-width="1.3" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="tag-row">
+        <span class="case-tag">Case Study</span>
+        <span class="case-tag">Conversion</span>
+        <div class="card-arrow"><span class="arrow-glyph a1">↗</span><span class="arrow-glyph a2">↗</span></div>
+      </div>
+      <h3>Rebuilding a Multi-Carrier Insurance Platform</h3>
+      <p>Redesigning small business insurance quoting across dozens of carrier rulesets, growing conversion 36% year over year.</p>
+    </a>
+
+  </section>
+
+  <section class="row-three">
+
+    <a href="magpie.html" class="case-card sky-fill">
+      <img class="card-art-full" src="assets/magpie-stack.png" alt="Authenticated Topps 1993 Derek Jeter SP card in the Vault, showing cost basis, current value, and gain.">
+      <div class="tag-row">
+        <span class="case-tag">Case Study</span>
+        <span class="case-tag">Growth</span>
+        <div class="card-arrow"><span class="arrow-glyph a1">↗</span><span class="arrow-glyph a2">↗</span></div>
+      </div>
+      <h3>Pivoting From Fraud Detection to Collection Management</h3>
+      <p>Pivoting the product after research overturned its founding hypothesis.</p>
+    </a>
+
+    <a href="brod-trip.html" class="case-card purple-fill">
+      <img class="card-art-full" src="assets/brod-trip-stack.png" alt="A Wayback Machine snapshot calendar for July 16, 2016, the archived capture used to recover a lost Bro'd Trip post.">
+      <div class="tag-row">
+        <span class="case-tag">Case Study</span>
+        <span class="case-tag">AI Workflow</span>
+        <div class="card-arrow"><span class="arrow-glyph a1">↗</span><span class="arrow-glyph a2">↗</span></div>
+      </div>
+      <h3>Rebuilding a Lost Archive with Claude Code</h3>
+      <p>A 244-post travel blog lost with no backup, rebuilt from the Wayback Machine using Claude Code.</p>
+    </a>
+
+    <div class="box contact-box" id="contact">
+      <div class="phone-screen">
+        <div class="chat-actions">
+          <button type="button" class="pill-btn" id="copyEmailBtn" data-default="Copy Email" data-copied="Copied!">Copy Email</button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+          <div class="msg-bubble">Think I'd be a good fit for your team?</div>
+          <div class="msg-bubble">Here's my email: allysonkatew@gmail.com</div>
+          <div class="msg-bubble">Or find me on <a href="https://www.linkedin.com/in/allysonkate/" target="_blank" rel="noopener" class="bubble-link">LinkedIn</a> 👋</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <div class="connect-label">Connect with me</div>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/allysonkate/" target="_blank" rel="noopener" title="LinkedIn">in</a>
+      <a href="mailto:allysonkatew@gmail.com" title="Email">@</a>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var KEY = 'portfolio_theme';
+  var lightBtn = document.getElementById('theme-light');
+  var darkBtn = document.getElementById('theme-dark');
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.body.classList.add('dark');
+      darkBtn.classList.add('active');
+      lightBtn.classList.remove('active');
+    } else {
+      document.body.classList.remove('dark');
+      lightBtn.classList.add('active');
+      darkBtn.classList.remove('active');
+    }
+  }
+  var DARK_MODE_ENABLED = false; // toggle back on when dark mode is ready
+  var saved = localStorage.getItem(KEY);
+  var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(DARK_MODE_ENABLED ? (saved || (prefersDark ? 'dark' : 'light')) : 'light');
+  lightBtn.addEventListener('click', function () { localStorage.setItem(KEY, 'light'); applyTheme('light'); });
+  darkBtn.addEventListener('click', function () { localStorage.setItem(KEY, 'dark'); applyTheme('dark'); });
+})();
+</script>
+
+<script>
+(function () {
+  var msgs = Array.prototype.slice.call(document.querySelectorAll('#chat-messages .msg-bubble'));
+  if (!msgs.length) return;
+  var stagger = 850, startDelay = 600, holdAfter = 2400, resetPause = 500;
+  function showAll() {
+    msgs.forEach(function (m, i) {
+      setTimeout(function () { m.classList.add('in'); }, startDelay + i * stagger);
+    });
+  }
+  function hideAll() {
+    msgs.forEach(function (m) { m.classList.remove('in'); });
+  }
+  function cycle() {
+    showAll();
+    var totalShow = startDelay + (msgs.length - 1) * stagger + 400;
+    setTimeout(function () {
+      hideAll();
+      setTimeout(cycle, resetPause);
+    }, totalShow + holdAfter);
+  }
+  cycle();
+})();
+</script>
+
+<script>
+(function () {
+  var btn = document.getElementById('copyEmailBtn');
+  if (!btn) return;
+  var email = 'allysonkatew@gmail.com';
+  var resetTimer;
+  btn.addEventListener('click', function () {
+    function showCopied() {
+      btn.textContent = btn.getAttribute('data-copied');
+      btn.classList.add('copied');
+      clearTimeout(resetTimer);
+      resetTimer = setTimeout(function () {
+        btn.textContent = btn.getAttribute('data-default');
+        btn.classList.remove('copied');
+      }, 1800);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email).then(showCopied, function () {
+        // Clipboard permission denied or unavailable — fall back silently.
+        window.prompt('Copy my email:', email);
+      });
+    } else {
+      window.prompt('Copy my email:', email);
+    }
+  });
+})();
+</script>
+
+
+</body>
+</html>

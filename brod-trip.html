@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bro'd Trip · Allyson</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f3efee;
+    --surface: #ffffff;
+    --ink: #1a1a1a;
+    --ink-soft: #5c5c5c;
+    --muted: #9a9a9a;
+    --line: #e7e3e0;
+    --accent: #4D56F2;
+    --tag-bg: rgba(243,239,238,0.7);
+    --btn-bg: #000000;
+    --btn-fg: #ffffff;
+    --pill-bg: #f3efee;
+    --case-color: #AC5BF7;
+  }
+  body.dark {
+    --bg: #14161a;
+    --surface: #1c1f24;
+    --ink: #f1f1f1;
+    --ink-soft: #a8a8a8;
+    --muted: #6c6f75;
+    --line: #2b2e33;
+    --tag-bg: rgba(255,255,255,0.08);
+    --btn-bg: #f1f1f1;
+    --btn-fg: #14161a;
+    --pill-bg: #262a2f;
+    --case-color: #3E1C5F;
+  }
+  body.dark .invert-logo { filter: invert(1) brightness(1.8); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Albert Sans', -apple-system, sans-serif;
+    line-height: 1.5;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+  body, .screen, .highlight, .quote { transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
+
+  header { display: flex; align-items: center; justify-content: space-between; padding: 26px 0; }
+  .brand { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+  .brand .mark { font-size: 18px; line-height: 1; transition: transform .2s ease; }
+  .brand:hover .mark { transform: rotate(-10deg); }
+  .brand .name { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); }
+  nav { display: flex; align-items: center; gap: 30px; }
+  nav a { font-size: 14px; font-weight: 500; text-decoration: none; color: var(--ink-soft); }
+  nav a:hover { color: var(--ink); }
+  .theme-icons { display: none; align-items: center; gap: 10px; } /* dark mode paused */
+  .icon-toggle { background: none; border: none; padding: 0; cursor: pointer; font-size: 16px; line-height: 1; color: var(--ink-soft); font-family: inherit; }
+  .icon-toggle.active { color: var(--accent); }
+
+  .hero-case { padding: 20px 0 0; }
+  .eyebrow-case { font-size: 14px; color: var(--ink-soft); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .eyebrow-case img { height: 13px; width: auto; }
+  h1.case-h1 { font-size: 36px; font-weight: 600; line-height: 1.28; letter-spacing: -0.01em; max-width: 780px; margin-bottom: 18px; }
+  .case-subhead { font-size: 16px; color: var(--ink-soft); max-width: 640px; line-height: 1.6; margin-bottom: 36px; }
+  .hero-meta-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-bottom: 32px; }
+  .tag-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .case-tag { font-size: 12.5px; font-weight: 500; color: var(--ink); background: var(--tag-bg); display: inline-block; padding: 5px 12px; border-radius: 100px; width: fit-content; }
+  .client-meta { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--ink-soft); }
+  .client-meta img { height: 13px; width: auto; }
+
+  .hero-panel { background: var(--case-color); width: 100vw; position: relative; left: 50%; margin-left: -50vw; display: flex; justify-content: center; }
+  .hero-img, .hero-video { max-width: 760px; width: 100%; height: auto; display: block; }
+  .hero-lottie { max-width: 760px; width: 100%; aspect-ratio: 16 / 9; position: relative; line-height: 0; overflow: hidden; }
+  .hero-lottie .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+  .hero-lottie.is-ready .hero-img { display: none; }
+  .hero-lottie svg { display: block; width: 100%; height: 100%; }
+  .mock-window { background: #fff; border-radius: 12px; max-width: 760px; width: 100%; padding: 28px; }
+  .mock-window .mw-line { height: 9px; border-radius: 5px; background: #ececec; margin-bottom: 12px; }
+  .mock-window .mw-line.w30 { width: 30%; }
+  .mock-window .mw-line.w60 { width: 60%; }
+  .mock-window .mw-line.w90 { width: 90%; }
+  .mock-window .mw-line:last-child { margin-bottom: 0; }
+
+  .case-main { max-width: 720px; margin: 0 auto; padding: 0 32px; }
+
+  .back-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--ink); background: var(--pill-bg); border-radius: 100px; padding: 9px 18px; text-decoration: none; margin: 36px 0 0; }
+
+  h2 { font-size: 23px; font-weight: 600; letter-spacing: -0.01em; margin: 56px 0 16px; }
+  p { font-size: 16px; line-height: 1.7; color: var(--ink); margin-bottom: 16px; }
+  p.soft { color: var(--ink-soft); }
+
+  ul.decision-list { list-style: none; margin: 0 0 20px; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+  ul.decision-list li { font-size: 15.5px; color: var(--ink); padding-left: 20px; position: relative; line-height: 1.6; }
+  ul.decision-list li::before { content: "–"; position: absolute; left: 0; top: 0; color: var(--ink-soft); }
+  ul.decision-list li strong { font-weight: 600; }
+
+  .highlight { margin: 28px 0 36px; }
+  .highlight .h-label { font-size: 13px; color: var(--ink-soft); display: flex; align-items: center; gap: 6px; margin-bottom: 10px; }
+  .highlight .h-label .spark { color: var(--accent); }
+  .highlight .h-line { font-size: 20px; font-weight: 600; line-height: 1.4; letter-spacing: -0.01em; }
+
+  .screen { background: var(--surface); border-radius: 12px; padding: 24px; margin: 24px 0 8px; display: flex; align-items: flex-start; gap: 14px; }
+  .screen .screen-icon { width: 34px; height: 34px; border-radius: 8px; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 15px; }
+  .screen .screen-body { flex: 1; }
+  .screen .screen-title { font-size: 13.5px; font-weight: 600; margin-bottom: 4px; }
+  .screen .screen-detail { font-size: 13px; color: var(--ink-soft); line-height: 1.6; }
+  .screen .screen-detail code { font-family: ui-monospace, 'SF Mono', monospace; font-size: 12px; background: var(--tag-bg); padding: 1px 5px; border-radius: 4px; }
+  .screen-photo { max-width: 656px; width: 100%; height: auto; display: block; margin: 24px 0 8px; border-radius: 12px; }
+  .screen-caption { font-size: 13px; color: var(--muted); text-align: left; line-height: 1.5; margin: 10px 0 32px; }
+
+  .quote { margin: 32px 0 40px; }
+  .quote .qmark { font-size: 36px; color: var(--accent); line-height: 0.6; display: block; margin-bottom: 12px; font-weight: 700; }
+  .quote p { font-size: 18px; line-height: 1.6; font-weight: 500; margin-bottom: 12px; }
+  .quote cite { font-size: 13px; font-weight: 600; color: var(--ink-soft); font-style: normal; }
+
+  .reflection { padding-top: 28px; border-top: 1px solid var(--line); margin: 8px 0 20px; }
+  .reflection p { margin-bottom: 0; font-size: 16.5px; color: var(--ink-soft); }
+
+  .case-nav-footer { max-width: 720px; margin: 40px auto 0; padding: 32px 32px 0; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
+  .case-nav-footer a { font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; }
+
+  footer { text-align: center; padding: 60px 24px 80px; margin-top: 40px; }
+  footer .connect-label { font-size: 15px; color: var(--ink); margin-bottom: 14px; }
+  footer .links { display: flex; justify-content: center; gap: 10px; }
+  footer .links a { width: 36px; height: 36px; border-radius: 100px; background: var(--btn-bg); display: flex; align-items: center; justify-content: center; color: var(--btn-fg); text-decoration: none; font-size: 13px; font-weight: 700; }
+
+  @media (max-width: 640px) {
+    h1.case-h1 { font-size: 26px; }
+    .highlight .h-line { font-size: 17px; }
+    .case-main, .case-nav-footer { padding-left: 22px; padding-right: 22px; }
+    nav a:not(.theme-icons) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <a href="index.html" class="brand">
+      <span class="mark">✱</span>
+      <div class="name">allyson</div>
+    </a>
+    <nav>
+      <a href="index.html#work">Work</a>
+      <a href="about.html">About</a>
+      <a href="index.html#contact">Contact</a>
+      <div class="theme-icons">
+        <button id="theme-light" class="icon-toggle" type="button" aria-label="Light mode">☀</button>
+        <button id="theme-dark" class="icon-toggle" type="button" aria-label="Dark mode">☾</button>
+      </div>
+    </nav>
+  </header>
+</div>
+
+<main>
+
+  <div class="wrap hero-case">
+    <div class="eyebrow-case">
+      <img src="assets/brod-trip-logo.png" alt="The Bro'd Trip" class="invert-logo" style="height:13px;">
+    </div>
+    <h1 class="case-h1">Rebuilding a Lost Archive with Claude Code</h1>
+    <p class="case-subhead">A 244-post travel blog lost with no backup, rebuilt from the Wayback Machine using Claude Code.</p>
+    <div class="hero-meta-row">
+      <div class="tag-row">
+        <span class="case-tag">Case Study</span>
+        <span class="case-tag">Personal Project</span>
+        <span class="case-tag">AI Workflow</span>
+      </div>
+      <div class="client-meta">
+        🚐 Bro'd Trip &mdash; 2025
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-panel">
+    <div class="hero-lottie" id="heroLottie" role="img" aria-label="The Bro'd Trip logo animating in, then the site scrolling through the blog archive homepage and a fully restored post, 'The Enchanted Highway,' with its text, photos, and sidebar widgets intact.">
+      <img class="hero-img" id="heroLottieFallback" src="assets/brod-trip-hero-poster.png" alt="The rebuilt Bro'd Trip site: the blog archive homepage listing recovered posts, alongside a fully restored post, 'The Enchanted Highway,' with its text, photos, and sidebar widgets intact.">
+    </div>
+  </div>
+
+  <div class="wrap">
+    <a href="index.html#work" class="back-pill">← All case studies</a>
+  </div>
+
+  <div class="case-main">
+
+    <div class="highlight">
+      <div class="h-label"><span class="spark">✦</span> By the numbers</div>
+      <div class="h-line">244 posts rebuilt · 196 fully recovered · ~60% of images recovered</div>
+    </div>
+
+    <h2>The Situation</h2>
+    <p>A decade ago, my husband spent a year driving a van through all 50 states, documenting the whole trip one post at a time. Somewhere along the way, the WordPress site holding all of it went dark. No export file, no local drafts, no backup. Two hundred and forty-four posts gone, along with the record of one of the most significant years of his life.</p>
+
+    <h2>What Survived</h2>
+    <p>The only thing left was whatever the Wayback Machine had managed to crawl before the site disappeared. The crawl was partial and uneven: some posts came back clean, others were missing images or broken outright, and different crawl dates sometimes returned different versions of the same post. Before any rebuilding could start, the real question was simple: what do we actually have, and what do we do about what's gone.</p>
+
+    <h2>Two Attempts</h2>
+    <p>The first attempt was straightforward: rebuild it exactly how it was, hosted on WordPress, one post at a time. Fifteen posts in, it was clear that pace wasn't going to get through 244 posts. I stopped.</p>
+    <p>The second attempt started with Claude Code as the core tool instead of the whole process. Feed it a Wayback Machine URL, it crawls the archived post and returns a static HTML file. That approach got through the bulk of the archive, rate limits and all, until Anthropic restricted outbound fetching to the Wayback Machine mid-project. The fix was to download the archived HTML locally instead and feed the files in directly &mdash; one more adjustment in a project already defined by working with whatever survived.</p>
+
+    <h2>Deciding What to Do With What's Missing</h2>
+    <p>About 40% of the original images couldn't be recovered from the archive. Every one of those gets a placeholder instead of a gap: a note that the photo was lost in the archive, its original filename, and the caption it shipped with originally, pulled from whatever metadata survived.</p>
+    <p>The placeholder does two things at once. It tells a visitor plainly that something specific is missing, so a blank space reads as a known gap and not a broken page. It also stays useful to me: if an original file ever turns up on an old hard drive, the filename is already there to match it back to its post.</p>
+
+    <img class="screen-photo" src="assets/brod-trip-linkedin.png" alt="A LinkedIn post from Adam Fricke about the recovered blog, quote-shared by Allyson Fricke describing the project as trying to recover the past, with a preview of the rebuilt Bro'd Trip site attached.">
+    <p class="screen-caption">Adam's reaction when the site came back online</p>
+
+    <p class="soft">This decision fits a pattern already on the site. A callout box linking back to the original Wayback Machine crawl already tells visitors upfront that they're looking at a recovery, not the original site. The placeholder extends that same honesty into the one place a reader would otherwise assume something had simply broken.</p>
+
+    <h2>Deciding Not to Build Comments</h2>
+    <p>The rebuilt site has no commenting system. It's a scope call made on purpose, not a technical limitation.</p>
+
+    <div class="quote">
+      <span class="qmark">"</span>
+      <p>This is not a site that will ever be added to. It's a time capsule.</p>
+      <cite>The reasoning behind the call</cite>
+    </div>
+
+    <p>A commenting system implies an ongoing, living site, and this one isn't that anymore. Building toward a future the site doesn't have would have meant spending effort on the wrong thing.</p>
+
+    <h2>Where This Leaves It</h2>
+    <div class="reflection">
+      <p>The strongest evidence in Bro'd Trip is the decision trail: a manual approach that didn't scale, a process changed on purpose, a mid-project constraint that forced another adjustment, and two calls about what to do with an archive that will never be complete. Designing around data you can't fully trust or fully recover shows up more than once in this portfolio, and that repetition says something real about the kind of problems I gravitate toward.</p>
+    </div>
+
+  </div>
+
+  <div class="case-nav-footer">
+    <a href="index.html#work">← Back to case studies</a>
+    <a href="index.html#contact">Get in touch →</a>
+  </div>
+
+</main>
+
+<footer id="contact">
+  <div class="connect-label">Connect with me</div>
+  <div class="links">
+    <a href="#" title="LinkedIn">in</a>
+    <a href="mailto:allysonkatew@gmail.com" title="Email">@</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var KEY = 'portfolio_theme';
+  var lightBtn = document.getElementById('theme-light');
+  var darkBtn = document.getElementById('theme-dark');
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.body.classList.add('dark');
+      darkBtn.classList.add('active');
+      lightBtn.classList.remove('active');
+    } else {
+      document.body.classList.remove('dark');
+      lightBtn.classList.add('active');
+      darkBtn.classList.remove('active');
+    }
+  }
+  var DARK_MODE_ENABLED = false; // toggle back on when dark mode is ready
+  var saved = localStorage.getItem(KEY);
+  var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(DARK_MODE_ENABLED ? (saved || (prefersDark ? 'dark' : 'light')) : 'light');
+  lightBtn.addEventListener('click', function () { localStorage.setItem(KEY, 'light'); applyTheme('light'); });
+  darkBtn.addEventListener('click', function () { localStorage.setItem(KEY, 'dark'); applyTheme('dark'); });
+})();
+</script>
+
+<script src="assets/lottie-svg.min.js"></script>
+<script src="assets/brod-trip-hero-data.js"></script>
+<script>
+(function () {
+  var container = document.getElementById('heroLottie');
+  if (!container || typeof lottie === 'undefined') return;
+  var anim = lottie.loadAnimation({
+    container: container,
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    animationData: BROD_TRIP_LOTTIE_DATA
+  });
+  anim.addEventListener('DOMLoaded', function () {
+    container.classList.add('is-ready');
+  });
+  anim.addEventListener('data_failed', function () {
+    // Leave the poster image showing if the animation can't load.
+  });
+})();
+</script>
+
+</body>
+</html>

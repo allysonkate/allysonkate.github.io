@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Portal · Allyson</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Lora:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f3efee;
+    --surface: #ffffff;
+    --ink: #1a1a1a;
+    --ink-soft: #5c5c5c;
+    --muted: #9a9a9a;
+    --line: #e7e3e0;
+    --accent: #4D56F2;
+    --tag-bg: rgba(243,239,238,0.7);
+    --btn-bg: #000000;
+    --btn-fg: #ffffff;
+    --pill-bg: #f3efee;
+    --case-color: #FFB238;
+  }
+  body.dark {
+    --bg: #14161a;
+    --surface: #1c1f24;
+    --ink: #f1f1f1;
+    --ink-soft: #a8a8a8;
+    --muted: #6c6f75;
+    --line: #2b2e33;
+    --tag-bg: rgba(255,255,255,0.08);
+    --btn-bg: #f1f1f1;
+    --btn-fg: #14161a;
+    --pill-bg: #262a2f;
+    --case-color: #3a2c14;
+  }
+  body.dark .invert-logo { filter: invert(1) brightness(1.8); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Albert Sans', -apple-system, sans-serif;
+    line-height: 1.5;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+  body, .screen, .highlight, .quote { transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
+
+  header { display: flex; align-items: center; justify-content: space-between; padding: 26px 0; }
+  .brand { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+  .brand .mark { font-size: 18px; line-height: 1; transition: transform .2s ease; }
+  .brand:hover .mark { transform: rotate(-10deg); }
+  .brand .name { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); }
+  nav { display: flex; align-items: center; gap: 30px; }
+  nav a { font-size: 14px; font-weight: 500; text-decoration: none; color: var(--ink-soft); }
+  nav a:hover { color: var(--ink); }
+  .theme-icons { display: none; align-items: center; gap: 10px; } /* dark mode paused */
+  .icon-toggle { background: none; border: none; padding: 0; cursor: pointer; font-size: 16px; line-height: 1; color: var(--ink-soft); font-family: inherit; }
+  .icon-toggle.active { color: var(--accent); }
+
+  .hero-case { padding: 20px 0 0; }
+  .eyebrow-case { font-size: 14px; color: var(--ink-soft); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  h1.case-h1 { font-size: 36px; font-weight: 600; line-height: 1.28; letter-spacing: -0.01em; max-width: 780px; margin-bottom: 18px; }
+  .case-subhead { font-size: 16px; color: var(--ink-soft); max-width: 660px; line-height: 1.6; margin-bottom: 36px; }
+  .hero-meta-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-bottom: 32px; }
+  .tag-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .case-tag { font-size: 12.5px; font-weight: 500; color: var(--ink); background: var(--tag-bg); display: inline-block; padding: 5px 12px; border-radius: 100px; width: fit-content; }
+  .client-meta { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--ink-soft); }
+  .client-meta img { height: 14px; width: auto; }
+
+  .hero-panel { background: var(--case-color); width: 100vw; position: relative; left: 50%; margin-left: -50vw; display: flex; justify-content: center; }
+  .hero-img { max-width: 760px; width: 100%; height: auto; display: block; }
+  .mock-window { background: #fff; border-radius: 12px; max-width: 760px; width: 100%; padding: 28px; }
+  .mock-window .mw-line { height: 9px; border-radius: 5px; background: #ececec; margin-bottom: 12px; }
+  .mock-window .mw-line.w30 { width: 30%; }
+  .mock-window .mw-line.w60 { width: 60%; }
+  .mock-window .mw-line.w90 { width: 90%; }
+  .mock-window .mw-line:last-child { margin-bottom: 0; }
+
+  .case-main { max-width: 720px; margin: 0 auto; padding: 0 32px; }
+
+  .back-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--ink); background: var(--pill-bg); border-radius: 100px; padding: 9px 18px; text-decoration: none; margin: 36px 0 0; }
+
+  h2 { font-size: 23px; font-weight: 600; letter-spacing: -0.01em; margin: 56px 0 16px; }
+  h4 { font-size: 15px; font-weight: 600; margin: 0 0 4px; }
+  p { font-size: 16px; line-height: 1.7; color: var(--ink); margin-bottom: 16px; }
+  p.soft { color: var(--ink-soft); }
+
+  ul.decision-list { list-style: none; margin: 0 0 20px; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+  ul.decision-list li { font-size: 15.5px; color: var(--ink); padding-left: 20px; position: relative; line-height: 1.6; }
+  ul.decision-list li::before { content: "–"; position: absolute; left: 0; top: 0; color: var(--ink-soft); }
+  ul.decision-list li strong { font-weight: 600; }
+
+  .highlight { margin: 28px 0 36px; }
+  .highlight .h-label { font-size: 13px; color: var(--ink-soft); display: flex; align-items: center; gap: 6px; margin-bottom: 10px; }
+  .highlight .h-label .spark { color: var(--accent); }
+  .highlight .h-line { font-size: 20px; font-weight: 600; line-height: 1.4; letter-spacing: -0.01em; }
+
+  .screen { background: var(--surface); border-radius: 12px; padding: 40px 24px; margin: 24px 0 8px; }
+  .screen .cs-line { height: 8px; border-radius: 5px; background: var(--tag-bg); margin: 0 auto 10px; }
+  .screen .cs-line.w30 { width: 30%; }
+  .screen .cs-line.w60 { width: 60%; }
+  .screen .cs-line.w90 { width: 90%; }
+  .screen .cs-line:last-child { margin-bottom: 0; }
+  .screen-caption { font-size: 13px; color: var(--muted); text-align: left; line-height: 1.5; margin: 0 0 32px; }
+  .screen-photo { max-width: 656px; width: 100%; height: auto; display: block; margin: 24px 0 8px; border-radius: 12px; }
+  .screen-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .screen-row .screen { margin: 24px 0 8px; }
+
+  .carousel-wrap { position: relative; max-width: 656px; width: 100%; margin: 24px auto 8px; }
+  .carousel-track { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 2px; }
+  .carousel-track::-webkit-scrollbar { display: none; }
+  .carousel-card { flex: 0 0 84%; scroll-snap-align: start; scroll-snap-stop: always; border-radius: 14px; overflow: hidden; }
+  .carousel-card img { width: 100%; height: auto; display: block; }
+  @media (min-width: 640px) {
+    .carousel-card { flex-basis: 45%; }
+  }
+  .carousel-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 34px; height: 34px; border-radius: 50%; background: var(--surface); border: 1px solid var(--line); color: var(--ink); font-size: 18px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08); z-index: 2; }
+  .carousel-arrow.prev { left: -14px; }
+  .carousel-arrow.next { right: -14px; }
+  .carousel-arrow:disabled { opacity: .35; cursor: default; box-shadow: none; }
+  .carousel-dots { display: flex; justify-content: center; align-items: center; gap: 6px; margin-top: 14px; }
+  .carousel-dots .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--line); border: none; padding: 0; cursor: pointer; transition: width .2s ease, background-color .2s ease; }
+  .carousel-dots .dot.active { background: var(--accent); width: 18px; border-radius: 3px; }
+
+
+  .quote { margin: 32px 0 40px; }
+  .quote .qmark { font-size: 36px; color: var(--accent); line-height: 0.6; display: block; margin-bottom: 12px; font-weight: 700; }
+  .quote p { font-size: 18px; line-height: 1.6; font-weight: 500; margin-bottom: 12px; }
+  .quote cite { font-size: 13px; font-weight: 600; color: var(--ink-soft); font-style: normal; }
+
+  .status-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 8px 0 40px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .status-card p { font-size: 14.5px; color: var(--ink-soft); margin-bottom: 0; }
+
+  .reflection { padding-top: 28px; border-top: 1px solid var(--line); margin: 8px 0 20px; }
+  .reflection p { margin-bottom: 0; font-size: 16.5px; color: var(--ink-soft); }
+
+  .case-nav-footer { max-width: 720px; margin: 40px auto 0; padding: 32px 32px 0; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
+  .case-nav-footer a { font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; }
+
+  .view-btn { background: var(--btn-bg); color: var(--btn-fg); border: none; border-radius: 100px; padding: 11px 26px; font-size: 14px; font-weight: 600; cursor: pointer; }
+
+  footer { text-align: center; padding: 60px 24px 80px; margin-top: 40px; }
+  footer .connect-label { font-size: 15px; color: var(--ink); margin-bottom: 14px; }
+  footer .links { display: flex; justify-content: center; gap: 10px; }
+  footer .links a { width: 36px; height: 36px; border-radius: 100px; background: var(--btn-bg); display: flex; align-items: center; justify-content: center; color: var(--btn-fg); text-decoration: none; font-size: 13px; font-weight: 700; }
+
+  @media (max-width: 640px) {
+    h1.case-h1 { font-size: 26px; }
+    .highlight .h-line { font-size: 17px; }
+    .status-grid, .screen-row { grid-template-columns: 1fr; }
+    .case-main, .case-nav-footer { padding-left: 22px; padding-right: 22px; }
+    nav a:not(.theme-icons) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <a href="index.html" class="brand">
+      <span class="mark">✱</span>
+      <div class="name">allyson</div>
+    </a>
+    <nav>
+      <a href="index.html#work">Work</a>
+      <a href="about.html">About</a>
+      <a href="index.html#contact">Contact</a>
+      <div class="theme-icons">
+        <button id="theme-light" class="icon-toggle" type="button" aria-label="Light mode">☀</button>
+        <button id="theme-dark" class="icon-toggle" type="button" aria-label="Dark mode">☾</button>
+      </div>
+    </nav>
+  </header>
+</div>
+
+<div id="password-gate" style="display:flex; min-height:50vh; align-items:center; justify-content:center; padding:60px 24px;">
+  <form id="gate-form" style="max-width:340px; width:100%; text-align:center;">
+    <div class="case-tag" style="margin:0 auto 16px; display:inline-block;">Protected</div>
+    <h1 style="font-size:22px; font-weight:600; margin-bottom:10px;">This case study is password protected</h1>
+    <p style="color:var(--ink-soft); font-size:14px; margin-bottom:24px;">Enter the password to continue.</p>
+    <input type="password" id="gate-password" placeholder="Password" autocomplete="off"
+      style="width:100%; padding:11px 16px; font-size:15px; font-family:'Albert Sans',sans-serif; border:1px solid var(--line); border-radius:8px; margin-bottom:14px; color:var(--ink); outline:none; background:var(--surface);">
+    <br>
+    <button type="submit" class="view-btn">Unlock</button>
+    <p id="gate-error" style="color:#b3403a; font-size:13px; margin-top:14px; display:none;">Incorrect password. Try again.</p>
+  </form>
+</div>
+
+<main id="main-content" style="display:none;">
+
+  <div class="wrap hero-case">
+    <div class="eyebrow-case">
+      <img src="assets/acrisure-logo.png" alt="Acrisure" class="invert-logo" style="height:14px;">
+    </div>
+    <h1 class="case-h1">Designing Acrisure's Client Portal to Hold Products We Hadn't Built Yet</h1>
+    <p class="case-subhead">Unifying every account a client holds, designed around data the system can't reliably surface.</p>
+    <div class="hero-meta-row">
+      <div class="tag-row">
+        <span class="case-tag">Case Study</span>
+        <span class="case-tag">Insurance</span>
+        <span class="case-tag">Information Architecture</span>
+      </div>
+      <div class="client-meta">
+        2024&ndash;2025
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-panel">
+    <img class="hero-img" src="assets/client-portal-hero.png" alt="Client portal screens: an active Workers' Compensation policy card, its Policy Details panel, and the coverage breakdown for a People Centric archetype.">
+  </div>
+
+  <div class="wrap">
+    <a href="index.html#work" class="back-pill">← All case studies</a>
+  </div>
+
+  <div class="case-main">
+
+    <div class="highlight">
+      <div class="h-label"><span class="spark">✦</span> Highlight</div>
+      <div class="h-line">58% of businesses are open to service without a dedicated point of contact, vs. 43% of individuals. This portal's core users are the segment most ready for self-service.</div>
+    </div>
+
+    <h2>About</h2>
+    <p>Acrisure is an insurance broker working across personal lines, commercial lines, and employee benefits. I'm a product designer there. This case study covers two pieces of the client portal I designed at different points in time: the content model that shipped as part of the original launch, and the navigation framework I designed after launch, once the shipped version showed it couldn't hold what the business actually needed.</p>
+
+    <h2>Background</h2>
+    <p>For a long time, Acrisure didn't have its own client-facing portal. There was a third-party tool, CSR24, for basic servicing, but adoption was mixed across the company. Some people used it, some didn't bother, and some used it in ways that caused more problems than it solved.</p>
+    <p>Leadership wanted more than a basic service tool. The ask was something built for every Acrisure client, across every product line the company sold, a real digital interface to Acrisure itself rather than another bolt-on utility. In practice, that meant a place to house resources, support cross-selling, and cut down the service tickets flowing into support by giving clients somewhere to help themselves.</p>
+    <p>Acrisure's own research backed this up. A 2025 service center survey of over 1,000 individuals and businesses found businesses, this portal's core users, are far more open to self-service than individuals. The complaints people have about calling in are familiar ones: long wait times, getting bounced between departments, repeating themselves to a new rep every time.</p>
+    <p class="soft">Fixing that helps the client. It also helps Acrisure directly: I heard from the servicing team constantly that fewer calls would mean less repeat work on their end too.</p>
+
+    <p>Two constraints shaped everything from here:</p>
+    <ul class="decision-list">
+      <li><strong>Unreliable underlying data.</strong> Acrisure had grown by rolling up more than 1,000 businesses, each with its own systems, its own data, and its own idea of what "client" even meant. Its system of record inherited that mess: inconsistent, incomplete data, so entire categories like Billing and Claims can't be reliably shown in the new portal. Those tasks route out to CSR24 instead, a call made above the design work. I designed the handoff itself: what those journeys into CSR24 actually look like for a client.</li>
+      <li><strong>Real deadline pressure.</strong> The business needed something shipped fast, before there was time to build navigation the right way.</li>
+    </ul>
+
+    <h2>Decision One: Policy Archetype Models</h2>
+    <p>Acrisure's portal needs to show dozens of distinct policy types: Homeowners, Auto, BOP, Workers' Comp, and more, each with genuinely different underlying data. Designing each one from scratch meant new design work every time a policy type got added.</p>
+    <p>Instead, I found that coverage breaks down into five archetypes, based on how it attaches to whatever it covers:</p>
+
+    <div class="carousel-wrap">
+      <div class="carousel-track" id="archCarousel">
+        <div class="carousel-card"><img src="assets/archetype-card-multiasset.png" alt="Multi-Asset archetype card with the Auto policy data structure."></div>
+        <div class="carousel-card"><img src="assets/archetype-card-peoplecentric.png" alt="People Centric archetype card with the Workers' Comp policy data structure."></div>
+        <div class="carousel-card"><img src="assets/archetype-card-multiasset.png" alt="Multi-Asset archetype card with the Auto policy data structure."></div>
+        <div class="carousel-card"><img src="assets/archetype-card-peoplecentric.png" alt="People Centric archetype card with the Workers' Comp policy data structure."></div>
+        <div class="carousel-card"><img src="assets/archetype-card-multiasset.png" alt="Multi-Asset archetype card with the Auto policy data structure."></div>
+      </div>
+      <button class="carousel-arrow prev" id="archPrev" aria-label="Previous card" type="button">‹</button>
+      <button class="carousel-arrow next" id="archNext" aria-label="Next card" type="button">›</button>
+      <div class="carousel-dots" id="archDots">
+        <button class="dot active" data-i="0" aria-label="Card 1" type="button"></button>
+        <button class="dot" data-i="1" aria-label="Card 2" type="button"></button>
+        <button class="dot" data-i="2" aria-label="Card 3" type="button"></button>
+        <button class="dot" data-i="3" aria-label="Card 4" type="button"></button>
+        <button class="dot" data-i="4" aria-label="Card 5" type="button"></button>
+      </div>
+    </div>
+    <p class="screen-caption">Preview only — swipe/dot pattern tested with 2 real diagrams repeated to fill 5 slots. Final version would use 5 distinct archetype diagrams.</p>
+
+    <div class="highlight">
+      <div class="h-label"><span class="spark">✦</span> Proof it holds up</div>
+      <div class="h-line">When Employee Benefits launched later, it slotted directly into the People Centric archetype. No new design work required.</div>
+    </div>
+
+    <h2>Decision Two: The Fast Navigation Tradeoff</h2>
+    <p>To hit the launch deadline, the portal reused Acrisure's existing design system instead of building navigation made for it. My manager and PM agreed with the call at the time, and given the deadline, it was the right one. It just meant the nav wasn't built for what came next.</p>
+
+    <h2>What Broke After Launch</h2>
+    <p>Three things surfaced the cost of that tradeoff, close together in time:</p>
+    <ul class="decision-list">
+      <li><strong>Leadership wanted to vision-cast.</strong> Our design manager wanted to imagine where the portal could go next: payroll, mortgages, things we weren't even sure were feasible yet. It became clear fast that the borrowed navigation couldn't hold that kind of ambition, even hypothetically.</li>
+      <li><strong>A persona showed up that nobody had planned for.</strong> Wealth managers, who manage several clients' accounts instead of their own.</li>
+      <li><strong>Product needed things the structure had no place for.</strong> A real split between account-level and policy-level documents, and a homepage that behaved like an actual dashboard instead of a flat list of policies.</li>
+    </ul>
+
+    <h2>Decision Three: The Navigation Framework</h2>
+    <p>I led the redesign, with a second designer pressure-testing my thinking the whole way. I used Claude throughout: competitive reviews of other portals, checking my structure against research like Nielsen Norman Group's, and quickly iterating IA options before landing on the final one.</p>
+    <p>I also got the team aligned on language up front, defining what we meant by Portal User, Account, Product, and Access level, and pulled one EPIC data issue (duplicate client records for the same business) out of scope entirely. That's a data problem, not something design can fix.</p>
+
+    <p>Four principles came out of it.</p>
+
+    <img class="screen-photo" src="assets/client-portal-principles.png" alt="Four design principles: Account-first (one account in view at a time, no cross-account confusion), Same identity, new context (topbar carries identity, sidebar carries account context), Content earns the nav (nothing placeholder or half-finished gets a nav slot), and Scalable by default (sidebar over tab bar, so it grows as new products are added).">
+    <p class="screen-caption">Design principles graphic: account-first, identity stays/context changes, content earns the nav, scalable by default</p>
+
+    <p>To test the structure, I used a scenario instead of reasoning about it in the abstract: Marcus Chen, a client juggling three businesses and a personal policy, all logging in on one Monday morning. The wealth manager persona fit the same model: one identity with several accounts underneath it, no new rule needed.</p>
+
+    <div class="highlight">
+      <div class="h-label"><span class="spark">✦</span> Field validation</div>
+      <div class="h-line">An advisor who manages insurance for several small-business clients described almost exactly this pattern: working inside one client's account at a time, with clients who don't want Acrisure contacting them directly at all.</div>
+    </div>
+
+    <img class="screen-photo" src="assets/client-portal-nav-diagram.png" alt="Diagram of the Acrisure client portal's navigation structure, split into a Portal User level (account switcher, notifications, settings) that stays visible across every account, and an account-scoped level below it (Overview, Documents, Requests, Insurance, Employee Benefits) that changes when the active account changes.">
+    <p class="screen-caption">Fully annotated screen with placement callouts</p>
+
+    <p>That same structure resolved both open product requests (the document split and the dashboard) without needing anything bolted on afterward.</p>
+
+    <p>I presented this work at a leadership offsite about where the portal was headed. Afterward, our Head of Product told me directly:</p>
+
+    <div class="quote">
+      <span class="qmark">"</span>
+      <p>I was so impressed with the way you showed up in our offsite. There was a moment where you and [a colleague] were down in some insurance endorsement process weeds and I was so glad you were able to drive the kinds of conversations that needed to be had.</p>
+      <cite>Head of Product, Acrisure</cite>
+    </div>
+
+    <h2>Where This Stands</h2>
+    <div class="status-grid">
+      <div class="status-card">
+        <h4>Archetype models</h4>
+        <p>Live in production. Still holding as new policy types get added.</p>
+      </div>
+      <div class="status-card">
+        <h4>Navigation framework</h4>
+        <p>A completed proposal, not yet shipped, not yet confirmed to be built.</p>
+      </div>
+    </div>
+
+    <h2>Reflection</h2>
+    <div class="reflection">
+      <p>Both pieces are solving the same problem (a portal that wasn't built to grow) just at different points in time and different levels of the product. What ties them together is being upfront about a tradeoff made under real pressure, and choosing to go back and get it right once I had the room to.</p>
+    </div>
+
+  </div>
+
+  <div class="case-nav-footer">
+    <a href="index.html#work">← Back to case studies</a>
+    <a href="index.html#contact">Get in touch →</a>
+  </div>
+
+</main>
+
+<footer id="contact">
+  <div class="connect-label">Connect with me</div>
+  <div class="links">
+    <a href="#" title="LinkedIn">in</a>
+    <a href="mailto:allysonkatew@gmail.com" title="Email">@</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var KEY = 'portfolio_acrisure_unlocked';
+  var CORRECT = '2026';
+  var gate = document.getElementById('password-gate');
+  var content = document.getElementById('main-content');
+  function unlock() { gate.style.display = 'none'; content.style.display = 'block'; }
+  if (localStorage.getItem(KEY) === 'true') { unlock(); }
+  document.getElementById('gate-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var val = document.getElementById('gate-password').value.trim();
+    var errorEl = document.getElementById('gate-error');
+    if (val === CORRECT) {
+      localStorage.setItem(KEY, 'true');
+      errorEl.style.display = 'none';
+      unlock();
+    } else {
+      errorEl.style.display = 'block';
+    }
+  });
+})();
+</script>
+
+<script>
+(function () {
+  var KEY = 'portfolio_theme';
+  var lightBtn = document.getElementById('theme-light');
+  var darkBtn = document.getElementById('theme-dark');
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.body.classList.add('dark');
+      darkBtn.classList.add('active');
+      lightBtn.classList.remove('active');
+    } else {
+      document.body.classList.remove('dark');
+      lightBtn.classList.add('active');
+      darkBtn.classList.remove('active');
+    }
+  }
+  var DARK_MODE_ENABLED = false; // toggle back on when dark mode is ready
+  var saved = localStorage.getItem(KEY);
+  var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(DARK_MODE_ENABLED ? (saved || (prefersDark ? 'dark' : 'light')) : 'light');
+  lightBtn.addEventListener('click', function () { localStorage.setItem(KEY, 'light'); applyTheme('light'); });
+  darkBtn.addEventListener('click', function () { localStorage.setItem(KEY, 'dark'); applyTheme('dark'); });
+})();
+</script>
+
+<script>
+(function () {
+  var track = document.getElementById('archCarousel');
+  if (!track) return;
+  var dots = Array.prototype.slice.call(document.querySelectorAll('#archDots .dot'));
+  var prevBtn = document.getElementById('archPrev');
+  var nextBtn = document.getElementById('archNext');
+  var count = dots.length;
+  var cards = Array.prototype.slice.call(track.querySelectorAll('.carousel-card'));
+
+  function step() {
+    return cards.length > 1 ? (cards[1].offsetLeft - cards[0].offsetLeft) : track.clientWidth;
+  }
+  function maxScroll() {
+    return Math.max(0, track.scrollWidth - track.clientWidth);
+  }
+  function activeIndex() {
+    var max = maxScroll();
+    if (max <= 1) return 0;
+    if (track.scrollLeft >= max - 1) return count - 1;
+    if (track.scrollLeft <= 1) return 0;
+    return Math.min(count - 1, Math.round(track.scrollLeft / step()));
+  }
+  function setActive() {
+    var max = maxScroll();
+    if (max <= 1 && track.scrollLeft <= 1) {
+      // Track isn't laid out yet (e.g. still hidden behind the password gate) —
+      // assume the resting start state instead of locking both arrows.
+      dots.forEach(function (d, idx) { d.classList.toggle('active', idx === 0); });
+      prevBtn.disabled = true;
+      nextBtn.disabled = count <= 1;
+      return;
+    }
+    var i = activeIndex();
+    dots.forEach(function (d, idx) { d.classList.toggle('active', idx === i); });
+    prevBtn.disabled = track.scrollLeft <= 1;
+    nextBtn.disabled = track.scrollLeft >= max - 1;
+  }
+  function goTo(i) {
+    i = Math.max(0, Math.min(count - 1, i));
+    track.scrollTo({ left: Math.min(cards[i].offsetLeft, maxScroll()), behavior: 'smooth' });
+  }
+  function nudge(direction) {
+    var target = track.scrollLeft + direction * step();
+    target = Math.max(0, Math.min(maxScroll(), target));
+    track.scrollTo({ left: target, behavior: 'smooth' });
+  }
+  var scrollTimeout;
+  track.addEventListener('scroll', function () {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(setActive, 60);
+  });
+  window.addEventListener('resize', setActive);
+  window.addEventListener('load', setActive);
+  if (window.ResizeObserver) {
+    new ResizeObserver(setActive).observe(track);
+  }
+  setActive();
+  dots.forEach(function (d) {
+    d.addEventListener('click', function () { goTo(parseInt(d.dataset.i, 10)); });
+  });
+  prevBtn.addEventListener('click', function () { nudge(-1); });
+  nextBtn.addEventListener('click', function () { nudge(1); });
+})();
+</script>
+
+</body>
+</html>
