@@ -109,6 +109,7 @@
   .screen .screen-detail code { font-family: ui-monospace, 'SF Mono', monospace; font-size: 12px; background: var(--tag-bg); padding: 1px 5px; border-radius: 4px; }
   .screen-photo { max-width: 656px; width: 100%; height: auto; display: block; margin: 24px 0 8px; border-radius: 12px; }
   .screen-caption { font-size: 13px; color: var(--muted); text-align: left; line-height: 1.5; margin: 10px 0 32px; }
+  .placeholder-box { border: 1.5px dashed var(--line); border-radius: 12px; padding: 32px 24px; text-align: center; color: var(--muted); font-size: 14px; font-style: italic; margin: 8px 0 32px; }
 
   .quote { margin: 32px 0 40px; }
   .quote .qmark { font-size: 36px; color: var(--accent); line-height: 0.6; display: block; margin-bottom: 12px; font-weight: 700; }
@@ -166,7 +167,6 @@
       <div class="tag-row">
         <span class="case-tag">Case Study</span>
         <span class="case-tag">Personal Project</span>
-        <span class="case-tag">AI Workflow</span>
       </div>
       <div class="client-meta">
         🚐 Bro'd Trip &mdash; 2025
@@ -199,32 +199,20 @@
 
     <h2>Two Attempts</h2>
     <p>The first attempt was straightforward: rebuild it exactly how it was, hosted on WordPress, one post at a time. Fifteen posts in, it was clear that pace wasn't going to get through 244 posts. I stopped.</p>
-    <p>The second attempt started with Claude Code as the core tool instead of the whole process. Feed it a Wayback Machine URL, it crawls the archived post and returns a static HTML file. That approach got through the bulk of the archive, rate limits and all, until Anthropic restricted outbound fetching to the Wayback Machine mid-project. The fix was to download the archived HTML locally instead and feed the files in directly &mdash; one more adjustment in a project already defined by working with whatever survived.</p>
+    <p>The second attempt started with Claude Code as the core tool instead of the whole process. Feed it a Wayback Machine URL, and it crawls the archived post, pulls the content, and returns a clean static HTML file. Running at roughly $20 a month in Claude usage, that approach got through the bulk of the archive, rate limits and all, until Anthropic restricted outbound fetching to the Wayback Machine mid-project. The fix was to download the archived HTML locally instead and feed the files in directly, one more adjustment in a project already defined by working with whatever survived. The full rebuild, including a cleanup pass across all 248 files (the 244 posts plus the about and sponsors pages), came to about $480 in usage total.</p>
+    <p class="soft">About 40% of the original images couldn't be recovered from the archive at all. Instead of a gap, each of those gets a placeholder: a note that the photo was lost, its original filename, and whatever caption survived in the metadata, so a missing photo still reads as a known gap instead of a broken page.</p>
 
-    <h2>Deciding What to Do With What's Missing</h2>
-    <p>About 40% of the original images couldn't be recovered from the archive. Every one of those gets a placeholder instead of a gap: a note that the photo was lost in the archive, its original filename, and the caption it shipped with originally, pulled from whatever metadata survived.</p>
-    <p>The placeholder does two things at once. It tells a visitor plainly that something specific is missing, so a blank space reads as a known gap and not a broken page. It also stays useful to me: if an original file ever turns up on an old hard drive, the filename is already there to match it back to its post.</p>
-
-    <img class="screen-photo" src="assets/brod-trip-linkedin.png" alt="A LinkedIn post from Adam Fricke about the recovered blog, quote-shared by Allyson Fricke describing the project as trying to recover the past, with a preview of the rebuilt Bro'd Trip site attached.">
-    <p class="screen-caption">Adam's reaction when the site came back online</p>
-
-    <p class="soft">This decision fits a pattern already on the site. A callout box linking back to the original Wayback Machine crawl already tells visitors upfront that they're looking at a recovery, not the original site. The placeholder extends that same honesty into the one place a reader would otherwise assume something had simply broken.</p>
-
-    <h2>Deciding Not to Build Comments</h2>
-    <p>The rebuilt site has no commenting system. It's a scope call made on purpose, not a technical limitation.</p>
-
-    <div class="quote">
-      <span class="qmark">"</span>
-      <p>This is not a site that will ever be added to. It's a time capsule.</p>
-      <cite>The reasoning behind the call</cite>
-    </div>
-
-    <p>A commenting system implies an ongoing, living site, and this one isn't that anymore. Building toward a future the site doesn't have would have meant spending effort on the wrong thing.</p>
+    <h2>The Commit History</h2>
+    <p>Claude Code did more than fetch pages. It restructured templates, rewrote the fetch pipeline when the restriction hit, and ran the cleanup pass across all 248 files. The repo stays private, but the commit log is the plainest record of that: real commits, real dates, spread out over about two weeks of actual work.</p>
+    <div class="placeholder-box">Commit history screenshot goes here</div>
 
     <h2>Where This Leaves It</h2>
     <div class="reflection">
-      <p>The strongest evidence in Bro'd Trip is the decision trail: a manual approach that didn't scale, a process changed on purpose, a mid-project constraint that forced another adjustment, and two calls about what to do with an archive that will never be complete. Designing around data you can't fully trust or fully recover shows up more than once in this portfolio, and that repetition says something real about the kind of problems I gravitate toward.</p>
+      <p>This one is smaller than the rest of this portfolio on purpose. It started as a favor for my husband, not a business problem, and it stayed that way the whole way through. What it does show is real: Claude Code as a genuine part of how the work got done, from the first crawl to the last file in the cleanup pass, not a tool I dabbled with once. If the question is whether I'm comfortable writing and shipping real code with AI in the loop, this is the answer.</p>
     </div>
+
+    <img class="screen-photo" src="assets/brod-trip-linkedin.png" alt="A LinkedIn post from Adam Fricke about the recovered blog, quote-shared by Allyson Fricke describing the project as trying to recover the past, with a preview of the rebuilt Bro'd Trip site attached.">
+    <p class="screen-caption">Adam's reaction when the site came back online</p>
 
   </div>
 
