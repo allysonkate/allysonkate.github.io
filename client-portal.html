@@ -104,7 +104,6 @@
   .screen .cs-line.w90 { width: 90%; }
   .screen .cs-line:last-child { margin-bottom: 0; }
   .screen-caption { font-size: 13px; color: var(--muted); text-align: left; line-height: 1.5; margin: 0 0 32px; }
-  .placeholder-box { border: 1.5px dashed var(--line); border-radius: 12px; padding: 32px 24px; text-align: center; color: var(--muted); font-size: 14px; font-style: italic; margin: 24px 0 8px; }
   .screen-photo { max-width: 656px; width: 100%; height: auto; display: block; margin: 24px 0 8px; border-radius: 12px; }
   .screen-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .screen-row .screen { margin: 24px 0 8px; }
@@ -237,14 +236,6 @@
     <p>Acrisure's portal needs to show dozens of distinct policy types: Homeowners, Auto, BOP, Workers' Comp, and more, each with genuinely different underlying data. Designing each one from scratch meant new design work every time a policy type got added.</p>
     <p>Instead, I found that coverage breaks down into five archetypes, based on how it attaches to whatever it covers:</p>
 
-    <ul class="decision-list">
-      <li><strong>Single Location:</strong> one property or address (Homeowners, Condo, Tenant, Dwelling Fire, Mobile Home, Flood NFIP)</li>
-      <li><strong>Multi-Asset:</strong> multiple scheduled items (Auto, Watercraft, Inland Marine)</li>
-      <li><strong>Multi-Location Commercial:</strong> multiple premises (BOP, Property, Commercial Flood)</li>
-      <li><strong>People Centric:</strong> individuals or groups (Workers' Comp today, built to extend to Directors &amp; Officers and Employee Benefits)</li>
-      <li><strong>Policy-Level / Org-Wide:</strong> applies broadly rather than to specific assets (Umbrella, E&amp;O, General Liability, built to extend to Cyber Liability)</li>
-    </ul>
-
     <div class="carousel-wrap">
       <div class="carousel-track" id="archCarousel">
         <div class="carousel-card"><img src="assets/archetype-card-multiasset.png" alt="Multi-Asset archetype card with the Auto policy data structure."></div>
@@ -289,8 +280,6 @@
     <img class="screen-photo" src="assets/client-portal-principles.png" alt="Four design principles: Account-first (one account in view at a time, no cross-account confusion), Same identity, new context (topbar carries identity, sidebar carries account context), Content earns the nav (nothing placeholder or half-finished gets a nav slot), and Scalable by default (sidebar over tab bar, so it grows as new products are added).">
     <p class="screen-caption">Design principles graphic: account-first, identity stays/context changes, content earns the nav, scalable by default</p>
 
-    <div class="placeholder-box">Marcus Chen scenario graphic goes here</div>
-
     <p>To test the structure, I used a scenario instead of reasoning about it in the abstract: Marcus Chen, a client juggling three businesses and a personal policy, all logging in on one Monday morning. The wealth manager persona fit the same model: one identity with several accounts underneath it, no new rule needed.</p>
 
     <div class="highlight">
@@ -307,7 +296,7 @@
 
     <div class="quote">
       <span class="qmark">"</span>
-      <p>I was so impressed with the way you showed up in our offsite. There was a moment where you and [a colleague] were down in some insurance endorsement process weeds and I was so glad you were able to drive the kinds of conversations that needed to be had.</p>
+      <p>I was so impressed with the way you showed up in our offsite&hellip; I was so glad you were able to drive the kinds of conversations that needed to be had.</p>
       <cite>Head of Product, Acrisure</cite>
     </div>
 
@@ -347,12 +336,13 @@
 
 <script>
 (function () {
+  var GATE_ENABLED = false; // toggle back on when password protection should return
   var KEY = 'portfolio_acrisure_unlocked';
   var CORRECT = '2026';
   var gate = document.getElementById('password-gate');
   var content = document.getElementById('main-content');
   function unlock() { gate.style.display = 'none'; content.style.display = 'block'; }
-  if (localStorage.getItem(KEY) === 'true') { unlock(); }
+  if (!GATE_ENABLED || localStorage.getItem(KEY) === 'true') { unlock(); }
   document.getElementById('gate-form').addEventListener('submit', function (e) {
     e.preventDefault();
     var val = document.getElementById('gate-password').value.trim();

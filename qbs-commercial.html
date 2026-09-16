@@ -410,12 +410,13 @@
 
 <script>
 (function () {
+  var GATE_ENABLED = false; // toggle back on when password protection should return
   var KEY = 'portfolio_acrisure_unlocked';
   var CORRECT = '2026';
   var gate = document.getElementById('password-gate');
   var content = document.getElementById('main-content');
   function unlock() { gate.style.display = 'none'; content.style.display = 'block'; }
-  if (localStorage.getItem(KEY) === 'true') { unlock(); }
+  if (!GATE_ENABLED || localStorage.getItem(KEY) === 'true') { unlock(); }
   document.getElementById('gate-form').addEventListener('submit', function (e) {
     e.preventDefault();
     var val = document.getElementById('gate-password').value.trim();
