@@ -104,6 +104,7 @@
   .screen .cs-line.w90 { width: 90%; }
   .screen .cs-line:last-child { margin-bottom: 0; }
   .screen-caption { font-size: 13px; color: var(--muted); text-align: left; line-height: 1.5; margin: 0 0 32px; }
+  .placeholder-box { border: 1.5px dashed var(--line); border-radius: 12px; padding: 32px 24px; text-align: center; color: var(--muted); font-size: 14px; font-style: italic; margin: 24px 0 8px; }
   .screen-photo { max-width: 656px; width: 100%; height: auto; display: block; margin: 24px 0 8px; border-radius: 12px; }
   .screen-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .screen-row .screen { margin: 24px 0 8px; }
@@ -218,37 +219,39 @@
 
   <div class="case-main">
 
+    <h2>The Situation</h2>
+    <p>Acrisure had grown by rolling up more than 1,000 businesses, each bringing its own systems, its own data, and its own idea of what "client" even meant. The only client-facing option was CSR24, a third-party tool with mixed adoption, and no client, servicer, or business team had ever had one place to see everything a given client held with Acrisure.</p>
+    <p>Leadership's goal was three-fold: help clients manage everything in one place instead of juggling logins and calls, help servicers spend less time on repeat lookups, and help the business by cutting the tickets self-service could absorb and supporting cross-selling across a client's accounts.</p>
+
+    <h2>The Constraint</h2>
+    <p>Acrisure's system of record inherited that same rolled-up mess: inconsistent, incomplete data, so entire categories like Billing and Claims can't be reliably shown in the new portal. Those tasks route out to CSR24 instead, a call made above the design work. I designed the handoff itself: what those journeys into CSR24 actually look like for a client.</p>
+    <p>The business also needed something shipped fast, and the only design system available to build from was acrisure.com's own: built for marketing pages, not for the structural weight a servicing portal needed to carry.</p>
+
     <div class="highlight">
-      <div class="h-label"><span class="spark">✦</span> Highlight</div>
-      <div class="h-line">58% of businesses are open to service without a dedicated point of contact, vs. 43% of individuals. This portal's core users are the segment most ready for self-service.</div>
+      <div class="h-label"><span class="spark">✦</span> The tension</div>
+      <div class="h-line">I had to design around data the system couldn't back up, and inherit a foundation that was never built to hold what came next.</div>
     </div>
 
-    <h2>About</h2>
-    <p>Acrisure is an insurance broker working across personal lines, commercial lines, and employee benefits. I'm a product designer there. This case study covers two pieces of the client portal I designed at different points in time: the content model that shipped as part of the original launch, and the navigation framework I designed after launch, once the shipped version showed it couldn't hold what the business actually needed.</p>
-
-    <h2>Background</h2>
-    <p>For a long time, Acrisure didn't have its own client-facing portal. There was a third-party tool, CSR24, for basic servicing, but adoption was mixed across the company. Some people used it, some didn't bother, and some used it in ways that caused more problems than it solved.</p>
-    <p>Leadership wanted more than a basic service tool. The ask was something built for every Acrisure client, across every product line the company sold, a real digital interface to Acrisure itself rather than another bolt-on utility. In practice, that meant a place to house resources, support cross-selling, and cut down the service tickets flowing into support by giving clients somewhere to help themselves.</p>
-    <p>Acrisure's own research backed this up. A 2025 service center survey of over 1,000 individuals and businesses found businesses, this portal's core users, are far more open to self-service than individuals. The complaints people have about calling in are familiar ones: long wait times, getting bounced between departments, repeating themselves to a new rep every time.</p>
-    <p class="soft">Fixing that helps the client. It also helps Acrisure directly: I heard from the servicing team constantly that fewer calls would mean less repeat work on their end too.</p>
-
-    <p>Two constraints shaped everything from here:</p>
-    <ul class="decision-list">
-      <li><strong>Unreliable underlying data.</strong> Acrisure had grown by rolling up more than 1,000 businesses, each with its own systems, its own data, and its own idea of what "client" even meant. Its system of record inherited that mess: inconsistent, incomplete data, so entire categories like Billing and Claims can't be reliably shown in the new portal. Those tasks route out to CSR24 instead, a call made above the design work. I designed the handoff itself: what those journeys into CSR24 actually look like for a client.</li>
-      <li><strong>Real deadline pressure.</strong> The business needed something shipped fast, before there was time to build navigation the right way.</li>
-    </ul>
 
     <h2>Decision One: Policy Archetype Models</h2>
     <p>Acrisure's portal needs to show dozens of distinct policy types: Homeowners, Auto, BOP, Workers' Comp, and more, each with genuinely different underlying data. Designing each one from scratch meant new design work every time a policy type got added.</p>
     <p>Instead, I found that coverage breaks down into five archetypes, based on how it attaches to whatever it covers:</p>
 
+    <ul class="decision-list">
+      <li><strong>Single Location:</strong> one property or address (Homeowners, Condo, Tenant, Dwelling Fire, Mobile Home, Flood NFIP)</li>
+      <li><strong>Multi-Asset:</strong> multiple scheduled items (Auto, Watercraft, Inland Marine)</li>
+      <li><strong>Multi-Location Commercial:</strong> multiple premises (BOP, Property, Commercial Flood)</li>
+      <li><strong>People Centric:</strong> individuals or groups (Workers' Comp today, built to extend to Directors &amp; Officers and Employee Benefits)</li>
+      <li><strong>Policy-Level / Org-Wide:</strong> applies broadly rather than to specific assets (Umbrella, E&amp;O, General Liability, built to extend to Cyber Liability)</li>
+    </ul>
+
     <div class="carousel-wrap">
       <div class="carousel-track" id="archCarousel">
         <div class="carousel-card"><img src="assets/archetype-card-multiasset.png" alt="Multi-Asset archetype card with the Auto policy data structure."></div>
         <div class="carousel-card"><img src="assets/archetype-card-peoplecentric.png" alt="People Centric archetype card with the Workers' Comp policy data structure."></div>
-        <div class="carousel-card"><img src="assets/archetype-card-multiasset.png" alt="Multi-Asset archetype card with the Auto policy data structure."></div>
-        <div class="carousel-card"><img src="assets/archetype-card-peoplecentric.png" alt="People Centric archetype card with the Workers' Comp policy data structure."></div>
-        <div class="carousel-card"><img src="assets/archetype-card-multiasset.png" alt="Multi-Asset archetype card with the Auto policy data structure."></div>
+        <div class="carousel-card"><img src="assets/archetype-card-multilocation.png" alt="Multi-Location Commercial archetype card with the BOP policy data structure."></div>
+        <div class="carousel-card"><img src="assets/archetype-card-singlelocation.png" alt="Single Location archetype card with the Homeowners policy data structure."></div>
+        <div class="carousel-card"><img src="assets/archetype-card-policylevel.png" alt="Policy-Level archetype card with the General Liability policy data structure."></div>
       </div>
       <button class="carousel-arrow prev" id="archPrev" aria-label="Previous card" type="button">‹</button>
       <button class="carousel-arrow next" id="archNext" aria-label="Next card" type="button">›</button>
@@ -260,7 +263,6 @@
         <button class="dot" data-i="4" aria-label="Card 5" type="button"></button>
       </div>
     </div>
-    <p class="screen-caption">Preview only — swipe/dot pattern tested with 2 real diagrams repeated to fill 5 slots. Final version would use 5 distinct archetype diagrams.</p>
 
     <div class="highlight">
       <div class="h-label"><span class="spark">✦</span> Proof it holds up</div>
@@ -286,6 +288,8 @@
 
     <img class="screen-photo" src="assets/client-portal-principles.png" alt="Four design principles: Account-first (one account in view at a time, no cross-account confusion), Same identity, new context (topbar carries identity, sidebar carries account context), Content earns the nav (nothing placeholder or half-finished gets a nav slot), and Scalable by default (sidebar over tab bar, so it grows as new products are added).">
     <p class="screen-caption">Design principles graphic: account-first, identity stays/context changes, content earns the nav, scalable by default</p>
+
+    <div class="placeholder-box">Marcus Chen scenario graphic goes here</div>
 
     <p>To test the structure, I used a scenario instead of reasoning about it in the abstract: Marcus Chen, a client juggling three businesses and a personal policy, all logging in on one Monday morning. The wealth manager persona fit the same model: one identity with several accounts underneath it, no new rule needed.</p>
 
@@ -336,7 +340,7 @@
 <footer id="contact">
   <div class="connect-label">Connect with me</div>
   <div class="links">
-    <a href="#" title="LinkedIn">in</a>
+    <a href="https://www.linkedin.com/in/allysonkate/" target="_blank" rel="noopener" title="LinkedIn">in</a>
     <a href="mailto:allysonkatew@gmail.com" title="Email">@</a>
   </div>
 </footer>
