@@ -333,7 +333,6 @@
     <p>Industry classification was the screen causing the most confusion post-launch. High time-on-screen showed people struggling to find their category, made worse by the constraint above: thousands of inconsistent, carrier-specific codes with no budget to simplify them.</p>
 
     <img class="screen-photo" src="assets/qbs-industry-before.png" alt="Find your business class screen: a plain radio-button list of categories, with an unlabeled Type of Business search field below it.">
-    <p class="screen-caption">Before: radio-button list</p>
 
     <p>The obvious answer was AI. Let a customer describe their business in plain language and have a model return the closest matches, with a manual fallback for low-confidence cases. We built it. Before it ever reached a customer, we tested it internally against real business data, and the match accuracy didn't clear the bar we needed.</p>
 
@@ -341,11 +340,10 @@
       <img class="screen-photo" src="assets/qbs-industry-concept.png" alt="Describe your business in a few words screen: free-text input with AI-matched industry results ranked below it.">
       <div class="type-caret"></div>
     </div>
-    <p class="screen-caption">AI concept, tested internally, not shipped</p>
 
-    <p>We didn't ship it. In insurance, getting someone's industry wrong isn't cosmetic: it can misprice or misqualify a customer, and my team runs that E&amp;O calculus by default on anything customer-facing. Walking away from the AI feature was the obvious call, even without a precise technical explanation for why the model underperformed.</p>
+    <p>We didn't ship it. In insurance, getting someone's industry wrong isn't cosmetic: it can misprice or misqualify a customer, and my team automatically weighs that risk on anything customer-facing. Walking away from the AI feature was the obvious call, even without a precise technical explanation for why the model underperformed.</p>
 
-    <p>What shipped instead was a visual card grid: broad categories represented with icons and plain-language examples, so a customer could recognize their business instead of parsing formal category names. Selecting a category scopes both the visible list and the search field below it, narrowing roughly 2,000 codes down to the ~100 relevant to that category. Anyone unsure can pick "Other" and search the full set.</p>
+    <p>What shipped instead was a visual card grid: broad categories represented with icons and plain-language examples, so a customer could recognize their business instead of parsing formal category names. Selecting a category scopes both the visible list and the search field below it, so a short, ambiguous term like "cleaning" doesn't return unrelated matches across the full 2,000-code set. Anyone unsure can pick "Other" and search the full set.</p>
 
     <div class="industry-demo">
       <img class="demo-img demo-default" src="assets/qbs-industry-after-hover.png" alt="Which industry category best represents your business screen: a visual card grid of broad categories with icons and plain-language examples, plus a search field to narrow further.">
@@ -357,7 +355,6 @@
         </svg>
       </div>
     </div>
-    <p class="screen-caption">After: card grid, live today — cursor selects Construction, narrowing the search below</p>
 
     <div class="highlight">
       <div class="h-label"><span class="spark">✦</span> Result</div>
@@ -366,16 +363,15 @@
 
     <h2>Carrier Abstraction</h2>
 
+    <p>Carrier variation showed up everywhere in the flow, not just at checkout.</p>
+
+    <p>Binding a policy means answering each carrier's own underwriting questions, and those arrive from engineering as a flat list of API fields, not as questions: whether a location has residential units, what percentage of sales come from alcohol, whether flammable materials are stored in approved containers, one of dozens of variables like it. Even after engineering narrows the list to what's relevant, a single location can still carry a long list of fields.</p>
+
+    <p>My job was turning that list into a conversation: every field became a plain question a business owner could answer without knowing anything about carriers or APIs, mapped back to exactly the format the system needed. New carriers and fields get added constantly, and each one goes through the same translation.</p>
+
+    <p>Carriers integrate through fundamentally different patterns: one confirms almost instantly, another needs an e-signature and can take days to clear. I designed the Coverage Hub: a home base where each coverage runs as its own thread, so a customer binding coverage through multiple carriers can manage each one separately and always see where each one stands (in progress, complete, needs signature).</p>
+
     <img class="screen-photo" src="assets/qbs-coverage-hub-detail.png" alt="Coverage Hub showing two policies bound at once: a General Liability policy from The Hartford in progress, and a Professional Liability policy from Coterie flagged Agent Follow-Up Needed with call and contact options.">
-    <p class="screen-caption">Coverage Hub bind-status card</p>
-
-    <p>Abstracted carrier variation across the entire flow, not just at checkout.</p>
-
-    <p>Binding a policy means answering each carrier's own underwriting questions, and those arrive from engineering as a flat list of API fields, not as questions: whether a location has residential units, what percentage of sales come from alcohol, whether flammable materials are stored in approved containers. Even after engineering narrows the list to what's relevant, a single location can carry dozens of fields.</p>
-
-    <p>My job was turning that list into a conversation: every field became a plain question a business owner or broker could answer without knowing anything about carriers or APIs, mapped back to exactly the format the system needed. New carriers and fields get added constantly, and each one goes through the same translation.</p>
-
-    <p>The same divergence showed up after checkout, too. Carriers integrate through fundamentally different patterns: one resolves near-synchronously, another requires e-signature and asynchronous webhook handling. I designed the Coverage Hub to surface each policy's status (in progress, complete, needs signature) so customers binding multiple coverages at once always know where they stand.</p>
 
     <h2>Results</h2>
     <ul class="decision-list">
@@ -383,7 +379,6 @@
       <li>+5% increase in conversion to payment after removing checkout friction</li>
       <li>+3.7% conversion lift from the industry classification redesign</li>
       <li>Reduced reliance on phone-only binding</li>
-      <li>Increased confidence from carrier partners</li>
     </ul>
 
     <h2>Reflection</h2>
