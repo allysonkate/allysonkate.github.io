@@ -194,7 +194,7 @@
     <div class="eyebrow-case">
       <img src="assets/acrisure-logo.png" alt="Acrisure" class="invert-logo" style="height:14px;">
     </div>
-    <h1 class="case-h1">Designing Acrisure's Client Portal to Hold Products We Hadn't Built Yet</h1>
+    <h1 class="case-h1">Designing a Portal Around the Limits of the Data</h1>
     <p class="case-subhead">Unifying every account a client holds, designed around data the system can't reliably surface.</p>
     <div class="hero-meta-row">
       <div class="tag-row">
@@ -219,22 +219,22 @@
   <div class="case-main">
 
     <h2>The Situation</h2>
-    <p>Acrisure had grown by rolling up more than 1,000 businesses, each bringing its own systems, its own data, and its own idea of what "client" even meant. The only client-facing option was CSR24, a third-party tool with mixed adoption, and no client, servicer, or business team had ever had one place to see everything a given client held with Acrisure.</p>
-    <p>Leadership's goal was three-fold: help clients manage everything in one place instead of juggling logins and calls, help servicers spend less time on repeat lookups, and help the business by cutting the tickets self-service could absorb and supporting cross-selling across a client's accounts.</p>
+    <p>Acrisure had grown by rolling up more than 1,000 businesses, each bringing its own systems, data, and definition of what "client" even meant. The only client-facing option was a third-party tool with mixed adoption. No client, servicer, or business team had ever had one place to see everything a given client held.</p>
+    <p>Leadership's goal was three-fold: help clients manage everything in one place instead of juggling logins and calls, help servicers spend less time on calls and emails, and help the business by cutting the tickets self-service could absorb and supporting cross-selling and risk management across a client's accounts.</p>
 
     <h2>The Constraint</h2>
-    <p>Acrisure's system of record inherited that same rolled-up mess: inconsistent, incomplete data, so entire categories like Billing and Claims can't be reliably shown in the new portal. Those tasks route out to CSR24 instead, a call made above the design work. I designed the handoff itself: what those journeys into CSR24 actually look like for a client.</p>
+    <p>Acrisure's system of record inherited that same fragmentation: inconsistent, incomplete data. Billing and Claims are hit hardest, since Acrisure is the broker, not the carrier, and doesn't hold that data directly. Neither can be reliably shown in the new portal. Those tasks route out to that existing tool instead, a call made above the design work. I designed the handoff itself: what that journey out actually looks like for a client.</p>
     <p>The business also needed something shipped fast, and the only design system available to build from was acrisure.com's own: built for marketing pages, not for the structural weight a servicing portal needed to carry.</p>
 
     <div class="highlight">
       <div class="h-label"><span class="spark">✦</span> The tension</div>
-      <div class="h-line">I had to design around data the system couldn't back up, and inherit a foundation that was never built to hold what came next.</div>
+      <div class="h-line">I had to design around data the system couldn't reliably surface, and inherit a foundation that was never built to hold what came next.</div>
     </div>
 
 
     <h2>Decision One: Policy Archetype Models</h2>
-    <p>Acrisure's portal needs to show dozens of distinct policy types: Homeowners, Auto, BOP, Workers' Comp, and more, each with genuinely different underlying data. Designing each one from scratch meant new design work every time a policy type got added.</p>
-    <p>Instead, I found that coverage breaks down into five archetypes, based on how it attaches to whatever it covers:</p>
+    <p>Acrisure's portal needs to show dozens of distinct policy types: Homeowners, Auto, BOP, Workers' Comp, and more, each with genuinely different underlying data: what's insured, the details that need to be captured, the tasks a client has to take on each one. Designing each one from scratch meant new design work every time a policy type got added.</p>
+    <p>So I built a system instead: coverage breaks down into five structural archetypes based on how it attaches to whatever it covers, one reusable pattern per archetype instead of one-off work per policy type, saving both design and engineering time as new products get added.</p>
 
     <div class="carousel-wrap">
       <div class="carousel-track" id="archCarousel">
@@ -257,25 +257,23 @@
 
     <div class="highlight">
       <div class="h-label"><span class="spark">✦</span> Proof it holds up</div>
-      <div class="h-line">When Employee Benefits launched later, it slotted directly into the People Centric archetype. No new design work required.</div>
+      <div class="h-line">Employee Benefits launched later and slotted directly into the People Centric archetype with no new design work required. It's the clearest evidence the model wasn't just built for what existed at the time.</div>
     </div>
 
     <h2>Decision Two: The Fast Navigation Tradeoff</h2>
-    <p>To hit the launch deadline, the portal reused Acrisure's existing design system instead of building navigation made for it. My manager and PM agreed with the call at the time, and given the deadline, it was the right one. It just meant the nav wasn't built for what came next.</p>
+    <p>Given the timeline, I launched on Acrisure's existing design system rather than build new navigation infrastructure. My manager and PM agreed with the call at the time, and given the deadline, it was the right one. It just meant the nav wasn't built for what came next.</p>
 
     <h2>What Broke After Launch</h2>
     <p>Three things surfaced the cost of that tradeoff, close together in time:</p>
     <ul class="decision-list">
       <li><strong>Leadership wanted to vision-cast.</strong> Our design manager wanted to imagine where the portal could go next: payroll, mortgages, things we weren't even sure were feasible yet. It became clear fast that the borrowed navigation couldn't hold that kind of ambition, even hypothetically.</li>
       <li><strong>A persona showed up that nobody had planned for.</strong> Wealth managers, who manage several clients' accounts instead of their own.</li>
-      <li><strong>Product needed things the structure had no place for.</strong> A real split between account-level and policy-level documents, and a homepage that behaved like an actual dashboard instead of a flat list of policies.</li>
+      <li><strong>Product needed things the structure had no place for.</strong> A real split between account-level and policy-level documents, and space for self-service tools and risk resources beyond a flat list of policies.</li>
     </ul>
 
     <h2>Decision Three: The Navigation Framework</h2>
-    <p>I led the redesign, with a second designer pressure-testing my thinking the whole way. I used Claude throughout: competitive reviews of other portals, checking my structure against research like Nielsen Norman Group's, and quickly iterating IA options before landing on the final one.</p>
-    <p>I also got the team aligned on language up front, defining what we meant by Portal User, Account, Product, and Access level, and pulled one EPIC data issue (duplicate client records for the same business) out of scope entirely. That's a data problem, not something design can fix.</p>
-
-    <p>Four principles came out of it.</p>
+    <p>I led the redesign, with a second designer pressure-testing my thinking the whole way. I used Claude throughout: competitive reviews of other portals, checking my structure against established UX research, and quickly iterating IA options before landing on the final one.</p>
+    <p>Before designing anything, I got the team aligned on shared language: what we meant by Portal User, Account, Product, and Access level. I also scoped one data issue, duplicate client records for the same business, out of the project entirely. That's a problem for engineering to solve, not something a navigation redesign could fix.</p>
 
     <img class="screen-photo" src="assets/client-portal-principles.png" alt="Four design principles: Account-first (one account in view at a time, no cross-account confusion), Same identity, new context (topbar carries identity, sidebar carries account context), Content earns the nav (nothing placeholder or half-finished gets a nav slot), and Scalable by default (sidebar over tab bar, so it grows as new products are added).">
     <p class="screen-caption">Design principles graphic: account-first, identity stays/context changes, content earns the nav, scalable by default</p>
@@ -290,7 +288,7 @@
     <img class="screen-photo" src="assets/client-portal-nav-diagram.png" alt="Diagram of the Acrisure client portal's navigation structure, split into a Portal User level (account switcher, notifications, settings) that stays visible across every account, and an account-scoped level below it (Overview, Documents, Requests, Insurance, Employee Benefits) that changes when the active account changes.">
     <p class="screen-caption">Fully annotated screen with placement callouts</p>
 
-    <p>That same structure resolved both open product requests (the document split and the dashboard) without needing anything bolted on afterward.</p>
+    <p>That same structure resolved both open product requests (the document split and the new self-service and risk resources) without needing anything bolted on afterward.</p>
 
     <p>I presented this work at a leadership offsite about where the portal was headed. Afterward, our Head of Product told me directly:</p>
 
@@ -308,13 +306,13 @@
       </div>
       <div class="status-card">
         <h4>Navigation framework</h4>
-        <p>A completed proposal, not yet shipped, not yet confirmed to be built.</p>
+        <p>A completed proposal, not yet shipped.</p>
       </div>
     </div>
 
     <h2>Reflection</h2>
     <div class="reflection">
-      <p>Both pieces are solving the same problem (a portal that wasn't built to grow) just at different points in time and different levels of the product. What ties them together is being upfront about a tradeoff made under real pressure, and choosing to go back and get it right once I had the room to.</p>
+      <p>Both pieces are solving the same problem (a portal that wasn't built to scale) just at different points in time and different levels of the product. What ties them together is being upfront about a tradeoff made under real pressure, and choosing to go back and get it right once I had the room to.</p>
     </div>
 
   </div>
