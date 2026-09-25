@@ -68,7 +68,7 @@
   .icon-toggle.active { color: var(--accent); }
 
   /* hero */
-  .hero-case { padding: 20px 0 0; }
+  .hero-case { padding-top: 20px; }
   .eyebrow-case {
     font-size: 14px; color: var(--ink-soft); margin-bottom: 16px;
     display: flex; align-items: center; gap: 8px;
@@ -127,6 +127,7 @@
   ul.decision-list li { font-size: 15.5px; color: var(--ink); padding-left: 20px; position: relative; line-height: 1.6; }
   ul.decision-list li::before { content: "–"; position: absolute; left: 0; top: 0; color: var(--ink-soft); }
   ul.decision-list li strong { font-weight: 600; }
+  ul.decision-list.accent-bullets li::before { content: "•"; color: var(--accent); font-size: 18px; line-height: 1.2; }
 
   .highlight { margin: 28px 0 36px; }
   .highlight .h-label {
@@ -235,6 +236,13 @@
     .case-main, .case-nav-footer { padding-left: 22px; padding-right: 22px; }
     nav a:not(.theme-icons) { display: none; }
   }
+
+  .line-pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 32px; }
+  .line-pill {
+    font-size: 13px; font-weight: 500; color: var(--ink-soft);
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 100px; padding: 6px 14px; line-height: 1.3;
+  }
 </style>
 </head>
 <body>
@@ -242,7 +250,6 @@
 <div class="wrap">
   <header>
     <a href="index.html" class="brand">
-      <span class="mark">✱</span>
       <div class="name">allyson</div>
     </a>
     <nav>
@@ -306,7 +313,17 @@
     </div>
 
     <h2>The Situation</h2>
-    <p>The platform lets small businesses quote and bind insurance across six product lines: General Liability, Business Owner's Policy, Workers' Comp, Professional Liability, Cyber, and Commercial Property. It has to support fully digital, hybrid, and agent-assisted journeys at once.</p>
+    <p>The platform lets small businesses quote and bind insurance across six product lines. It has to support fully digital, hybrid, and agent-assisted journeys at once.</p>
+
+    <div class="line-pills">
+      <span class="line-pill">General Liability</span>
+      <span class="line-pill">Business Owner's Policy</span>
+      <span class="line-pill">Workers' Comp</span>
+      <span class="line-pill">Professional Liability</span>
+      <span class="line-pill">Cyber</span>
+      <span class="line-pill">Commercial Property</span>
+    </div>
+
     <p>The experience I inherited was functional but fragile. It had been built to prove a fully digital model worked, then patched after an acquisition to meet new carrier and brand requirements. It couldn't reliably support the mix of journeys the business actually needed. The goal was to redesign it to work across dozens of carrier rulesets, without pushing that complexity onto the customer.</p>
 
     <div class="quote">
@@ -316,12 +333,15 @@
     </div>
 
     <h2>The Constraint</h2>
-    <p>Small commercial insurance quoting has a specific kind of complexity that better UI alone doesn't solve.</p>
-    <p>Every product line depends on classifying a customer's industry correctly to determine eligibility and price. There are thousands of possible industry codes, and the naming is inconsistent enough to get strange (cleaning services alone split across half a dozen adjacent categories). Some single-carrier competitors can offer a clean, curated list because they underwrite their own policies end to end. The platform works across many carriers at once, so that shortcut wasn't available. Consolidating the raw data into something friendlier would have taken engineering investment that was never prioritized.</p>
-    <p class="soft">I had to make an inherently messy system feel navigable through UI alone.</p>
+    <p>Every product line depends on classifying a customer's industry correctly to determine eligibility and price, and there are thousands of possible codes with naming inconsistent enough to get strange (cleaning services alone split across half a dozen adjacent categories). Single-carrier competitors can offer a clean, curated list because they underwrite end to end; the platform works across many carriers at once, so that shortcut wasn't available. Consolidating the raw data into something friendlier would have taken engineering investment that was never prioritized.</p>
+
+    <div class="highlight">
+      <div class="h-label"><span class="spark">✦</span> The tension</div>
+      <div class="h-line">Small commercial insurance quoting has a specific kind of complexity that better UI alone doesn't solve.</div>
+    </div>
 
     <h2>What I Did</h2>
-    <ul class="decision-list">
+    <ul class="decision-list accent-bullets">
       <li><strong>Rebuilt the flow as a system, not screens.</strong> Mapped question requirements across product lines, carriers, and payment models to see which complexity was unavoidable and which could be abstracted or sequenced differently.</li>
       <li><strong>Abstracted carrier variation at the system level.</strong> Carrier requirements varied significantly. Exposing that variation directly to users created confusion, so divergence got handled behind the scenes instead of in the UI.</li>
       <li><strong>Supported both digital completion and agent handoff.</strong> Rather than one "happy path," the flow let customers complete digitally where possible while preserving context if they needed an agent.</li>

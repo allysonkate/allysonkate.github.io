@@ -59,7 +59,7 @@
   .icon-toggle { background: none; border: none; padding: 0; cursor: pointer; font-size: 16px; line-height: 1; color: var(--ink-soft); font-family: inherit; }
   .icon-toggle.active { color: var(--accent); }
 
-  .hero-case { padding: 20px 0 0; }
+  .hero-case { padding-top: 20px; }
   .eyebrow-case { font-size: 14px; color: var(--ink-soft); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
   .eyebrow-case img { height: 13px; width: auto; }
   h1.case-h1 { font-size: 36px; font-weight: 600; line-height: 1.28; letter-spacing: -0.01em; max-width: 780px; margin-bottom: 18px; }
@@ -83,12 +83,12 @@
 
   ul.decision-list { list-style: none; margin: 0 0 20px; padding: 0; display: flex; flex-direction: column; gap: 14px; }
   ul.decision-list li { font-size: 15.5px; color: var(--ink); padding-left: 20px; position: relative; line-height: 1.6; }
-  ul.decision-list li::before { content: "–"; position: absolute; left: 0; top: 0; color: var(--ink-soft); }
+  ul.decision-list li::before { content: "•"; position: absolute; left: 0; top: 0; color: var(--case-color); font-size: 18px; line-height: 1.2; }
   ul.decision-list li strong { font-weight: 600; }
 
   .highlight { margin: 28px 0 36px; }
   .highlight .h-label { font-size: 13px; color: var(--ink-soft); display: flex; align-items: center; gap: 6px; margin-bottom: 10px; }
-  .highlight .h-label .spark { color: var(--accent); }
+  .highlight .h-label .spark { color: var(--case-color); }
   .highlight .h-line { font-size: 20px; font-weight: 600; line-height: 1.4; letter-spacing: -0.01em; }
 
   .screen { background: var(--surface); border-radius: 12px; padding: 40px 24px; margin: 24px 0 8px; }
@@ -101,7 +101,7 @@
   .screen-photo { max-width: 656px; width: 100%; height: auto; display: block; margin: 24px 0 8px; border-radius: 12px; }
 
   .quote { margin: 32px 0 40px; }
-  .quote .qmark { font-size: 36px; color: var(--accent); line-height: 0.6; display: block; margin-bottom: 12px; font-weight: 700; }
+  .quote .qmark { font-size: 36px; color: var(--case-color); line-height: 0.6; display: block; margin-bottom: 12px; font-weight: 700; }
   .quote p { font-size: 18px; line-height: 1.6; font-weight: 500; margin-bottom: 12px; }
   .quote cite { font-size: 13px; font-weight: 600; color: var(--ink-soft); font-style: normal; }
 
@@ -129,7 +129,6 @@
 <div class="wrap">
   <header>
     <a href="index.html" class="brand">
-      <span class="mark">✱</span>
       <div class="name">allyson</div>
     </a>
     <nav>
@@ -187,7 +186,12 @@
     <p>That authentication work surfaced something bigger. Collectors weren't just worried about fakes. They were managing entire collections scattered across emails, spreadsheets, and marketplaces, with no reliable way to track what they owned or what it was worth. The company repositioned around that larger opportunity and relaunched as Magpie.</p>
 
     <h2>The Constraint</h2>
-    <p>The founder had already decided what the product was when I joined: an authentication tool that verified high-value collectibles before they changed hands. My job was to help take that conviction to a shipped beta. But her actual goal was problem-solution fit, not product-market fit. She wanted something that solved a real problem for collectors, even if the problem itself turned out to be different from the one she'd started with. Every design decision had to be able to survive that shift if the research called for it, and by beta, it did.</p>
+    <p>The founder had already decided what the product was when I joined: an authentication tool that verified high-value collectibles before they changed hands. My job was to help take that conviction to a shipped beta. She wanted something that solved a real problem for collectors, even if the problem itself turned out to be different from the one she'd started with. Every design decision had to be able to survive that shift if the research called for it, and by beta, it did.</p>
+
+    <div class="highlight">
+      <div class="h-label"><span class="spark">✦</span> The real goal</div>
+      <div class="h-line">Her actual goal was problem-solution fit, not product-market fit.</div>
+    </div>
 
     <h2>What We Learned</h2>
     <img class="screen-photo" src="assets/magpie-whiteboard.png" alt="Whiteboard research synthesis mapping collector segments by motivation, transaction behavior, and community engagement.">

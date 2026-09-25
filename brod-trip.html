@@ -59,7 +59,7 @@
   .icon-toggle { background: none; border: none; padding: 0; cursor: pointer; font-size: 16px; line-height: 1; color: var(--ink-soft); font-family: inherit; }
   .icon-toggle.active { color: var(--accent); }
 
-  .hero-case { padding: 20px 0 0; }
+  .hero-case { padding-top: 20px; }
   .eyebrow-case { font-size: 14px; color: var(--ink-soft); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
   .eyebrow-case img { height: 13px; width: auto; }
   h1.case-h1 { font-size: 36px; font-weight: 600; line-height: 1.28; letter-spacing: -0.01em; max-width: 780px; margin-bottom: 18px; }
@@ -132,7 +132,16 @@
     .highlight .h-line { font-size: 17px; }
     .case-main, .case-nav-footer { padding-left: 22px; padding-right: 22px; }
     nav a:not(.theme-icons) { display: none; }
+    .attempt-strip { flex-direction: column; }
+    .attempt-arrow { width: 100%; height: 32px; transform: rotate(90deg); }
   }
+
+  .attempt-strip { display: flex; align-items: stretch; margin: 8px 0 28px; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .attempt-step { flex: 1; padding: 18px 22px; background: var(--surface); }
+  .attempt-step.failed { opacity: 0.55; }
+  .attempt-step .step-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-soft); margin-bottom: 6px; }
+  .attempt-step .step-detail { font-size: 14.5px; color: var(--ink); font-weight: 600; line-height: 1.4; }
+  .attempt-arrow { display: flex; align-items: center; justify-content: center; width: 44px; color: var(--case-color); font-size: 18px; background: var(--bg); flex-shrink: 0; }
 </style>
 </head>
 <body>
@@ -140,7 +149,6 @@
 <div class="wrap">
   <header>
     <a href="index.html" class="brand">
-      <span class="mark">✱</span>
       <div class="name">allyson</div>
     </a>
     <nav>
@@ -193,8 +201,21 @@
     <p>The only thing left was whatever the Wayback Machine had managed to crawl before the site disappeared. The crawl was partial and uneven: some posts came back clean, others were missing images or broken outright, and different crawl dates sometimes returned different versions of the same post. Before any rebuilding could start, the real question was simple: what do we actually have, and what do we do about what's gone.</p>
 
     <h2>Two Attempts</h2>
+
+    <div class="attempt-strip">
+      <div class="attempt-step failed">
+        <div class="step-label">Attempt 1</div>
+        <div class="step-detail">15 posts by hand, then stopped</div>
+      </div>
+      <div class="attempt-arrow">→</div>
+      <div class="attempt-step">
+        <div class="step-label">Attempt 2</div>
+        <div class="step-detail">248 files with Claude Code</div>
+      </div>
+    </div>
+
     <p>The first attempt was straightforward: rebuild it exactly how it was, hosted on WordPress, one post at a time. Fifteen posts in, it was clear that pace wasn't going to get through 244 posts. I stopped.</p>
-    <p>The second attempt started with Claude Code as the core tool instead of the whole process. Feed it a Wayback Machine URL, and it crawls the archived post, pulls the content, and returns a clean static HTML file. Running at roughly $20 a month in Claude usage, that approach got through the bulk of the archive, rate limits and all, until Anthropic restricted outbound fetching to the Wayback Machine mid-project. The fix was to download the archived HTML locally instead and feed the files in directly, one more adjustment in a project already defined by working with whatever survived. The full rebuild, including a cleanup pass across all 248 files (the 244 posts plus the about and sponsors pages), came to about $480 in usage total.</p>
+    <p>The second attempt started with Claude Code as the core tool instead of the whole process. Feed it a Wayback Machine URL, and it crawls the archived post, pulls the content, and returns a clean static HTML file. Running at roughly $20 a month in Claude usage, that approach got through the bulk of the archive, rate limits and all, until Anthropic restricted outbound fetching to the Wayback Machine mid-project. The fix was to download the archived HTML locally instead and feed the files in directly, one more adjustment in a project already defined by working with whatever survived. The full rebuild, including a cleanup pass across all 248 files (the 244 posts plus the about and sponsors pages), wrapped up the project.</p>
     <p class="soft">About 40% of the original images couldn't be recovered from the archive at all. Instead of a gap, each of those gets a placeholder: a note that the photo was lost, its original filename, and whatever caption survived in the metadata, so a missing photo still reads as a known gap instead of a broken page.</p>
 
     <h2>The Commit History</h2>
