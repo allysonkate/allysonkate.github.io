@@ -89,7 +89,7 @@
 
   h2 { font-size: 23px; font-weight: 600; letter-spacing: -0.01em; margin: 56px 0 16px; }
   p { font-size: 16px; line-height: 1.7; color: var(--ink); margin-bottom: 16px; }
-  p.soft { color: var(--ink-soft); }
+  p.soft { color: var(--ink); }
 
   ul.decision-list { list-style: none; margin: 0 0 20px; padding: 0; display: flex; flex-direction: column; gap: 14px; }
   ul.decision-list li { font-size: 15.5px; color: var(--ink); padding-left: 20px; position: relative; line-height: 1.6; }
@@ -117,7 +117,7 @@
   .quote cite { font-size: 13px; font-weight: 600; color: var(--ink-soft); font-style: normal; }
 
   .reflection { padding-top: 28px; border-top: 1px solid var(--line); margin: 8px 0 20px; }
-  .reflection p { margin-bottom: 0; font-size: 16.5px; color: var(--ink-soft); }
+  .reflection p { margin-bottom: 0; font-size: 16.5px; color: var(--ink); }
 
   .case-nav-footer { max-width: 720px; margin: 40px auto 0; padding: 32px 32px 0; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
   .case-nav-footer a { font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; }
@@ -141,6 +141,7 @@
   .attempt-step.failed { opacity: 0.55; }
   .attempt-step .step-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-soft); margin-bottom: 6px; }
   .attempt-step .step-detail { font-size: 14.5px; color: var(--ink); font-weight: 600; line-height: 1.4; }
+  .attempt-step .step-note { font-size: 13px; color: var(--ink-soft); font-weight: 400; line-height: 1.5; margin-top: 5px; }
   .attempt-arrow { display: flex; align-items: center; justify-content: center; width: 44px; color: var(--case-color); font-size: 18px; background: var(--bg); flex-shrink: 0; }
 </style>
 </head>
@@ -206,30 +207,34 @@
       <div class="attempt-step failed">
         <div class="step-label">Attempt 1</div>
         <div class="step-detail">15 posts by hand, then stopped</div>
+        <div class="step-note">Too manual to keep up with 244</div>
       </div>
       <div class="attempt-arrow">→</div>
       <div class="attempt-step">
         <div class="step-label">Attempt 2</div>
-        <div class="step-detail">248 files with Claude Code</div>
+        <div class="step-detail">244 posts with Claude Code</div>
+        <div class="step-note">Adapted through rate limits and a mid-project fetch restriction</div>
       </div>
     </div>
 
-    <p>The first attempt was straightforward: rebuild it exactly how it was, hosted on WordPress, one post at a time. Fifteen posts in, it was clear that pace wasn't going to get through 244 posts. I stopped.</p>
-    <p>The second attempt started with Claude Code as the core tool instead of the whole process. Feed it a Wayback Machine URL, and it crawls the archived post, pulls the content, and returns a clean static HTML file. Running at roughly $20 a month in Claude usage, that approach got through the bulk of the archive, rate limits and all, until Anthropic restricted outbound fetching to the Wayback Machine mid-project. The fix was to download the archived HTML locally instead and feed the files in directly, one more adjustment in a project already defined by working with whatever survived. The full rebuild, including a cleanup pass across all 248 files (the 244 posts plus the about and sponsors pages), wrapped up the project.</p>
-    <p class="soft">About 40% of the original images couldn't be recovered from the archive at all. Instead of a gap, each of those gets a placeholder: a note that the photo was lost, its original filename, and whatever caption survived in the metadata, so a missing photo still reads as a known gap instead of a broken page.</p>
-
-    <h2>The Commit History</h2>
-    <p>Claude Code did more than fetch pages. It restructured templates, rewrote the fetch pipeline when the restriction hit, and ran the cleanup pass across all 248 files. Some of the later updates went through VS Code directly, Claude open next to the code, each change reviewed before it got pushed.</p>
-    <div class="placeholder-box" style="display:none;">Commit history screenshot goes here</div> <!-- temporarily hidden, unhide when screenshot is ready -->
+    <p>The first attempt was straightforward: rebuild it exactly how it was, hosted on WordPress, one post at a time. Fifteen posts in, it was clear that pace wasn't going to get through 244 posts. I ran out of steam.</p>
+    <p>The second attempt started with Claude Code as the core tool instead of the whole process. Feed it a Wayback Machine URL, and it crawls the archived post, pulls the content, and returns a clean static HTML file. Running at roughly $20 a month in Claude usage, that approach got through the bulk of the archive, rate limits and all, until Anthropic restricted outbound fetching to the Wayback Machine mid-project. The fix was to download the archived HTML locally instead and feed the files in directly. Fifteen posts had been enough to stop me once. It wasn't happening twice.</p>
+    <p>The full rebuild, including a cleanup pass across all 248 files (the 244 posts plus the about and sponsors pages), wrapped up the project.</p>
 
     <div class="highlight">
       <div class="h-label"><span class="spark">✦</span> By the numbers</div>
       <div class="h-line">244 posts rebuilt · 196 fully recovered · ~60% of images recovered</div>
     </div>
 
+    <p class="soft">About 40% of the original images couldn't be recovered from the archive at all. Instead of a gap, each of those gets a placeholder: a note that the photo was lost, its original filename, and whatever caption survived in the metadata, so a missing photo still reads as a known gap instead of a broken page.</p>
+
+    <h2>The Commit History</h2>
+    <p>Claude Code did more than fetch pages. It restructured templates, rewrote the fetch pipeline when the restriction hit, and ran the cleanup pass across all 248 files. Some of the later updates went through VS Code directly, Claude open next to the code, each change reviewed before it got pushed.</p>
+    <img class="screen-photo" src="assets/Broad_Study_Body_002.png" alt="A GitHub commit history for the project, showing commits co-authored by Allyson Fricke and Claude, including 'Improve In the News page,' 'Add staggered card animation and four micro-interactions,' and 'Add staggered fade-in animation to post cards.'">
+
     <h2>Where This Leaves It</h2>
     <div class="reflection">
-      <p>This one is smaller than the rest of this portfolio on purpose. It started as a favor for my husband, not a business problem, and it stayed that way the whole way through. What it does show is real: Claude Code as a genuine part of how the work got done, from the first crawl to the last file in the cleanup pass, not a tool I dabbled with once. If the question is whether I'm comfortable writing and shipping real code with AI in the loop, this is the answer.</p>
+      <p>This might just be a personal project, but it shows how I actually love to work: Claude Code and VS Code as a real part of how I get things done. My husband got his road trip back. I got an excuse to build a website for fun.</p>
     </div>
 
     <img class="screen-photo" src="assets/brod-trip-linkedin.png" alt="A LinkedIn post from Adam Fricke about the recovered blog, quote-shared by Allyson Fricke describing the project as trying to recover the past, with a preview of the rebuilt Bro'd Trip site attached.">
@@ -247,7 +252,7 @@
   <div class="connect-label">Connect with me</div>
   <div class="links">
     <a href="https://www.linkedin.com/in/allysonkate/" target="_blank" rel="noopener" title="LinkedIn">in</a>
-    <a href="mailto:allysonkatew@gmail.com" title="Email">@</a>
+    <a href="mailto:allysonfricke@gmail.com" title="Email">@</a>
   </div>
 </footer>
 
