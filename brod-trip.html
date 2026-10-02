@@ -108,6 +108,7 @@
   .screen .screen-detail { font-size: 13px; color: var(--ink-soft); line-height: 1.6; }
   .screen .screen-detail code { font-family: ui-monospace, 'SF Mono', monospace; font-size: 12px; background: var(--tag-bg); padding: 1px 5px; border-radius: 4px; }
   .screen-photo { max-width: 656px; width: 100%; height: auto; display: block; margin: 24px 0 8px; border-radius: 12px; }
+  .screen-photo-wide { width: 900px; max-width: calc(100vw - 44px); height: auto; display: block; margin-top: 24px; margin-bottom: 8px; margin-left: -122px; margin-right: -122px; border-radius: 12px; }
   .screen-caption { font-size: 13px; color: var(--muted); text-align: left; line-height: 1.5; margin: 10px 0 32px; }
   .placeholder-box { border: 1.5px dashed var(--line); border-radius: 12px; padding: 32px 24px; text-align: center; color: var(--muted); font-size: 14px; font-style: italic; margin: 8px 0 32px; }
 
@@ -131,6 +132,7 @@
     h1.case-h1 { font-size: 26px; }
     .highlight .h-line { font-size: 17px; }
     .case-main, .case-nav-footer { padding-left: 22px; padding-right: 22px; }
+    .screen-photo-wide { width: 100%; max-width: 100%; margin-left: 0; margin-right: 0; }
     nav a:not(.theme-icons) { display: none; }
     .attempt-strip { flex-direction: column; }
     .attempt-arrow { width: 100%; height: 32px; transform: rotate(90deg); }
@@ -233,7 +235,7 @@
     <h2>New Tools, Same Site</h2>
     <p>This case study started a while back. I've kept updating the site since then, most recently in Cursor: small styling details that Claude and Cursor don't quite get right the first time. Each one gets its own branch, merged through a pull request.</p>
     <p>For one of those, I pulled the site into Figma with the Figma MCP, adjusted the pull quote there, then had Cursor compare the Figma frame to the CSS and update only what changed. I reviewed every diff before merging.</p>
-    <img class="screen-photo" src="assets/Broad_Study_Body_003.png" alt="A Cursor chat panel comparing a Figma frame to the pull-quote CSS in the repo, listing differences in font, size, color, and spacing, next to a browser preview of the live Bro'd Trip site.">
+    <img class="screen-photo-wide" src="assets/Broad_Study_Body_003.png" alt="A Cursor chat panel comparing a Figma frame to the pull-quote CSS in the repo, listing differences in font, size, color, and spacing, next to a browser preview of the live Bro'd Trip site.">
 
     <h2>Where This Leaves It</h2>
     <div class="reflection">
