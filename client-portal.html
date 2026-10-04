@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Client Portal · Allyson</title>
+<title>Rebuilding a Client Portal's Foundation · Allyson</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Lora:wght@500;600&display=swap" rel="stylesheet">
@@ -21,6 +21,7 @@
     --btn-fg: #ffffff;
     --pill-bg: #f3efee;
     --case-color: #FFB238;
+    --case-bullet: var(--case-color);
   }
   body.dark {
     --bg: #14161a;
@@ -34,6 +35,7 @@
     --btn-fg: #14161a;
     --pill-bg: #262a2f;
     --case-color: #3a2c14;
+    --case-bullet: #FFB238;
   }
   body.dark .invert-logo { filter: invert(1) brightness(1.8); }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -91,6 +93,9 @@
   ul.decision-list li { font-size: 15.5px; color: var(--ink); padding-left: 20px; position: relative; line-height: 1.6; }
   ul.decision-list li::before { content: "–"; position: absolute; left: 0; top: 0; color: var(--ink-soft); }
   ul.decision-list li strong { font-weight: 600; }
+  /* Case-colored bullet markers (What Broke After Launch). Dark mode's --case-color is a dark panel
+     tone that would vanish on the dark page, so markers fall back to the same amber there. */
+  ul.decision-list.case-bullets li::before { content: "•"; color: var(--case-bullet); font-size: 18px; line-height: 1.2; }
 
   .highlight { margin: 28px 0 36px; }
   .highlight .h-label { font-size: 13px; color: var(--ink-soft); display: flex; align-items: center; gap: 6px; margin-bottom: 10px; }
@@ -205,13 +210,13 @@
     <div class="eyebrow-case">
       <img src="assets/acrisure-logo.png" alt="Acrisure" class="invert-logo" style="height:14px;">
     </div>
-    <h1 class="case-h1">Designing a Portal Around the Limits of the Data</h1>
-    <p class="case-subhead">Unifying every account a client holds, designed around data the system can't reliably surface.</p>
+    <h1 class="case-h1">Rebuilding a Client Portal's Foundation</h1>
+    <p class="case-subhead">Designing a structure for hundreds of coverage types, then redesigning the navigation it launched on.</p>
     <div class="hero-meta-row">
       <div class="tag-row">
         <span class="case-tag">Case Study</span>
         <span class="case-tag">Insurance</span>
-        <span class="case-tag">Information Architecture</span>
+        <span class="case-tag">Systems</span>
       </div>
       <div class="client-meta">
         2025&ndash;2026
@@ -249,20 +254,20 @@
     </div>
 
     <h2>The Constraint</h2>
-    <div class="block-label">The data</div>
-    <p class="measure">Acrisure's system of record inherited that same fragmentation: inconsistent, incomplete data. Because of those limits, we had to route billing and claims to that existing tool, a call made above the design work. <strong>I designed the handoff itself</strong>: what that journey out actually looks like for a client.</p>
+    <div class="block-label">The coverage</div>
+    <p class="measure">Acrisure sells hundreds of coverage types, each with its own underlying data: what's insured, what has to be captured, what a client can do about it. A portal couldn't treat each one as its own design problem.</p>
 
     <div class="block-label">The foundation</div>
     <p class="measure">The business also needed something shipped fast, and the only design system available to build from was acrisure.com's own: built for marketing pages, not for the structural weight a servicing portal needed to carry.</p>
 
     <div class="highlight">
       <div class="h-label"><span class="spark">✦</span> The tension</div>
-      <div class="h-line">I had to design around data the system couldn't reliably surface, and inherit a foundation that was never built to hold what came next.</div>
+      <div class="h-line">I had to design for hundreds of coverage types, and inherit a foundation that was never built to hold what came next.</div>
     </div>
 
 
     <h2>Decision One: Policy Archetype Models</h2>
-    <p>Acrisure's portal needs to show dozens of distinct policy types: Homeowners, Auto, BOP, Workers' Comp, and more, each with genuinely different underlying data: what's insured, the details that need to be captured, the tasks a client has to take on each one. Designing each one from scratch meant new design work every time a policy type got added.</p>
+    <p>Acrisure's portal needs to show dozens of distinct policy types: Homeowners, Auto, BOP, Workers' Comp, and more. Designing each one from scratch meant new design work every time a policy type got added.</p>
     <p>So I built a system instead: coverage breaks down into five structural archetypes based on how it attaches to whatever it covers, one reusable pattern per archetype instead of one-off work per policy type, saving both design and engineering time as new products get added.</p>
 
     <div class="carousel-wrap">
@@ -286,7 +291,7 @@
 
     <div class="highlight">
       <div class="h-label"><span class="spark">✦</span> Proof it holds up</div>
-      <div class="h-line">Employee Benefits launched later and slotted directly into the People Centric archetype with <strong>no new design work required</strong>. It's the clearest evidence the model wasn't just built for what existed at the time.</div>
+      <div class="h-line">Employee Benefits launched later and slotted directly into the People Centric archetype with no new design work required. It's the clearest evidence the model wasn't just built for what existed at the time.</div>
     </div>
 
     <h2>Decision Two: The Fast Navigation Tradeoff</h2>
@@ -294,7 +299,7 @@
 
     <h2>What Broke After Launch</h2>
     <p>Three things surfaced the cost of that tradeoff, close together in time:</p>
-    <ul class="decision-list">
+    <ul class="decision-list case-bullets">
       <li><strong>Leadership wanted to vision-cast.</strong> Our design manager wanted to imagine where the portal could go next: payroll, mortgages, things we weren't even sure were feasible yet. It became clear fast that the borrowed navigation couldn't hold that kind of ambition, even hypothetically.</li>
       <li><strong>A persona showed up that nobody had planned for.</strong> Wealth managers, who manage several clients' accounts instead of their own.</li>
       <li><strong>Product needed things the structure had no place for.</strong> A real split between account-level and policy-level documents, and space for self-service tools and risk resources beyond a flat list of policies.</li>
@@ -327,21 +332,9 @@
       <cite>Head of Product, Acrisure</cite>
     </div>
 
-    <h2>Where This Stands</h2>
-    <div class="status-grid">
-      <div class="status-card">
-        <h4>Archetype models</h4>
-        <p>Live in production. Still holding as new policy types get added.</p>
-      </div>
-      <div class="status-card">
-        <h4>Navigation framework</h4>
-        <p>A completed proposal, not yet shipped.</p>
-      </div>
-    </div>
-
     <h2>Reflection</h2>
     <div class="reflection">
-      <p>Both pieces are solving the same problem (a portal that wasn't built to scale) just at different points in time and different levels of the product. What ties them together is being upfront about a tradeoff made under real pressure, and choosing to go back and get it right once I had the room to.</p>
+      <p>Using the existing design system was the right call for the deadline, and I'd make it again. The archetype models held up and are carrying over to the rebuild. The navigation is what I get to redo now that there's time.</p>
     </div>
 
   </div>
