@@ -21,6 +21,7 @@
     --btn-fg: #ffffff;
     --pill-bg: #f3efee;
     --case-color: #AC5BF7;
+    --case-stat: var(--case-color);
   }
   body.dark {
     --bg: #14161a;
@@ -34,6 +35,7 @@
     --btn-fg: #14161a;
     --pill-bg: #262a2f;
     --case-color: #3E1C5F;
+    --case-stat: #AC5BF7;
   }
   body.dark .invert-logo { filter: invert(1) brightness(1.8); }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -100,6 +102,8 @@
   .highlight .h-label { font-size: 13px; color: var(--ink-soft); display: flex; align-items: center; gap: 6px; margin-bottom: 10px; }
   .highlight .h-label .spark { color: var(--accent); }
   .highlight .h-line { font-size: 20px; font-weight: 600; line-height: 1.4; letter-spacing: -0.01em; }
+  /* Stats row: numerals in the case color (kept the same purple in dark mode), at least 24px. */
+  .stat-n { font-size: 28px; font-weight: 600; color: var(--case-stat); letter-spacing: -0.02em; }
 
   .screen { background: var(--surface); border-radius: 12px; padding: 24px; margin: 24px 0 8px; display: flex; align-items: flex-start; gap: 14px; }
   .screen .screen-icon { width: 34px; height: 34px; border-radius: 8px; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 15px; }
@@ -131,6 +135,7 @@
   @media (max-width: 640px) {
     h1.case-h1 { font-size: 26px; }
     .highlight .h-line { font-size: 17px; }
+    .stat-n { font-size: 24px; }
     .case-main, .case-nav-footer { padding-left: 22px; padding-right: 22px; }
     .screen-photo-wide { width: 100%; max-width: 100%; margin-left: 0; margin-right: 0; }
     nav a:not(.theme-icons) { display: none; }
@@ -172,7 +177,7 @@
     <div class="eyebrow-case">
       <img src="assets/brod-trip-logo.png" alt="The Bro'd Trip" class="invert-logo" style="height:13px;">
     </div>
-    <h1 class="case-h1">Rebuilding a Lost Archive with AI</h1>
+    <h1 class="case-h1">Reviving a Lost Archive with AI</h1>
     <p class="case-subhead">Rebuilding a trip blog after the original posts were lost, using Claude Code, Cursor, and Figma.</p>
     <div class="hero-meta-row">
       <div class="tag-row">
@@ -201,7 +206,7 @@
     <p>A decade ago, my husband spent a year driving a van through all 50 states, documenting the whole trip one post at a time. Somewhere along the way, the WordPress site holding all of it went dark. No export file, no local drafts, no backup. Two hundred and forty-four posts gone, along with the record of one of the most significant years of his life.</p>
 
     <h2>What Survived</h2>
-    <p>The only thing left was whatever the Wayback Machine had managed to crawl before the site disappeared. The crawl was partial and uneven: some posts came back clean, others were missing images or broken outright, and different crawl dates sometimes returned different versions of the same post. Before any rebuilding could start, the real question was simple: what do we actually have, and what do we do about what's gone.</p>
+    <p>The only thing left was whatever the Wayback Machine had managed to crawl before the site disappeared. The crawl was partial and uneven: some posts came back clean, others were missing images or broken outright, and different crawl dates sometimes returned different versions of the same post. Before any rebuilding could start, I needed to know what we actually had and what to do about what was gone.</p>
 
     <h2>Two Attempts</h2>
 
@@ -222,10 +227,10 @@
     <p>The first attempt was straightforward: rebuild it exactly how it was, hosted on WordPress, one post at a time. Fifteen posts in, it was clear that pace wasn't going to get through 244 posts. I ran out of steam.</p>
     <p>The second attempt started with Claude Code as the core tool instead of the whole process. Feed it a Wayback Machine URL, and it crawls the archived post, pulls the content, and returns a clean static HTML file. Running at roughly $20 a month in Claude usage, that approach got through the bulk of the archive, rate limits and all, until Anthropic restricted outbound fetching to the Wayback Machine mid-project. The fix was to download the archived HTML locally instead and feed the files in directly. Fifteen posts had been enough to stop me once. It wasn't happening twice.</p>
     <p>The full rebuild, including a cleanup pass across all 248 files (the 244 posts plus the about and sponsors pages), wrapped up the project.</p>
+    <p>Where an image couldn't be recovered, the page shows a placeholder with the original filename and whatever caption survived.</p>
 
-    <div class="highlight">
-      <div class="h-label"><span class="spark">✦</span> By the numbers</div>
-      <div class="h-line">244 posts rebuilt · 196 fully recovered · ~60% of images recovered</div>
+    <div class="highlight stat-row">
+      <div class="h-line"><span class="stat-n">244</span> posts rebuilt · <span class="stat-n">196</span> fully recovered · <span class="stat-n">~60%</span> of images recovered</div>
     </div>
 
     <h2>The Commit History</h2>
@@ -239,7 +244,7 @@
 
     <h2>Where This Leaves It</h2>
     <div class="reflection">
-      <p>This might just be a personal project, but it shows how I actually love to work: Claude Code and VS Code as a real part of how I get things done. My husband got his road trip back. I got an excuse to build a website for fun.</p>
+      <p>When rebuilding by hand stalled, I changed the process. When the fetch got restricted, I changed the input. My husband got his road trip back, and I got an excuse to build a website for fun.</p>
     </div>
 
     <img class="screen-photo" src="assets/brod-trip-linkedin.png" alt="A LinkedIn post from Adam Fricke about the recovered blog, quote-shared by Allyson Fricke describing the project as trying to recover the past, with a preview of the rebuilt Bro'd Trip site attached.">

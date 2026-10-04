@@ -9,9 +9,9 @@ Source for my product design portfolio.
 - `index.html` — homepage
 - `about.html` — background and how I work
 - `qbs-commercial.html` — Rebuilding a Multi-Carrier Insurance Platform
-- `client-portal.html` — Designing a Portal Around the Limits of the Data
-- `magpie.html` — Pivoting From Fraud Detection to Collection Management
-- `brod-trip.html` — Rebuilding a Lost Archive with Claude Code
+- `client-portal.html` — Structuring a Client Portal for Scale
+- `magpie.html` — Pivoting a Fraud Tool Into a Collectibles Platform
+- `brod-trip.html` — Reviving a Lost Archive with AI
 
 ## Stack
 
