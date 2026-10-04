@@ -133,6 +133,18 @@
   .status-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 8px 0 40px; padding-top: 24px; border-top: 1px solid var(--line); }
   .status-card p { font-size: 14.5px; color: var(--ink-soft); margin-bottom: 0; }
 
+  /* Situation / Constraint skim layout: reuses existing tokens, type sizes and the status-grid
+     pattern (top rule, h4 + soft text). Line length is capped near 70 characters (60ch, since
+     the ch unit is the width of a digit, which is wider than average prose). */
+  .measure { max-width: 60ch; }
+  .situation-intro { margin-bottom: 44px; }
+  .goals-lead { margin-bottom: 0; }
+  .goal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin: 18px 0 48px; padding-top: 22px; border-top: 1px solid var(--line); }
+  .goal-item p { font-size: 14.5px; color: var(--ink-soft); margin-bottom: 0; line-height: 1.6; }
+  .block-label { font-size: 13px; color: var(--ink-soft); margin: 36px 0 8px; }
+  h2 + .block-label { margin-top: 0; }
+  .measure + .highlight { margin-top: 44px; }
+
   .reflection { padding-top: 28px; border-top: 1px solid var(--line); margin: 8px 0 20px; }
   .reflection p { margin-bottom: 0; font-size: 16.5px; color: var(--ink-soft); }
 
@@ -149,7 +161,7 @@
   @media (max-width: 640px) {
     h1.case-h1 { font-size: 26px; }
     .highlight .h-line { font-size: 17px; }
-    .status-grid, .screen-row { grid-template-columns: 1fr; }
+    .status-grid, .screen-row, .goal-grid { grid-template-columns: 1fr; }
     .case-main, .case-nav-footer { padding-left: 22px; padding-right: 22px; }
     nav a:not(.theme-icons) { display: none; }
   }
@@ -218,12 +230,30 @@
   <div class="case-main">
 
     <h2>The Situation</h2>
-    <p>Acrisure had grown by rolling up <strong>more than 1,000 businesses</strong>, each bringing its own systems, data, and definition of what "client" even meant. The only client-facing option was a third-party tool with mixed adoption. No client, servicer, or business team had ever had one place to see everything a given client held.</p>
-    <p>Leadership's goal was three-fold: help clients manage everything in one place instead of juggling logins and calls, help servicers spend less time on calls and emails, and help the business by cutting the tickets self-service could absorb and supporting cross-selling and risk management across a client's accounts.</p>
+    <p class="measure situation-intro">Acrisure had grown by rolling up <strong>more than 1,000 businesses</strong>, each bringing its own systems, data, and definition of what "client" even meant. The only client-facing option was a third-party tool with mixed adoption. No client, servicer, or business team had ever had one place to see everything a given client held.</p>
+
+    <p class="measure goals-lead">Leadership's goal was three-fold:</p>
+    <div class="goal-grid">
+      <div class="goal-item">
+        <h4>Clients</h4>
+        <p>Manage everything in one place instead of juggling logins and calls.</p>
+      </div>
+      <div class="goal-item">
+        <h4>Servicers</h4>
+        <p>Spend less time on calls and emails.</p>
+      </div>
+      <div class="goal-item">
+        <h4>The business</h4>
+        <p>Cut the tickets self-service could absorb, and support cross-selling and risk management across a client's accounts.</p>
+      </div>
+    </div>
 
     <h2>The Constraint</h2>
-    <p>Acrisure's system of record inherited that same fragmentation: inconsistent, incomplete data. Billing and Claims are hit hardest, since Acrisure is the broker, not the carrier, and doesn't hold that data directly. Neither can be reliably shown in the new portal. Those tasks route out to that existing tool instead, a call made above the design work. <strong>I designed the handoff itself</strong>: what that journey out actually looks like for a client.</p>
-    <p>The business also needed something shipped fast, and the only design system available to build from was acrisure.com's own: built for marketing pages, not for the structural weight a servicing portal needed to carry.</p>
+    <div class="block-label">The data</div>
+    <p class="measure">Acrisure's system of record inherited that same fragmentation: inconsistent, incomplete data. Because of those limits, we had to route billing and claims to that existing tool, a call made above the design work. <strong>I designed the handoff itself</strong>: what that journey out actually looks like for a client.</p>
+
+    <div class="block-label">The foundation</div>
+    <p class="measure">The business also needed something shipped fast, and the only design system available to build from was acrisure.com's own: built for marketing pages, not for the structural weight a servicing portal needed to carry.</p>
 
     <div class="highlight">
       <div class="h-label"><span class="spark">✦</span> The tension</div>
