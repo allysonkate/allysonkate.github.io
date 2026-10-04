@@ -99,6 +99,8 @@
   .screen .cs-line:last-child { margin-bottom: 0; }
   .screen-caption { font-size: 13px; color: var(--muted); text-align: left; line-height: 1.5; margin: 0 0 32px; }
   .screen-photo { max-width: 656px; width: 100%; height: auto; display: block; margin: 24px 0 8px; border-radius: 12px; }
+  /* Breakout: wider than the 656px text column, centered via equal negative margins ((900-656)/2). */
+  .screen-photo-wide { width: 900px; max-width: calc(100vw - 44px); height: auto; display: block; margin: 24px -122px 8px; border-radius: 12px; }
 
   .quote { margin: 32px 0 40px; }
   .quote .qmark { font-size: 36px; color: var(--case-color); line-height: 0.6; display: block; margin-bottom: 12px; font-weight: 700; }
@@ -120,6 +122,7 @@
     h1.case-h1 { font-size: 26px; }
     .highlight .h-line { font-size: 17px; }
     .case-main, .case-nav-footer { padding-left: 22px; padding-right: 22px; }
+    .screen-photo-wide { width: 100%; max-width: 100%; margin-left: 0; margin-right: 0; }
     nav a:not(.theme-icons) { display: none; }
   }
 </style>
@@ -192,7 +195,7 @@
     </div>
 
     <h2>The Constraint</h2>
-    <p>The founder had already decided what the product was when I joined: an authentication tool that verified high-value collectibles before they changed hands. My job was to help take that conviction to a shipped beta. She wanted something that solved a real problem for collectors, even if the problem itself turned out to be different from the one she'd started with. Every design decision had to be able to survive that shift if the research called for it, and by beta, it did.</p>
+    <p>The founder had already decided what the product was when I joined: an authentication tool that verified high-value collectibles before they changed hands. My job was to help take that conviction to a shipped beta. She wanted something that solved a real problem for collectors, even if the problem itself turned out to be different from the one she'd started with. <strong>Every design decision had to be able to survive that shift if the research called for it, and by beta, it did.</strong></p>
 
     <div class="highlight">
       <div class="h-label"><span class="spark">✦</span> The real goal</div>
@@ -225,8 +228,7 @@
     </ul>
     <p class="soft">Underneath all three sat the authentication work the product started with. Every item added to a collection could still be verified, so the fraud-prevention capability didn't disappear. It became infrastructure for trust instead of the whole product.</p>
 
-    <img class="screen-photo" src="assets/magpie-vault-screen.png" alt="Magpie Vault screen showing a collector's trading cards, including an authenticated 2003 LeBron James Rookie Exclusives and a 2020 LeBron James Prizm Silver pending authentication.">
-    <p class="screen-caption">One shared vault view carried all three post-authentication jobs.</p>
+    <img class="screen-photo-wide" src="assets/Magpie_Study_Body_001b.png" alt="Magpie Vault on mobile: a portfolio total of $16,405, up 33.1% all time, with search and sport filters above the collector's cards, next to the scrolled card list showing Authenticated and Not Authenticated badges with current values.">
 
     <h2>Evidence It Worked</h2>
     <p>One collector's experience captured why the authentication layer mattered even after the pivot. He used Magpie to catalog and share a collection of over a thousand items, and the platform's audit process caught that one of his graded cards had been decertified after counterfeiters copied it. He was able to resolve it quickly.</p>
