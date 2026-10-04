@@ -327,12 +327,9 @@
     <p>The experience I inherited was functional but fragile. It had been built to prove a fully digital model worked, then patched after an acquisition to meet new carrier and brand requirements. It couldn't reliably support the mix of journeys the business actually needed. The goal was to redesign it to work across dozens of carrier rulesets, without pushing that complexity onto the customer.</p>
 
     <h2>The Constraint</h2>
-    <p>Every product line depends on classifying a customer's industry correctly to determine eligibility and price, and there are thousands of possible codes with naming inconsistent enough to get strange (cleaning services alone split across half a dozen adjacent categories). Single-carrier competitors can offer a clean, curated list because they underwrite end to end; <strong>the platform works across many carriers at once, so that shortcut wasn't available.</strong> Consolidating the raw data into something friendlier would have taken engineering investment that was never prioritized.</p>
+    <p>Every product line depends on classifying a customer's industry correctly to determine eligibility and price, and there are thousands of possible codes with naming inconsistent enough to get strange (cleaning services alone split across half a dozen adjacent categories). Single-carrier competitors can offer a clean, curated list because they underwrite end to end.</p>
+    <p><strong>This platform works across many carriers at once, so that shortcut wasn't available.</strong> Consolidating the raw data into something friendlier would have taken engineering investment that was never prioritized. The design system was built for personal insurance, so I scaled it and added the components commercial needed.</p>
 
-    <div class="highlight">
-      <div class="h-label"><span class="spark">✦</span> The tension</div>
-      <div class="h-line">Small commercial insurance quoting has a specific kind of complexity that better UI alone doesn't solve.</div>
-    </div>
 
     <h2>Industry Classification</h2>
     <p>Industry classification was the screen causing the most confusion after the September 2024 launch. High time-on-screen showed people struggling to find their category, made worse by the constraint above: thousands of inconsistent, carrier-specific codes with no budget to simplify them.</p>
@@ -368,18 +365,11 @@
 
     <h2>Sequencing Carrier Questions</h2>
 
-    <p>Every carrier asks its own underwriting questions, and they arrive from engineering as raw API fields like residential units or percentage of sales from alcohol. <strong>The goal was getting customers to a quote fast,</strong> but every carrier needs different questions answered before it can price, and customers don't need to know which. <strong>For every field, my first question was whether it had to come before the quote or could wait until after.</strong> The ones that gate the quote became plain-language questions a business owner could answer, placed up front. Everything else waits until after the customer picks a carrier.</p>
+    <p>Every carrier asks its own underwriting questions, and they arrive from engineering as raw API fields like residential units or percentage of sales from alcohol. The goal was getting customers to a quote fast, but every carrier needs different questions answered before it can price, and customers don't need to know which. <strong>For every field, my first question was whether it had to come before the quote or could wait until after.</strong> The ones that gate the quote became plain-language questions a business owner could answer, placed up front. Everything else waits until after the customer picks a carrier.</p>
 
-    <p>Those later questions live in the Coverage Hub, which I designed. Carriers also finish binding at very different speeds (one confirms almost instantly, another needs an e-signature and can take days), so each coverage gets its own thread and the customer can see where every one stands (in progress, complete, needs signature).</p>
+    <p>Those later questions live in the Coverage Hub, which I designed. Carriers also finish binding at very different speeds (one confirms almost instantly, another needs an e-signature and can take days), so each coverage gets its own thread and the customer can see where every one stands (in progress, complete, needs signature). The flow supports digital, hybrid, and agent-assisted journeys, so customers can finish digitally where possible and bring their context with them if they need an agent.</p>
 
     <img class="screen-photo" src="assets/qbs-coverage-hub-detail.png" alt="Coverage Hub showing two policies bound at once: a General Liability policy from The Hartford in progress, and a Professional Liability policy from Coterie flagged Agent Follow-Up Needed with call and contact options.">
-
-    <h2>What I Did</h2>
-    <ul class="decision-list accent-bullets">
-      <li><strong>Rebuilt the flow as a system, not screens.</strong> Mapped questions across product lines, carriers, and payment models to decide what to ask up front and what to defer.</li>
-      <li><strong>Supported both digital completion and agent handoff.</strong> Customers could finish digitally where possible, with context preserved if they needed an agent.</li>
-      <li><strong>Extended the design system to support commercial's complexity.</strong> The system was built for personal insurance, so I scaled it and added the components commercial needed.</li>
-    </ul>
 
     <div class="quote">
       <span class="qmark">"</span>
@@ -390,14 +380,14 @@
     <h2>Results</h2>
     <ul class="decision-list accent-bullets">
       <li>+36% year-over-year increase in average conversion to bind</li>
-      <li>+5% increase in conversion to payment after removing checkout friction</li>
+      <li>+5% increase in conversion to payment after removing a modal that warned customers they couldn't make changes if they continued</li>
       <li>+3.7% conversion lift from the industry classification redesign</li>
       <li>Reduced reliance on phone-only binding</li>
     </ul>
 
     <h2>Reflection</h2>
     <div class="reflection">
-      <p>Designing for scale turned out to be a different problem than designing to prove an idea works. What validated a digital quote-to-bind model early on didn't automatically hold up against the complexity of a multi-carrier platform, and neither did the assumption that AI was automatically the right answer to that complexity. <strong>Testing an approach and being willing to walk away from it when it didn't clear the bar mattered as much to the outcome as any interface decision on this project.</strong></p>
+      <p>Designing for scale turned out to be a different problem than designing to prove an idea works. <strong>The complexity of a multi-carrier platform never went away, so most of the work was deciding when the customer had to meet it:</strong> recognizing an industry instead of parsing a code, answering only what the quote needed, and saving the rest until a carrier was chosen.</p>
     </div>
 
   </div>
