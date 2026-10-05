@@ -9,7 +9,7 @@ Source for my product design portfolio.
 - `index.html` — homepage
 - `about.html` — background and how I work
 - `qbs-commercial.html` — Rebuilding a Multi-Carrier Insurance Platform
-- `client-portal.html` — Structuring a Client Portal for Scale
+- `client-portal.html` — Building a Client Portal's Foundation
 - `magpie.html` — Pivoting a Fraud Tool Into a Collectibles Platform
 - `brod-trip.html` — Reviving a Lost Archive with AI
 
