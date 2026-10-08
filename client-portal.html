@@ -110,6 +110,7 @@
   .screen .cs-line:last-child { margin-bottom: 0; }
   .screen-caption { font-size: 13px; color: var(--muted); text-align: left; line-height: 1.5; margin: 0 0 32px; }
   .screen-photo { max-width: 656px; width: 100%; height: auto; display: block; margin: 24px 0 8px; border-radius: 12px; }
+  .screen-photo-wide { width: 900px; max-width: calc(100vw - 44px); height: auto; display: block; margin: 24px -122px 32px; border-radius: 12px; }
   .screen-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .screen-row .screen { margin: 24px 0 8px; }
 
@@ -164,6 +165,7 @@
   footer .links a { width: 36px; height: 36px; border-radius: 100px; background: var(--btn-bg); display: flex; align-items: center; justify-content: center; color: var(--btn-fg); text-decoration: none; font-size: 13px; font-weight: 700; }
 
   @media (max-width: 640px) {
+    .screen-photo-wide { width: 100%; max-width: 100%; margin-left: 0; margin-right: 0; }
     h1.case-h1 { font-size: 26px; }
     .highlight .h-line { font-size: 17px; }
     .status-grid, .screen-row, .goal-grid { grid-template-columns: 1fr; }
@@ -310,7 +312,6 @@
     <p>Before designing anything, I got the team aligned on shared language: what we meant by Portal User, Account, Product, and Access level. I also scoped one data issue, duplicate client records for the same business, out of the project entirely. That's a problem for engineering to solve, not something a navigation redesign could fix.</p>
 
     <img class="screen-photo" src="assets/client-portal-principles.png" alt="Four design principles: Account-first (one account in view at a time, no cross-account confusion), Same identity, new context (topbar carries identity, sidebar carries account context), Content earns the nav (nothing placeholder or half-finished gets a nav slot), and Scalable by default (sidebar over tab bar, so it grows as new products are added).">
-    <p class="screen-caption">Design principles graphic: account-first, identity stays/context changes, content earns the nav, scalable by default</p>
 
     <p>To test the structure, I used a scenario instead of reasoning about it in the abstract: Marcus Chen, a client juggling three businesses and a personal policy, all logging in on one Monday morning. The wealth manager persona fit the same model: one identity with several accounts underneath it, no new rule needed.</p>
 
@@ -319,8 +320,7 @@
       <div class="h-line">An advisor who manages insurance for several small-business clients described almost exactly this pattern: working inside one client's account at a time, with clients who don't want Acrisure contacting them directly at all.</div>
     </div>
 
-    <img class="screen-photo" src="assets/client-portal-nav-diagram.png" alt="Diagram of the Acrisure client portal's navigation structure, split into a Portal User level (account switcher, notifications, settings) that stays visible across every account, and an account-scoped level below it (Overview, Documents, Requests, Insurance, Employee Benefits) that changes when the active account changes.">
-    <p class="screen-caption">Fully annotated screen with placement callouts</p>
+    <img class="screen-photo-wide" src="assets/Portal_Study_Body_003.png" alt="Annotated portal screen. A Portal User level that is always visible holds the account switcher, the notification bell and settings. Below it, the account-scoped sidebar holds Overview, Documents and Requests, plus Policies, Billing and Claims under Insurance, with support persistent at the bottom.">
 
     <p>That same structure resolved both open product requests (the document split and the new self-service and risk resources) without needing anything bolted on afterward.</p>
 
