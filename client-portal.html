@@ -314,13 +314,15 @@
 
     <h3>The redesign</h3>
     <p>I drove the navigation framework, with a second designer pressure-testing my thinking the whole way. <strong>I used Claude throughout</strong>: competitive reviews of other portals, checking my structure against established UX research, and quickly iterating IA options before landing on the final one.</p>
-    <p>Before designing anything, I got the team aligned on shared language: what we meant by Portal User, Account, Product, and Access level. I also scoped one data issue, duplicate client records for the same business, out of the project entirely. That's a problem for engineering to solve, not something a navigation redesign could fix.</p>
+    <p>Before designing anything, I got the team aligned on shared language (what we meant by Portal User, Account, Product, and Access level) and set four design principles to hold every decision to.</p>
 
     <img class="screen-photo" src="assets/client-portal-principles.png" alt="Four design principles: Account-first (one account in view at a time, no cross-account confusion), Same identity, new context (topbar carries identity, sidebar carries account context), Content earns the nav (nothing placeholder or half-finished gets a nav slot), and Scalable by default (sidebar over tab bar, so it grows as new products are added).">
 
-    <img class="screen-photo-wide" src="assets/Portal_Study_Body_003.png" alt="Annotated portal screen. A Portal User level that is always visible holds the account switcher, the notification bell and settings. Below it, the account-scoped sidebar holds Overview, Documents and Requests, plus Policies, Billing and Claims under Insurance, with support persistent at the bottom.">
-
     <p>To test the structure, I used a scenario instead of reasoning about it in the abstract: Marcus Chen, a client juggling three businesses and a personal policy, all logging in on one Monday morning. The wealth manager persona fit the same model, one identity with several accounts underneath it, no new rule needed.</p>
+
+    <p>What came out of it: a Portal User level that's always visible, with an account-scoped sidebar underneath.</p>
+
+    <img class="screen-photo-wide" src="assets/Portal_Study_Body_003.png" alt="Annotated portal screen. A Portal User level that is always visible holds the account switcher, the notification bell and settings. Below it, the account-scoped sidebar holds Overview, Documents and Requests, plus Policies, Billing and Claims under Insurance, with support persistent at the bottom.">
 
     <div class="highlight">
       <div class="h-label"><span class="spark">✦</span> Field validation</div>
@@ -340,7 +342,7 @@
 
     <h2>Reflection</h2>
     <div class="reflection">
-      <p>Using the existing design system was the right call for the deadline, and I'd make it again. The archetype models held up and are carrying over to the rebuild. The portal is rolling out to user groups in stages, so adoption and ticket data are still ahead, but early feedback from servicers has been positive. The navigation is what I get to redo now that there's time.</p>
+      <p>We launched on the existing design system to hit the deadline, and it got us live on time. I knew the borrowed nav would have limits. Looking back, I'd push back more and make a stronger case for an alternative before we committed. The archetype models held up. Employee Benefits fit into them with no new design work, and the new navigation covered both open product requests. The portal is still rolling out to user groups in stages, so adoption and ticket data aren't in yet.</p>
     </div>
 
   </div>
