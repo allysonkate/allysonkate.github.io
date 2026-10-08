@@ -85,6 +85,8 @@
   .back-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--ink); background: var(--pill-bg); border-radius: 100px; padding: 9px 18px; text-decoration: none; margin: 36px 0 0; }
 
   h2 { font-size: 23px; font-weight: 600; letter-spacing: -0.01em; margin: 56px 0 16px; }
+  h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.005em; margin: 40px 0 10px; }
+  h2 + h3 { margin-top: 0; }
   h4 { font-size: 15px; font-weight: 600; margin: 0 0 4px; }
   p { font-size: 16px; line-height: 1.7; color: var(--ink); margin-bottom: 16px; }
   p.soft { color: var(--ink-soft); }
@@ -269,7 +271,7 @@
 
 
     <h2>Decision One: Policy Archetype Models</h2>
-    <p>Acrisure's portal needs to show hundreds of distinct policy types: Homeowners, Auto, BOP, Workers' Comp, and more. Designing each one from scratch meant new design work every time a policy type got added.</p>
+    <p>Acrisure's portal needs to show hundreds of distinct policy types, Homeowners, Auto, BOP, Workers' Comp, and more. Designing each one from scratch meant new design work every time a policy type got added.</p>
     <p>So I built a system instead: coverage breaks down into five structural archetypes based on how it attaches to whatever it covers, one reusable pattern per archetype instead of one-off work per policy type, saving both design and engineering time as new products get added.</p>
 
     <div class="carousel-wrap">
@@ -296,33 +298,37 @@
       <div class="h-line">Employee Benefits launched later and slotted directly into the People Centric archetype with no new design work required. It's the clearest evidence the model wasn't just built for what existed at the time.</div>
     </div>
 
-    <h2>Decision Two: The Fast Navigation Tradeoff</h2>
+    <h2>Decision Two: Borrowing the Navigation, Then Redesigning It</h2>
+    <h3>The tradeoff</h3>
     <p>Given the timeline, I launched on Acrisure's existing design system rather than build new navigation infrastructure. My manager and PM agreed with the call at the time, and given the deadline, it was the right one. It just meant <strong>the nav wasn't built for what came next</strong>.</p>
 
-    <h2>What Broke After Launch</h2>
+    <img class="screen-photo-wide" src="assets/Portal_Study_Body_003a.png" alt="The Acrisure client portal as it launched: the desktop dashboard (Welcome, John, personal products) with the slide-out navigation menu open, listing Account &amp; Privacy, Explore Personal Solutions, Explore Business Solutions, Acrisure.com, and Log Out.">
+
+    <h3>What broke after launch</h3>
     <p>Three things surfaced the cost of that tradeoff, close together in time:</p>
     <ul class="decision-list case-bullets">
-      <li><strong>Leadership wanted to vision-cast.</strong> Our design manager wanted to imagine where the portal could go next: payroll, mortgages, things we weren't even sure were feasible yet. It became clear fast that the borrowed navigation couldn't hold that kind of ambition, even hypothetically.</li>
+      <li><strong>Leadership wanted to vision-cast.</strong> Our design manager wanted to imagine where the portal could go next, payroll, mortgages, things we weren't even sure were feasible yet. It became clear fast that the borrowed navigation couldn't hold that kind of ambition, even hypothetically.</li>
       <li><strong>A persona showed up that nobody had planned for.</strong> Wealth managers, who manage several clients' accounts instead of their own.</li>
       <li><strong>Product needed things the structure had no place for.</strong> A real split between account-level and policy-level documents, and space for self-service tools and risk resources beyond a flat list of policies.</li>
     </ul>
 
-    <h2>Decision Three: The Navigation Framework</h2>
-    <p>I led the redesign, with a second designer pressure-testing my thinking the whole way. <strong>I used Claude throughout</strong>: competitive reviews of other portals, checking my structure against established UX research, and quickly iterating IA options before landing on the final one.</p>
+    <h3>The redesign</h3>
+    <p>I drove the navigation framework, with a second designer pressure-testing my thinking the whole way. <strong>I used Claude throughout</strong>: competitive reviews of other portals, checking my structure against established UX research, and quickly iterating IA options before landing on the final one.</p>
     <p>Before designing anything, I got the team aligned on shared language: what we meant by Portal User, Account, Product, and Access level. I also scoped one data issue, duplicate client records for the same business, out of the project entirely. That's a problem for engineering to solve, not something a navigation redesign could fix.</p>
 
     <img class="screen-photo" src="assets/client-portal-principles.png" alt="Four design principles: Account-first (one account in view at a time, no cross-account confusion), Same identity, new context (topbar carries identity, sidebar carries account context), Content earns the nav (nothing placeholder or half-finished gets a nav slot), and Scalable by default (sidebar over tab bar, so it grows as new products are added).">
 
-    <p>To test the structure, I used a scenario instead of reasoning about it in the abstract: Marcus Chen, a client juggling three businesses and a personal policy, all logging in on one Monday morning. The wealth manager persona fit the same model: one identity with several accounts underneath it, no new rule needed.</p>
+    <img class="screen-photo-wide" src="assets/Portal_Study_Body_003.png" alt="Annotated portal screen. A Portal User level that is always visible holds the account switcher, the notification bell and settings. Below it, the account-scoped sidebar holds Overview, Documents and Requests, plus Policies, Billing and Claims under Insurance, with support persistent at the bottom.">
+
+    <p>To test the structure, I used a scenario instead of reasoning about it in the abstract: Marcus Chen, a client juggling three businesses and a personal policy, all logging in on one Monday morning. The wealth manager persona fit the same model, one identity with several accounts underneath it, no new rule needed.</p>
 
     <div class="highlight">
       <div class="h-label"><span class="spark">✦</span> Field validation</div>
-      <div class="h-line">An advisor who manages insurance for several small-business clients described almost exactly this pattern: working inside one client's account at a time, with clients who don't want Acrisure contacting them directly at all.</div>
+      <div class="h-line">An advisor who manages insurance for several small-business clients described almost exactly this pattern, working inside one client's account at a time, with clients who don't want Acrisure contacting them directly at all.</div>
     </div>
 
-    <img class="screen-photo-wide" src="assets/Portal_Study_Body_003.png" alt="Annotated portal screen. A Portal User level that is always visible holds the account switcher, the notification bell and settings. Below it, the account-scoped sidebar holds Overview, Documents and Requests, plus Policies, Billing and Claims under Insurance, with support persistent at the bottom.">
 
-    <p>That same structure resolved both open product requests (the document split and the new self-service and risk resources) without needing anything bolted on afterward.</p>
+    <p>That same structure resolved both open product requests, the document split and the new self-service and risk resources, without needing anything bolted on afterward.</p>
 
     <p>I presented this work at a leadership offsite about where the portal was headed. Afterward, our Head of Product told me directly:</p>
 
