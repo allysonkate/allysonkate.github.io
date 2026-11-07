@@ -125,6 +125,166 @@
     .screen-photo-wide { width: 100%; max-width: 100%; margin-left: 0; margin-right: 0; }
     nav { gap: 20px; }
   }
+/* ===== Design pass: hierarchy for a 10-second scan ===== */
+  :root { --accent-text: #0A747E; --bar: #17D4E6; }
+  body.dark { --accent-text: #17D4E6; }
+
+  h1.case-h1 { font-size: clamp(38px, 6.6vw, 64px); font-weight: 600; line-height: 1.05; letter-spacing: -0.02em; max-width: 16ch; margin-bottom: 24px; }
+  .case-subhead { font-size: clamp(18px, 2.2vw, 22px); line-height: 1.5; color: var(--ink-soft); max-width: 640px; margin-bottom: 32px; }
+
+  .facts-strip { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; column-gap: 56px; border-top: 1px solid var(--muted); padding-top: 18px; margin-bottom: 28px; max-width: 720px; }
+  .fact-label { font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 6px; }
+  .fact-value { font-size: 17px; font-weight: 500; color: var(--ink); }
+  .hero-meta-row { justify-content: flex-start; }
+
+  .case-main { max-width: 744px; counter-reset: sec; }
+  .case-main p { font-size: 18px; line-height: 1.65; margin-bottom: 20px; }
+  .case-main h2 { counter-increment: sec; font-size: clamp(28px, 4vw, 36px); font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; margin: 112px 0 16px; }
+  .case-main h2::before { content: counter(sec, decimal-leading-zero); display: block; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-text); margin-bottom: 14px; line-height: 1; }
+  .case-main .result-block + h2 { margin-top: 0; }
+
+  .result-block { margin: 96px 0; }
+  .result-block .h-label { font-size: 13px; color: var(--ink-soft); display: flex; align-items: center; gap: 6px; margin-bottom: 16px; }
+  .result-block .h-label .spark { color: var(--accent-text); }
+  .rb-num { font-size: clamp(56px, 12vw, 96px); font-weight: 700; line-height: 1; letter-spacing: -0.03em; color: var(--accent-text); }
+  .rb-line { font-size: 22px; line-height: 1.4; margin-top: 12px; color: var(--ink); }
+
+  .decision-callout { font-size: clamp(20px, 2.6vw, 24px); font-weight: 500; line-height: 1.4; border-left: 3px solid var(--bar); padding-left: 24px; margin: 40px 0; color: var(--ink); }
+  .result-callout .h-label { font-size: 13px; font-weight: 400; color: var(--ink-soft); display: flex; align-items: center; gap: 6px; margin-bottom: 10px; }
+  .result-callout .h-label .spark { color: var(--accent-text); }
+  .rc-num { font-size: 56px; font-weight: 700; line-height: 1; letter-spacing: -0.03em; color: var(--accent-text); margin-bottom: 14px; }
+
+  .case-main .screen-photo, .case-main .screen-photo-wrap, .case-main .industry-demo { max-width: 680px; margin-bottom: 0; }
+  .fig-caption, .case-main p.fig-caption { font-size: 14px; line-height: 1.5; color: var(--ink-soft); margin: 12px 0 36px; }
+
+  .line-pills { margin: 4px 0 32px; }
+
+  .quote { margin: 56px 0; }
+  .case-main .quote p { font-size: clamp(22px, 3vw, 28px); font-weight: 500; line-height: 1.35; margin-bottom: 16px; }
+  .quote cite { font-size: 14px; color: var(--ink-soft); }
+  .quote .qmark { color: var(--accent-text); }
+
+  .stat-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px; width: min(1000px, calc(100vw - 64px)); position: relative; left: 50%; transform: translateX(-50%); margin: 32px 0 36px; }
+  .stat { border-top: 1px solid var(--muted); padding-top: 20px; }
+  .stat-num { font-size: 56px; font-weight: 700; line-height: 1; letter-spacing: -0.03em; color: var(--accent-text); margin-bottom: 14px; }
+  .stat-label { font-size: 16px; line-height: 1.5; color: var(--ink); }
+  .case-main p.stat-extra { font-size: 18px; position: relative; padding-left: 20px; margin-bottom: 0; }
+  .stat-extra::before { content: ""; position: absolute; left: 2px; top: 0.62em; width: 7px; height: 7px; border-radius: 50%; background: var(--bar); }
+
+  .case-main .reflection p { font-size: 18px; color: var(--ink-soft); margin-bottom: 0; }
+  .case-main .reflection .decision-callout { color: var(--ink); }
+
+  @media (max-width: 640px) {
+    .facts-strip { grid-template-columns: 1fr; row-gap: 16px; }
+    .case-main h2 { margin-top: 72px; }
+    .case-main .result-block + h2 { margin-top: 0; }
+    .result-block { margin: 72px 0; }
+    .stat-row { grid-template-columns: 1fr; gap: 36px; width: 100%; left: 0; transform: none; }
+    .stat-num, .rc-num { font-size: 56px; }
+  }
+
+  /* ===== Per-page tokens + wide-image centering ===== */
+  .facts-strip { max-width: 860px; }
+  .screen-photo-wide { margin-top: 24px; margin-bottom: 0; }
+  @media (min-width: 641px) {
+    .screen-photo-wide { width: min(900px, calc(100vw - 64px)); max-width: none; position: relative; left: 50%; transform: translateX(-50%); margin-left: 0; margin-right: 0; }
+    .case-main p.fig-caption.wide { width: min(900px, calc(100vw - 64px)); position: relative; left: 50%; transform: translateX(-50%); }
+  }
+  .decision-callout.result-callout { color: var(--ink); }
+  .highlight .h-label { font-size: 14px; }
+  .highlight .h-line { font-size: clamp(19px, 2.2vw, 22px); }
+  ul.decision-list li, .case-main ul.decision-list li { font-size: 18px; line-height: 1.6; padding-left: 22px; }
+
+  .stat-row.two { grid-template-columns: repeat(2, minmax(0, 1fr)); width: min(680px, calc(100vw - 64px)); }
+  @media (max-width: 640px) { .stat-row.two { grid-template-columns: 1fr; width: 100%; } }
+/* ===== DS: site design system v2 (identical token block on every page; see design-system.md) ===== */
+:root {
+  --fs-h1: clamp(34px, 4.8vw, 48px);
+  --fs-h2: clamp(26px, 3.4vw, 32px);
+  --fs-h3: 22px;
+  --fs-lead: clamp(18px, 2vw, 20px);        /* subtitles, result line */
+  --fs-callout: clamp(20px, 2.4vw, 22px);
+  --fs-stat: 48px;
+  --fs-body: 18px;
+  --fs-ui: 16px;                            /* fact values, stat labels, card text, buttons */
+  --fs-small: 14px;                         /* nav, captions, chips, labels with words */
+  --fs-label: 12px;                         /* uppercase eyebrows, tiny meta */
+  /* spacing: 8-based scale. Inner gaps are always smaller than outer ones. */
+  --space-xs: 8px;       /* label to heading, caption to figure */
+  --space-s: 16px;       /* heading to its content */
+  --space-m: 24px;       /* paragraph to paragraph, header stack */
+  --space-l: 32px;
+  --space-block: 40px;   /* around callouts, quotes, figures */
+  --space-lead: 48px;    /* hero to result, result to first section */
+  --space-xl: 64px;      /* top of home and about */
+  --space-section: 96px; /* between numbered sections */
+}
+@media (max-width: 640px) { :root { --space-block: 32px; --space-lead: 40px; --space-xl: 48px; --space-section: 72px; } }
+
+/* shared chrome: header, footer, chips */
+.brand .name, .brand .mark { font-size: var(--fs-body); }
+nav a { font-size: var(--fs-small); }
+.icon-toggle { font-size: var(--fs-ui); }
+footer .connect-label { font-size: var(--fs-ui); }
+footer .links a { font-size: var(--fs-small); }
+.case-tag { font-size: var(--fs-small); }
+strong { font-weight: 600; }
+
+/* case studies */
+.back-link { display: inline-block; font-size: var(--fs-small); font-weight: 500; color: var(--ink-soft); text-decoration: none; margin: 4px 0 var(--space-m); }
+.back-link:hover { color: var(--ink); }
+.eyebrow-case { margin-bottom: var(--space-m); }
+h1.case-h1 { font-size: var(--fs-h1); line-height: 1.12; letter-spacing: -0.02em; max-width: 22ch; margin-bottom: var(--space-s); }
+.case-subhead { font-size: var(--fs-lead); line-height: 1.5; max-width: 640px; margin-bottom: var(--space-l); }
+.facts-strip { display: flex; flex-wrap: wrap; gap: var(--space-m) var(--space-lead); max-width: 860px; margin-bottom: var(--space-block); padding-top: var(--space-s); }
+.fact-label { font-size: var(--fs-label); }
+.fact-value { font-size: var(--fs-ui); }
+.case-main p { font-size: var(--fs-body); margin-bottom: var(--space-m); }
+.case-main h2 { font-size: var(--fs-h2); margin: var(--space-section) 0 var(--space-s); }
+.case-main h2::before { font-size: var(--fs-label); margin-bottom: var(--space-xs); }
+.case-main .result-block + h2 { margin-top: 0; }
+.case-main h3 { font-size: var(--fs-h3); line-height: 1.25; letter-spacing: -0.01em; margin: var(--space-lead) 0 var(--space-xs); }
+.case-main h2 + h3 { margin-top: 0; }
+.case-main h4, .goal-item h4 { font-size: var(--fs-body); font-weight: 600; }
+.case-main .result-block { margin: var(--space-lead) 0; }
+.result-block .h-label { margin-bottom: var(--space-s); }
+.rb-num { font-size: var(--fs-h1); font-weight: 600; line-height: 1.12; letter-spacing: -0.02em; }
+.rb-line { font-size: var(--fs-lead); line-height: 1.45; margin-top: var(--space-xs); }
+.decision-callout { font-size: var(--fs-callout); margin: var(--space-block) 0; }
+.rc-num, .stat-num { font-size: var(--fs-stat); }
+.stat-label { font-size: var(--fs-ui); }
+.fig-caption, .case-main p.fig-caption { font-size: var(--fs-small); margin: var(--space-xs) 0 var(--space-block); }
+.screen-caption { font-size: var(--fs-small); }
+.case-main .reflection p, .case-main p.stat-extra { font-size: var(--fs-body); }
+.stat-row { margin: var(--space-l) 0 var(--space-block); }
+.highlight .h-line { font-size: var(--fs-callout); }
+.h-label, .highlight .h-label, .result-callout .h-label, .result-block .h-label { font-size: var(--fs-small); }
+.line-pill { font-size: var(--fs-small); }
+.block-label { font-size: var(--fs-small); }
+.goal-item p { font-size: var(--fs-ui); }
+.attempt-step .step-label { font-size: var(--fs-label); }
+.attempt-step .step-detail { font-size: var(--fs-ui); }
+.attempt-step .step-note { font-size: var(--fs-small); }
+.attempt-arrow { font-size: var(--fs-body); }
+@media (max-width: 640px) { .stat-num, .rc-num { font-size: var(--fs-stat); } .facts-strip { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-s) var(--space-m); } .facts-strip .fact:nth-child(2) { grid-column: 1 / -1; } }
+.highlight { margin: var(--space-block) 0; }
+.case-main .measure.situation-intro { margin-bottom: var(--space-block); }
+.goal-grid { margin: var(--space-s) 0 0; padding-top: var(--space-m); gap: var(--space-l); }
+.case-main .highlight p { margin-bottom: 0; }
+.quote { margin: var(--space-block) 0; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: var(--space-m) var(--space-l); }
+.quote .qmark { font-size: var(--fs-h2); margin-bottom: var(--space-xs); }
+.case-main .quote p { font-size: var(--fs-lead); font-weight: 400; line-height: 1.5; margin-bottom: var(--space-s); }
+@media (max-width: 640px) { .quote { padding: var(--space-m); } }
+/* ===== /DS ===== */
+/* page: bold closing statement under the three challenges. No bar, no rules; smaller than the H2. */
+.case-main p.statement { font-size: var(--fs-h3); font-weight: 600; line-height: 1.3; color: var(--ink); text-wrap: balance; margin: var(--space-m) 0 var(--space-block); }
+/* page: list spacing for What I Designed */
+ul.decision-list { margin: 0 0 var(--space-m); gap: var(--space-s); }
+.case-video { display: block; width: 100%; height: auto; aspect-ratio: 900 / 492; border-radius: 12px; }
+.video-wide { width: min(900px, calc(100vw - 64px)); position: relative; left: 50%; transform: translateX(-50%); margin: var(--space-m) 0 0; }
+.case-main p a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent-text); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+.case-main p a:hover { color: var(--accent-text); }
+
 </style>
 </head>
 <body>
@@ -149,101 +309,114 @@
 <main>
 
   <div class="wrap hero-case">
+    <a href="index.html#work" class="back-link">← All case studies</a>
     <div class="eyebrow-case">
       <img src="assets/magpie-logo.png" alt="Magpie" class="invert-logo" style="height:13px;">
     </div>
-    <h1 class="case-h1">Pivoting a Fraud Tool Into a Collectibles Platform</h1>
-    <p class="case-subhead">Freelance design lead pre-product-market-fit, pivoting the product after research overturned its founding hypothesis.</p>
-    <div class="hero-meta-row">
-      <div class="tag-row">
-        <span class="case-tag">Case Study</span>
-        <span class="case-tag">0-to-1</span>
-        <span class="case-tag">Growth</span>
-      </div>
-      <div class="client-meta">
-        Lead Product Designer &middot; 2021&ndash;2022
-      </div>
+    <h1 class="case-h1">User Interviews and Usability Testing That Changed What We Built</h1>
+    <p class="case-subhead">Freelance design lead pre-product-market-fit, co-leading user interviews and task-based usability sessions that reversed the product's founding bet before it shipped.</p>
+    <div class="facts-strip">
+      <div class="fact"><div class="fact-label">Company</div><div class="fact-value">Magpie</div></div>
+      <div class="fact"><div class="fact-label">Role</div><div class="fact-value">Freelance Design Lead</div></div>
+      <div class="fact"><div class="fact-label">Timeline</div><div class="fact-value">2021&ndash;2022, Entrepreneurs Roundtable Accelerator</div></div>
+      <div class="fact"><div class="fact-label">Focus</div><div class="fact-value">Research</div></div>
     </div>
+    
   </div>
 
   <div class="hero-panel">
     <img class="hero-img" src="assets/magpie-hero.png" alt="Magpie vault dashboard showing total trading card portfolio value over time, alongside the card list view with authentication status, cost, and current value.">
   </div>
 
-  <div class="wrap">
-    <a href="index.html#work" class="back-pill">← All case studies</a>
-  </div>
-
   <div class="case-main">
 
-    <div class="highlight">
-      <div class="h-label"><span class="spark">✦</span> Highlight</div>
-      <div class="h-line">152% average month-over-month user growth in 2021</div>
+    <div class="result-block">
+      <div class="h-label"><span class="spark">✦</span> Result</div>
+      <div class="rb-num">152%</div>
+      <div class="rb-line">average month-over-month user growth in 2021</div>
     </div>
 
     <h2>The Situation</h2>
-    <p>I joined as freelance design lead during Entrepreneurs Roundtable Accelerator, working alongside the founder and a product manager, with a freelance designer of my own supporting the work. The company was pre-product-market-fit, and my job was to help take it from an early hypothesis to a shipped beta.</p>
+    <p>I joined as freelance design lead during <a href="https://www.eranyc.com/" target="_blank" rel="noopener">Entrepreneurs Roundtable Accelerator</a>, working alongside the founder and a product manager, with a freelance designer of my own supporting the work. The company was pre-product-market-fit, and my job was to help take it from an early hypothesis to a shipped beta.</p>
 
-    <h2>The Problem We Started With</h2>
-    <p>The product began as a fraud-prevention tool. By beta, it was live as authentication for sports cards: photo and video forensic analysis to help collectors verify high-value items before buying or selling.</p>
-    <h2>What Research Surfaced</h2>
-    <p>That authentication work surfaced something bigger. Collectors weren't just worried about fakes. They were managing entire collections scattered across emails, spreadsheets, and marketplaces, with no reliable way to track what they owned or what it was worth. The company repositioned around that larger opportunity and relaunched as Magpie.</p>
+    <h2>The Hypothesis</h2>
+    <p>The company began as a fraud-prevention tool. By early 2021 it authenticated high-value collectibles for buyers and sellers worried about fakes, using forensic photo and video analysis. <strong>The bet was that trust in authenticity was the product.</strong></p>
 
-    <div class="quote">
-      <span class="qmark">"</span>
-      <p>In these other platforms you can never track price fluctuations&hellip; the changes I want to know.</p>
-      <cite>An early Magpie user</cite>
+    <img class="screen-photo" src="assets/Magpie_Study_Body_Wireframes.png" alt="Two low-fidelity wireframes of the original authentication product: an Upload Item screen with photo slots, item type, brand and size fields, and protection and resale toggles, next to an Item screen showing an Authenticated status card with View certificate and Add protection buttons.">
+    <p class="fig-caption">Wireframes for the original authentication product: uploading an item and viewing its authenticated status.</p>
+
+    <h2>How We Tested It</h2>
+    <p>The PM and I ran about six user interviews together, and I helped lead the synthesis. We also put the real MVP in front of beta users and had them try to complete a task in it, so we could watch what actually happened instead of asking what people thought they wanted.</p>
+
+    <div class="video-wide">
+      <video class="case-video" autoplay muted loop playsinline preload="metadata"
+             poster="assets/magpie-add-item-scroll-poster.jpg"
+             aria-label="Prototype: searching for Nike, choosing the Air Max 97, and scrolling through the item details step to Add to Vault">
+        <source src="assets/magpie-add-item-scroll.mp4" type="video/mp4">
+      </video>
     </div>
+    <p class="fig-caption wide">The Add Item prototype: find the item, then add what you paid and when.</p>
 
-    <h2>The Constraint</h2>
-    <p>Her actual goal was problem-solution fit, not product-market fit. The founder had already decided what the product was when I joined, though: an authentication tool that verified high-value collectibles before they changed hands. My job was to help take that conviction to a shipped beta. She wanted something that solved a real problem for collectors, even if the problem itself turned out to be different from the one she'd started with. <strong>Every design decision had to be able to survive that shift if the research called for it, and by beta, it did.</strong></p>
+    <h2>What We Found</h2>
+    <p>Collectors didn't just worry about fakes. They had no reliable way to track what they owned or what it was worth, scattered across emails, spreadsheets, and marketplaces.</p>
 
-    <div class="highlight">
-      <div class="h-label"><span class="spark">✦</span> The real goal</div>
-      <div class="h-line">Her actual goal was problem-solution fit, not product-market fit.</div>
-    </div>
-
-    <h2>What We Learned</h2>
-    <img class="screen-photo" src="assets/magpie-whiteboard.png" alt="Whiteboard research synthesis mapping collector segments by motivation, transaction behavior, and community engagement.">
-
-    <p>Research didn't stop at the rename. The first Magpie beta tested that bigger vision across categories, handbags and sneakers included, before continued interviews narrowed it back to trading cards. It was the category the authentication work had started in, and the one Magpie ultimately shipped and was acquired for. Three challenges kept surfacing:</p>
     <ul class="decision-list">
       <li>Time and effort to track and value collections spread across multiple categories</li>
       <li>Cost and friction involved in buying, selling, and trading</li>
       <li>Limited places to connect with other collectors and actually enjoy the hobby</li>
     </ul>
 
+    <p class="statement">We were building the right feature for the wrong problem.</p>
+
     <div class="quote">
-      <span class="qmark">"</span>
+      <span class="qmark">&ldquo;</span>
+      <p>In these other platforms you can never track price fluctuations&hellip; the changes I want to know.</p>
+      <cite>An early Magpie user</cite>
+    </div>
+
+    <div class="quote">
+      <span class="qmark">&ldquo;</span>
       <p>My main reason for starting an Instagram page for my collection was so I could enjoy items that aren't regularly displayed or in storage.</p>
       <cite>An early Magpie user</cite>
     </div>
 
+    <h2>The Decision It Changed</h2>
+    <p>The company repositioned around the bigger problem and relaunched as Magpie, a platform for tracking and valuing a collection, with the authentication work folded in underneath as a trust layer instead of being the whole product.</p>
+
+    <div class="decision-callout">We repositioned around the bigger problem and made authentication a trust layer, not the whole product.</div>
+
     <h2>What I Designed</h2>
-    <p>The easier path was to keep deepening the authentication work: more file types, tighter forensic detection, higher accuracy. Research pointed toward a bigger opportunity, so I translated those three challenges directly into what shipped:</p>
+    <p>Research pointed toward a bigger opportunity, so I translated those three challenges directly into what shipped:</p>
     <ul class="decision-list">
       <li><strong>Value</strong>: portfolio-style tracking so a collector could see what their whole collection was worth at a glance, not just one item at a time</li>
       <li><strong>Trade</strong>: a lower-friction path to buy, sell, and trade within the platform</li>
       <li><strong>Discover &amp; Share</strong>: a way for collectors to connect with each other, closer to a community than a marketplace</li>
     </ul>
-    <p class="soft">Underneath all three sat the authentication work the product started with. Every item added to a collection could still be verified, so the fraud-prevention capability didn't disappear. It became infrastructure for trust instead of the whole product.</p>
 
     <img class="screen-photo-wide" src="assets/Magpie_Study_Body_001b.png" alt="Magpie Vault on mobile: a portfolio total of $16,405, up 33.1% all time, with search and sport filters above the collector's cards, next to the scrolled card list showing Authenticated and Not Authenticated badges with current values.">
+    <p class="fig-caption wide">Magpie Vault on mobile: collection value and the card list with authentication status</p>
 
     <h2>Evidence It Worked</h2>
     <p>One collector's experience captured why the authentication layer mattered even after the pivot. He used Magpie to catalog and share a collection of over a thousand items, and the platform's audit process caught that one of his graded cards had been decertified after counterfeiters copied it. He was able to resolve it quickly.</p>
 
-    <div class="highlight">
-      <div class="h-label"><span class="spark">✦</span> 2021 by the numbers</div>
-      <div class="h-line">192 total accounts · 152% average MoM user growth · $10K revenue generated in 2021</div>
+    <div class="stat-row two">
+      <div class="stat"><div class="stat-num">192</div><div class="stat-label">total accounts</div></div>
+      <div class="stat"><div class="stat-num">152%</div><div class="stat-label">average MoM user growth (per the founder's year-end investor update)</div></div>
     </div>
 
     <h2>Outcome</h2>
-    <p>Magpie shipped with integrations into eBay, Shopify, and other marketplaces collectors already used, with another 213 collectors already in the pipeline heading into 2022. The company was later acquired.</p>
+    <p>Magpie shipped with integrations into eBay, Shopify, and other marketplaces collectors already used, with another 213 collectors already in the pipeline heading into 2022. The company was acquired about a year after I left.</p>
 
-    <h2>Reflection</h2>
+    <p>Magpie was a SaaS business from the start: subscription revenue for the collection-management tools, plus commission on B2B partnerships.</p>
+
+    <p>By the time I left, that same partnership had also surfaced a signal toward the business side of the hobby, collector-dealers who needed more than a personal tracker.</p>
+
+    <p>The portfolio-tracking view I'd already designed, total value, performance over time, gain and loss per holding, became the foundation for that direction: the company moved toward the same mechanic for wealth management, reporting on a client's full balance sheet of alternative assets instead of one collector's cards.</p>
+
+    <h2>What I'd Do Differently</h2>
     <div class="reflection">
-      <p>The hardest part of this project wasn't any single screen. It was staying honest about what research was actually telling us, even after the company had already repositioned around a bigger opportunity. What Magpie actually became came from watching real collectors use the beta and listening when their problems didn't match the pitch.</p>
+      <p>Even after the repositioning, we kept testing across several collectible categories. An ongoing partnership with a small trading card shop in New York, a business whose own buying and reselling depended on getting pricing and authentication right, narrowed it to trading cards specifically, the category the authentication work had started in.</p>
+      <div class="decision-callout">I'd push to test that narrower question sooner instead of building out breadth first.</div>
     </div>
 
   </div>
@@ -286,6 +459,11 @@
   lightBtn.addEventListener('click', function () { localStorage.setItem(KEY, 'light'); applyTheme('light'); });
   darkBtn.addEventListener('click', function () { localStorage.setItem(KEY, 'dark'); applyTheme('dark'); });
 })();
+</script>
+
+<script>
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches)
+    document.querySelectorAll('.case-video').forEach(v => { v.removeAttribute('autoplay'); v.pause(); });
 </script>
 
 </body>

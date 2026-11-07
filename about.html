@@ -207,6 +207,55 @@
     .about-hero h1 { font-size: 26px; }
     nav { gap: 20px; }
   }
+
+/* ===== DS: site design system v2 (identical token block on every page; see design-system.md) ===== */
+:root {
+  --fs-h1: clamp(34px, 4.8vw, 48px);
+  --fs-h2: clamp(26px, 3.4vw, 32px);
+  --fs-h3: 22px;
+  --fs-lead: clamp(18px, 2vw, 20px);        /* subtitles, result line */
+  --fs-callout: clamp(20px, 2.4vw, 22px);
+  --fs-stat: 48px;
+  --fs-body: 18px;
+  --fs-ui: 16px;                            /* fact values, stat labels, card text, buttons */
+  --fs-small: 14px;                         /* nav, captions, chips, labels with words */
+  --fs-label: 12px;                         /* uppercase eyebrows, tiny meta */
+  /* spacing: 8-based scale. Inner gaps are always smaller than outer ones. */
+  --space-xs: 8px;       /* label to heading, caption to figure */
+  --space-s: 16px;       /* heading to its content */
+  --space-m: 24px;       /* paragraph to paragraph, header stack */
+  --space-l: 32px;
+  --space-block: 40px;   /* around callouts, quotes, figures */
+  --space-lead: 48px;    /* hero to result, result to first section */
+  --space-xl: 64px;      /* top of home and about */
+  --space-section: 96px; /* between numbered sections */
+}
+@media (max-width: 640px) { :root { --space-block: 32px; --space-lead: 40px; --space-xl: 48px; --space-section: 72px; } }
+
+/* shared chrome: header, footer, chips */
+.brand .name, .brand .mark { font-size: var(--fs-body); }
+nav a { font-size: var(--fs-small); }
+.icon-toggle { font-size: var(--fs-ui); }
+footer .connect-label { font-size: var(--fs-ui); }
+footer .links a { font-size: var(--fs-small); }
+.case-tag { font-size: var(--fs-small); }
+strong { font-weight: 600; }
+
+/* about */
+.about-hero { margin-top: var(--space-lead); margin-bottom: var(--space-xs); }
+.about-hero h1 { font-size: var(--fs-h1); line-height: 1.12; letter-spacing: -0.02em; }
+.about-photos { margin-bottom: var(--space-l); }
+.about-copy { margin-top: var(--space-lead); margin-bottom: var(--space-xs); }
+.about-copy p { font-size: var(--fs-body); line-height: 1.65; margin-bottom: var(--space-m); }
+.about-copy p.closing { margin-top: var(--space-xs); margin-bottom: 0; }
+.experience-wrap { margin-top: var(--space-lead); margin-bottom: var(--space-section); }
+.status-line { margin-bottom: var(--space-m); }
+.exp-text .role { font-size: var(--fs-ui); }
+.exp-text .co { font-size: var(--fs-small); }
+.exp-text .dates { font-size: var(--fs-label); color: var(--ink-soft); }
+.exp-logo { font-size: var(--fs-label); }
+.status-line { font-size: var(--fs-small); }
+/* ===== /DS ===== */
 </style>
 </head>
 <body>

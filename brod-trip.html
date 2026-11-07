@@ -150,6 +150,161 @@
   .attempt-step .step-detail { font-size: 14.5px; color: var(--ink); font-weight: 600; line-height: 1.4; }
   .attempt-step .step-note { font-size: 13px; color: var(--ink-soft); font-weight: 400; line-height: 1.5; margin-top: 5px; }
   .attempt-arrow { display: flex; align-items: center; justify-content: center; width: 44px; color: var(--case-color); font-size: 18px; background: var(--bg); flex-shrink: 0; }
+/* ===== Design pass: hierarchy for a 10-second scan ===== */
+  :root { --accent-text: #8A3FD6; --bar: #AC5BF7; }
+  body.dark { --accent-text: #C08CFB; }
+
+  h1.case-h1 { font-size: clamp(38px, 6.6vw, 64px); font-weight: 600; line-height: 1.05; letter-spacing: -0.02em; max-width: 16ch; margin-bottom: 24px; }
+  .case-subhead { font-size: clamp(18px, 2.2vw, 22px); line-height: 1.5; color: var(--ink-soft); max-width: 640px; margin-bottom: 32px; }
+
+  .facts-strip { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; column-gap: 56px; border-top: 1px solid var(--muted); padding-top: 18px; margin-bottom: 28px; max-width: 720px; }
+  .fact-label { font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 6px; }
+  .fact-value { font-size: 17px; font-weight: 500; color: var(--ink); }
+  .hero-meta-row { justify-content: flex-start; }
+
+  .case-main { max-width: 744px; counter-reset: sec; }
+  .case-main p { font-size: 18px; line-height: 1.65; margin-bottom: 20px; }
+  .case-main h2 { counter-increment: sec; font-size: clamp(28px, 4vw, 36px); font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; margin: 112px 0 16px; }
+  .case-main h2::before { content: counter(sec, decimal-leading-zero); display: block; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-text); margin-bottom: 14px; line-height: 1; }
+  .case-main .result-block + h2 { margin-top: 0; }
+
+  .result-block { margin: 96px 0; }
+  .result-block .h-label { font-size: 13px; color: var(--ink-soft); display: flex; align-items: center; gap: 6px; margin-bottom: 16px; }
+  .result-block .h-label .spark { color: var(--accent-text); }
+  .rb-num { font-size: clamp(56px, 12vw, 96px); font-weight: 700; line-height: 1; letter-spacing: -0.03em; color: var(--accent-text); }
+  .rb-line { font-size: 22px; line-height: 1.4; margin-top: 12px; color: var(--ink); }
+
+  .decision-callout { font-size: clamp(20px, 2.6vw, 24px); font-weight: 500; line-height: 1.4; border-left: 3px solid var(--bar); padding-left: 24px; margin: 40px 0; color: var(--ink); }
+  .result-callout .h-label { font-size: 13px; font-weight: 400; color: var(--ink-soft); display: flex; align-items: center; gap: 6px; margin-bottom: 10px; }
+  .result-callout .h-label .spark { color: var(--accent-text); }
+  .rc-num { font-size: 56px; font-weight: 700; line-height: 1; letter-spacing: -0.03em; color: var(--accent-text); margin-bottom: 14px; }
+
+  .case-main .screen-photo, .case-main .screen-photo-wrap, .case-main .industry-demo { max-width: 680px; margin-bottom: 0; }
+  .fig-caption, .case-main p.fig-caption { font-size: 14px; line-height: 1.5; color: var(--ink-soft); margin: 12px 0 36px; }
+
+  .line-pills { margin: 4px 0 32px; }
+
+  .quote { margin: 56px 0; }
+  .case-main .quote p { font-size: clamp(22px, 3vw, 28px); font-weight: 500; line-height: 1.35; margin-bottom: 16px; }
+  .quote cite { font-size: 14px; color: var(--ink-soft); }
+  .quote .qmark { color: var(--accent-text); }
+
+  .stat-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px; width: min(1000px, calc(100vw - 64px)); position: relative; left: 50%; transform: translateX(-50%); margin: 32px 0 36px; }
+  .stat { border-top: 1px solid var(--muted); padding-top: 20px; }
+  .stat-num { font-size: 56px; font-weight: 700; line-height: 1; letter-spacing: -0.03em; color: var(--accent-text); margin-bottom: 14px; }
+  .stat-label { font-size: 16px; line-height: 1.5; color: var(--ink); }
+  .case-main p.stat-extra { font-size: 18px; position: relative; padding-left: 20px; margin-bottom: 0; }
+  .stat-extra::before { content: ""; position: absolute; left: 2px; top: 0.62em; width: 7px; height: 7px; border-radius: 50%; background: var(--bar); }
+
+  .case-main .reflection p { font-size: 18px; color: var(--ink-soft); margin-bottom: 0; }
+  .case-main .reflection .decision-callout { color: var(--ink); }
+
+  @media (max-width: 640px) {
+    .facts-strip { grid-template-columns: 1fr; row-gap: 16px; }
+    .case-main h2 { margin-top: 72px; }
+    .case-main .result-block + h2 { margin-top: 0; }
+    .result-block { margin: 72px 0; }
+    .stat-row { grid-template-columns: 1fr; gap: 36px; width: 100%; left: 0; transform: none; }
+    .stat-num, .rc-num { font-size: 56px; }
+  }
+
+
+  /* ===== Per-page tokens + wide-image centering ===== */
+  .facts-strip { max-width: 860px; }
+  .screen-photo-wide { margin-top: 24px; margin-bottom: 0; }
+  @media (min-width: 641px) {
+    .screen-photo-wide { width: min(900px, calc(100vw - 64px)); max-width: none; position: relative; left: 50%; transform: translateX(-50%); margin-left: 0; margin-right: 0; }
+    .case-main p.fig-caption.wide { width: min(900px, calc(100vw - 64px)); position: relative; left: 50%; transform: translateX(-50%); }
+  }
+  .decision-callout.result-callout { color: var(--ink); }
+  .highlight .h-label { font-size: 14px; }
+  .highlight .h-line { font-size: clamp(19px, 2.2vw, 22px); }
+  ul.decision-list li, .case-main ul.decision-list li { font-size: 18px; line-height: 1.6; padding-left: 22px; }
+
+  .attempt-step.failed { opacity: 1; }
+  .attempt-step.failed .step-detail, .attempt-step.failed .step-note { color: var(--ink-soft); }
+/* ===== DS: site design system v2 (identical token block on every page; see design-system.md) ===== */
+:root {
+  --fs-h1: clamp(34px, 4.8vw, 48px);
+  --fs-h2: clamp(26px, 3.4vw, 32px);
+  --fs-h3: 22px;
+  --fs-lead: clamp(18px, 2vw, 20px);        /* subtitles, result line */
+  --fs-callout: clamp(20px, 2.4vw, 22px);
+  --fs-stat: 48px;
+  --fs-body: 18px;
+  --fs-ui: 16px;                            /* fact values, stat labels, card text, buttons */
+  --fs-small: 14px;                         /* nav, captions, chips, labels with words */
+  --fs-label: 12px;                         /* uppercase eyebrows, tiny meta */
+  /* spacing: 8-based scale. Inner gaps are always smaller than outer ones. */
+  --space-xs: 8px;       /* label to heading, caption to figure */
+  --space-s: 16px;       /* heading to its content */
+  --space-m: 24px;       /* paragraph to paragraph, header stack */
+  --space-l: 32px;
+  --space-block: 40px;   /* around callouts, quotes, figures */
+  --space-lead: 48px;    /* hero to result, result to first section */
+  --space-xl: 64px;      /* top of home and about */
+  --space-section: 96px; /* between numbered sections */
+}
+@media (max-width: 640px) { :root { --space-block: 32px; --space-lead: 40px; --space-xl: 48px; --space-section: 72px; } }
+
+/* shared chrome: header, footer, chips */
+.brand .name, .brand .mark { font-size: var(--fs-body); }
+nav a { font-size: var(--fs-small); }
+.icon-toggle { font-size: var(--fs-ui); }
+footer .connect-label { font-size: var(--fs-ui); }
+footer .links a { font-size: var(--fs-small); }
+.case-tag { font-size: var(--fs-small); }
+strong { font-weight: 600; }
+
+/* case studies */
+.back-link { display: inline-block; font-size: var(--fs-small); font-weight: 500; color: var(--ink-soft); text-decoration: none; margin: 4px 0 var(--space-m); }
+.back-link:hover { color: var(--ink); }
+.eyebrow-case { margin-bottom: var(--space-m); }
+h1.case-h1 { font-size: var(--fs-h1); line-height: 1.12; letter-spacing: -0.02em; max-width: 22ch; margin-bottom: var(--space-s); }
+.case-subhead { font-size: var(--fs-lead); line-height: 1.5; max-width: 640px; margin-bottom: var(--space-l); }
+.facts-strip { display: flex; flex-wrap: wrap; gap: var(--space-m) var(--space-lead); max-width: 860px; margin-bottom: var(--space-block); padding-top: var(--space-s); }
+.fact-label { font-size: var(--fs-label); }
+.fact-value { font-size: var(--fs-ui); }
+.case-main p { font-size: var(--fs-body); margin-bottom: var(--space-m); }
+.case-main h2 { font-size: var(--fs-h2); margin: var(--space-section) 0 var(--space-s); }
+.case-main h2::before { font-size: var(--fs-label); margin-bottom: var(--space-xs); }
+.case-main .result-block + h2 { margin-top: 0; }
+.case-main h3 { font-size: var(--fs-h3); line-height: 1.25; letter-spacing: -0.01em; margin: var(--space-lead) 0 var(--space-xs); }
+.case-main h2 + h3 { margin-top: 0; }
+.case-main h4, .goal-item h4 { font-size: var(--fs-body); font-weight: 600; }
+.case-main .result-block { margin: var(--space-lead) 0; }
+.result-block .h-label { margin-bottom: var(--space-s); }
+.rb-num { font-size: var(--fs-h1); font-weight: 600; line-height: 1.12; letter-spacing: -0.02em; }
+.rb-line { font-size: var(--fs-lead); line-height: 1.45; margin-top: var(--space-xs); }
+.decision-callout { font-size: var(--fs-callout); margin: var(--space-block) 0; }
+.rc-num, .stat-num { font-size: var(--fs-stat); }
+.stat-label { font-size: var(--fs-ui); }
+.fig-caption, .case-main p.fig-caption { font-size: var(--fs-small); margin: var(--space-xs) 0 var(--space-block); }
+.screen-caption { font-size: var(--fs-small); }
+.case-main .reflection p, .case-main p.stat-extra { font-size: var(--fs-body); }
+.stat-row { margin: var(--space-l) 0 var(--space-block); }
+.highlight .h-line { font-size: var(--fs-callout); }
+.h-label, .highlight .h-label, .result-callout .h-label, .result-block .h-label { font-size: var(--fs-small); }
+.line-pill { font-size: var(--fs-small); }
+.block-label { font-size: var(--fs-small); }
+.goal-item p { font-size: var(--fs-ui); }
+.attempt-step .step-label { font-size: var(--fs-label); }
+.attempt-step .step-detail { font-size: var(--fs-ui); }
+.attempt-step .step-note { font-size: var(--fs-small); }
+.attempt-arrow { font-size: var(--fs-body); }
+@media (max-width: 640px) { .stat-num, .rc-num { font-size: var(--fs-stat); } .facts-strip { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-s) var(--space-m); } .facts-strip .fact:nth-child(2) { grid-column: 1 / -1; } }
+.highlight { margin: var(--space-block) 0; }
+.case-main .measure.situation-intro { margin-bottom: var(--space-block); }
+.goal-grid { margin: var(--space-s) 0 0; padding-top: var(--space-m); gap: var(--space-l); }
+.attempt-strip { margin: var(--space-xs) 0 var(--space-block); }
+.case-main .highlight p { margin-bottom: 0; }
+.quote { margin: var(--space-block) 0; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: var(--space-m) var(--space-l); }
+.quote .qmark { font-size: var(--fs-h2); margin-bottom: var(--space-xs); }
+.case-main .quote p { font-size: var(--fs-lead); font-weight: 400; line-height: 1.5; margin-bottom: var(--space-s); }
+@media (max-width: 640px) { .quote { padding: var(--space-m); } }
+/* ===== /DS ===== */
+
+
 </style>
 </head>
 <body>
@@ -174,20 +329,18 @@
 <main>
 
   <div class="wrap hero-case">
+    <a href="index.html#work" class="back-link">← All case studies</a>
     <div class="eyebrow-case">
       <img src="assets/brod-trip-logo.png" alt="The Bro'd Trip" class="invert-logo" style="height:13px;">
     </div>
     <h1 class="case-h1">Reviving a Lost Archive with AI</h1>
     <p class="case-subhead">Rebuilding a trip blog after the original posts were lost, using Claude Code, Cursor, and Figma.</p>
-    <div class="hero-meta-row">
-      <div class="tag-row">
-        <span class="case-tag">Case Study</span>
-        <span class="case-tag">AI Workflow</span>
-      </div>
-      <div class="client-meta">
-        2026
-      </div>
+    <div class="facts-strip">
+      <div class="fact"><div class="fact-label">Project</div><div class="fact-value">Personal project</div></div>
+      <div class="fact"><div class="fact-label">Timeline</div><div class="fact-value">2026</div></div>
+      <div class="fact"><div class="fact-label">Focus</div><div class="fact-value">AI workflow</div></div>
     </div>
+    
   </div>
 
   <div class="hero-panel">
@@ -196,11 +349,13 @@
     </div>
   </div>
 
-  <div class="wrap">
-    <a href="index.html#work" class="back-pill">← All case studies</a>
-  </div>
-
   <div class="case-main">
+
+    <div class="result-block">
+      <div class="h-label"><span class="spark">✦</span> Result</div>
+      <div class="rb-num">196 of 244</div>
+      <div class="rb-line">posts fully recovered after the original site was lost</div>
+    </div>
 
     <h2>The Situation</h2>
     <p>A decade ago, my husband spent a year driving a van through all 50 states, documenting the whole trip one post at a time. Somewhere along the way, the WordPress site holding all of it went dark. No export file, no local drafts, no backup. Two hundred and forty-four posts gone, along with the record of one of the most significant years of his life.</p>
@@ -225,29 +380,39 @@
     </div>
 
     <p>The first attempt was straightforward: rebuild it exactly how it was, hosted on WordPress, one post at a time. Fifteen posts in, it was clear that pace wasn't going to get through 244 posts. I ran out of steam.</p>
-    <p>The second attempt started with Claude Code as the core tool instead of the whole process. Feed it a Wayback Machine URL, and it crawls the archived post, pulls the content, and returns a clean static HTML file. Running at roughly $20 a month in Claude usage, that approach got through the bulk of the archive, rate limits and all, until Anthropic restricted outbound fetching to the Wayback Machine mid-project. The fix was to download the archived HTML locally instead and feed the files in directly. Fifteen posts had been enough to stop me once. It wasn't happening twice.</p>
+    <p>The second attempt started with Claude Code as the core tool instead of the whole process. Feed it a Wayback Machine URL, and it crawls the archived post, pulls the content, and returns a clean static HTML file. Running at roughly $20 a month in Claude usage, that approach got through the bulk of the archive, rate limits and all, until Anthropic restricted outbound fetching to the Wayback Machine mid-project.</p>
+
+    <div class="decision-callout">The fix was to download the archived HTML locally instead and feed the files in directly.</div>
+
+    <p>Fifteen posts had been enough to stop me once. It wasn't happening twice.</p>
     <p>The full rebuild, including a cleanup pass across all 248 files (the 244 posts plus the about and sponsors pages), wrapped up the project.</p>
     <p>Where an image couldn't be recovered, the page shows a placeholder with the original filename and whatever caption survived.</p>
 
-    <div class="highlight stat-row">
-      <div class="h-line"><span class="stat-n">244</span> posts rebuilt · <span class="stat-n">196</span> fully recovered · <span class="stat-n">~60%</span> of images recovered</div>
+    <div class="stat-row">
+      <div class="stat"><div class="stat-num">244</div><div class="stat-label">posts rebuilt</div></div>
+      <div class="stat"><div class="stat-num">196</div><div class="stat-label">fully recovered</div></div>
+      <div class="stat"><div class="stat-num">~60%</div><div class="stat-label">of images recovered</div></div>
     </div>
 
     <h2>The Commit History</h2>
     <p>Claude Code did more than fetch pages. It restructured templates, rewrote the fetch pipeline when the restriction hit, and ran the cleanup pass across all 248 files. Some of the later updates went through VS Code directly, Claude open next to the code, each change reviewed before it got pushed.</p>
     <img class="screen-photo" src="assets/Broad_Study_Body_002.png" alt="A GitHub commit history for the project, showing commits co-authored by Allyson Fricke and Claude, including 'Improve In the News page,' 'Add staggered card animation and four micro-interactions,' and 'Add staggered fade-in animation to post cards.'">
+    <p class="fig-caption">The project's commit history, with changes co-authored with Claude</p>
 
     <h2>New Tools, Same Site</h2>
     <p>This case study started a while back. I've kept updating the site since then, most recently in Cursor: small styling details that Claude and Cursor don't quite get right the first time. Each one gets its own branch, merged through a pull request.</p>
     <p>For one of those, I pulled the site into Figma with the Figma MCP, adjusted the pull quote there, then had Cursor compare the Figma frame to the CSS and update only what changed. I reviewed every diff before merging.</p>
     <img class="screen-photo-wide" src="assets/Broad_Study_Body_003.png" alt="A Cursor chat panel comparing a Figma frame to the pull-quote CSS in the repo, listing differences in font, size, color, and spacing, next to a browser preview of the live Bro'd Trip site.">
+    <p class="fig-caption wide">Cursor comparing a Figma frame to the live pull-quote CSS</p>
 
     <h2>Where This Leaves It</h2>
     <div class="reflection">
-      <p>When rebuilding by hand stalled, I changed the process. When the fetch got restricted, I changed the input. My husband got his road trip back, and I got an excuse to build a website for fun.</p>
+      <div class="decision-callout">When rebuilding by hand stalled, I changed the process. When the fetch got restricted, I changed the input.</div>
+      <p>My husband got his road trip back, and I got an excuse to build a website for fun.</p>
     </div>
 
     <img class="screen-photo" src="assets/brod-trip-linkedin.png" alt="A LinkedIn post from Adam Fricke about the recovered blog, quote-shared by Allyson Fricke describing the project as trying to recover the past, with a preview of the rebuilt Bro'd Trip site attached.">
+    <p class="fig-caption">The recovered blog, shared on LinkedIn</p>
 
   </div>
 

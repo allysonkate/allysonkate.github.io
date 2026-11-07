@@ -174,6 +174,166 @@
     .case-main, .case-nav-footer { padding-left: 22px; padding-right: 22px; }
     nav { gap: 20px; }
   }
+/* ===== Design pass: hierarchy for a 10-second scan ===== */
+  :root { --accent-text: #A24A0B; --bar: #FCB07F; }
+  body.dark { --accent-text: #FCB07F; }
+
+  h1.case-h1 { font-size: clamp(38px, 6.6vw, 64px); font-weight: 600; line-height: 1.05; letter-spacing: -0.02em; max-width: 16ch; margin-bottom: 24px; }
+  .case-subhead { font-size: clamp(18px, 2.2vw, 22px); line-height: 1.5; color: var(--ink-soft); max-width: 640px; margin-bottom: 32px; }
+
+  .facts-strip { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; column-gap: 56px; border-top: 1px solid var(--muted); padding-top: 18px; margin-bottom: 28px; max-width: 720px; }
+  .fact-label { font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 6px; }
+  .fact-value { font-size: 17px; font-weight: 500; color: var(--ink); }
+  .hero-meta-row { justify-content: flex-start; }
+
+  .case-main { max-width: 744px; counter-reset: sec; }
+  .case-main p { font-size: 18px; line-height: 1.65; margin-bottom: 20px; }
+  .case-main h2 { counter-increment: sec; font-size: clamp(28px, 4vw, 36px); font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; margin: 112px 0 16px; }
+  .case-main h2::before { content: counter(sec, decimal-leading-zero); display: block; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-text); margin-bottom: 14px; line-height: 1; }
+  .case-main .result-block + h2 { margin-top: 0; }
+
+  .result-block { margin: 96px 0; }
+  .result-block .h-label { font-size: 13px; color: var(--ink-soft); display: flex; align-items: center; gap: 6px; margin-bottom: 16px; }
+  .result-block .h-label .spark { color: var(--accent-text); }
+  .rb-num { font-size: clamp(56px, 12vw, 96px); font-weight: 700; line-height: 1; letter-spacing: -0.03em; color: var(--accent-text); }
+  .rb-line { font-size: 22px; line-height: 1.4; margin-top: 12px; color: var(--ink); }
+
+  .decision-callout { font-size: clamp(20px, 2.6vw, 24px); font-weight: 500; line-height: 1.4; border-left: 3px solid var(--bar); padding-left: 24px; margin: 40px 0; color: var(--ink); }
+  .result-callout .h-label { font-size: 13px; font-weight: 400; color: var(--ink-soft); display: flex; align-items: center; gap: 6px; margin-bottom: 10px; }
+  .result-callout .h-label .spark { color: var(--accent-text); }
+  .rc-num { font-size: 56px; font-weight: 700; line-height: 1; letter-spacing: -0.03em; color: var(--accent-text); margin-bottom: 14px; }
+
+  .case-main .screen-photo, .case-main .screen-photo-wrap, .case-main .industry-demo { max-width: 680px; margin-bottom: 0; }
+  .fig-caption, .case-main p.fig-caption { font-size: 14px; line-height: 1.5; color: var(--ink-soft); margin: 12px 0 36px; }
+
+  .line-pills { margin: 4px 0 32px; }
+
+  .quote { margin: 56px 0; }
+  .case-main .quote p { font-size: clamp(22px, 3vw, 28px); font-weight: 500; line-height: 1.35; margin-bottom: 16px; }
+  .quote cite { font-size: 14px; color: var(--ink-soft); }
+  .quote .qmark { color: var(--accent-text); }
+
+  .stat-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px; width: min(1000px, calc(100vw - 64px)); position: relative; left: 50%; transform: translateX(-50%); margin: 32px 0 36px; }
+  .stat { border-top: 1px solid var(--muted); padding-top: 20px; }
+  .stat-num { font-size: 56px; font-weight: 700; line-height: 1; letter-spacing: -0.03em; color: var(--accent-text); margin-bottom: 14px; }
+  .stat-label { font-size: 16px; line-height: 1.5; color: var(--ink); }
+  .case-main p.stat-extra { font-size: 18px; position: relative; padding-left: 20px; margin-bottom: 0; }
+  .stat-extra::before { content: ""; position: absolute; left: 2px; top: 0.62em; width: 7px; height: 7px; border-radius: 50%; background: var(--bar); }
+
+  .case-main .reflection p { font-size: 18px; color: var(--ink-soft); margin-bottom: 0; }
+  .case-main .reflection .decision-callout { color: var(--ink); }
+
+  @media (max-width: 640px) {
+    .facts-strip { grid-template-columns: 1fr; row-gap: 16px; }
+    .case-main h2 { margin-top: 72px; }
+    .case-main .result-block + h2 { margin-top: 0; }
+    .result-block { margin: 72px 0; }
+    .stat-row { grid-template-columns: 1fr; gap: 36px; width: 100%; left: 0; transform: none; }
+    .stat-num, .rc-num { font-size: 56px; }
+  }
+
+
+  /* ===== Per-page tokens + wide-image centering ===== */
+  .facts-strip { max-width: 860px; }
+  .screen-photo-wide { margin-top: 24px; margin-bottom: 0; }
+  @media (min-width: 641px) {
+    .screen-photo-wide { width: min(900px, calc(100vw - 64px)); max-width: none; position: relative; left: 50%; transform: translateX(-50%); margin-left: 0; margin-right: 0; }
+    .case-main p.fig-caption.wide { width: min(900px, calc(100vw - 64px)); position: relative; left: 50%; transform: translateX(-50%); }
+  }
+  .highlight .h-label { font-size: 14px; }
+  .highlight .h-line { font-size: clamp(19px, 2.2vw, 22px); }
+  ul.decision-list li, .case-main ul.decision-list li { font-size: 18px; line-height: 1.6; padding-left: 22px; }
+
+  .case-main h3 { font-size: 22px; line-height: 1.25; letter-spacing: -0.01em; margin: 56px 0 12px; }
+  .case-main h2 + h3 { margin-top: 0; }
+  .case-main .goal-item h4 { font-size: var(--fs-body); margin-bottom: 6px; }
+  .case-main .goal-item p { font-size: var(--fs-ui); }
+  .block-label { font-size: 14px; margin: 40px 0 8px; }
+  h2 + .block-label { margin-top: 0; }
+  .carousel-wrap { max-width: 680px; }
+  .case-main .measure { max-width: none; }
+  .case-main .measure.situation-intro { margin-bottom: 44px; }
+/* ===== DS: site design system v2 (identical token block on every page; see design-system.md) ===== */
+:root {
+  --fs-h1: clamp(34px, 4.8vw, 48px);
+  --fs-h2: clamp(26px, 3.4vw, 32px);
+  --fs-h3: 22px;
+  --fs-lead: clamp(18px, 2vw, 20px);        /* subtitles, result line */
+  --fs-callout: clamp(20px, 2.4vw, 22px);
+  --fs-stat: 48px;
+  --fs-body: 18px;
+  --fs-ui: 16px;                            /* fact values, stat labels, card text, buttons */
+  --fs-small: 14px;                         /* nav, captions, chips, labels with words */
+  --fs-label: 12px;                         /* uppercase eyebrows, tiny meta */
+  /* spacing: 8-based scale. Inner gaps are always smaller than outer ones. */
+  --space-xs: 8px;       /* label to heading, caption to figure */
+  --space-s: 16px;       /* heading to its content */
+  --space-m: 24px;       /* paragraph to paragraph, header stack */
+  --space-l: 32px;
+  --space-block: 40px;   /* around callouts, quotes, figures */
+  --space-lead: 48px;    /* hero to result, result to first section */
+  --space-xl: 64px;      /* top of home and about */
+  --space-section: 96px; /* between numbered sections */
+}
+@media (max-width: 640px) { :root { --space-block: 32px; --space-lead: 40px; --space-xl: 48px; --space-section: 72px; } }
+
+/* shared chrome: header, footer, chips */
+.brand .name, .brand .mark { font-size: var(--fs-body); }
+nav a { font-size: var(--fs-small); }
+.icon-toggle { font-size: var(--fs-ui); }
+footer .connect-label { font-size: var(--fs-ui); }
+footer .links a { font-size: var(--fs-small); }
+.case-tag { font-size: var(--fs-small); }
+strong { font-weight: 600; }
+
+/* case studies */
+.back-link { display: inline-block; font-size: var(--fs-small); font-weight: 500; color: var(--ink-soft); text-decoration: none; margin: 4px 0 var(--space-m); }
+.back-link:hover { color: var(--ink); }
+.eyebrow-case { margin-bottom: var(--space-m); }
+h1.case-h1 { font-size: var(--fs-h1); line-height: 1.12; letter-spacing: -0.02em; max-width: 22ch; margin-bottom: var(--space-s); }
+.case-subhead { font-size: var(--fs-lead); line-height: 1.5; max-width: 640px; margin-bottom: var(--space-l); }
+.facts-strip { display: flex; flex-wrap: wrap; gap: var(--space-m) var(--space-lead); max-width: 860px; margin-bottom: var(--space-block); padding-top: var(--space-s); }
+.fact-label { font-size: var(--fs-label); }
+.fact-value { font-size: var(--fs-ui); }
+.case-main p { font-size: var(--fs-body); margin-bottom: var(--space-m); }
+.case-main h2 { font-size: var(--fs-h2); margin: var(--space-section) 0 var(--space-s); }
+.case-main h2::before { font-size: var(--fs-label); margin-bottom: var(--space-xs); }
+.case-main .result-block + h2 { margin-top: 0; }
+.case-main h3 { font-size: var(--fs-h3); line-height: 1.25; letter-spacing: -0.01em; margin: var(--space-lead) 0 var(--space-xs); }
+.case-main h2 + h3 { margin-top: 0; }
+.case-main h4, .goal-item h4 { font-size: var(--fs-body); font-weight: 600; }
+.case-main .result-block { margin: var(--space-lead) 0; }
+.result-block .h-label { margin-bottom: var(--space-s); }
+.rb-num { font-size: var(--fs-h1); font-weight: 600; line-height: 1.12; letter-spacing: -0.02em; }
+.rb-line { font-size: var(--fs-lead); line-height: 1.45; margin-top: var(--space-xs); }
+.decision-callout { font-size: var(--fs-callout); margin: var(--space-block) 0; }
+.rc-num, .stat-num { font-size: var(--fs-stat); }
+.stat-label { font-size: var(--fs-ui); }
+.fig-caption, .case-main p.fig-caption { font-size: var(--fs-small); margin: var(--space-xs) 0 var(--space-block); }
+.screen-caption { font-size: var(--fs-small); }
+.case-main .reflection p, .case-main p.stat-extra { font-size: var(--fs-body); }
+.stat-row { margin: var(--space-l) 0 var(--space-block); }
+.highlight .h-line { font-size: var(--fs-callout); }
+.h-label, .highlight .h-label, .result-callout .h-label, .result-block .h-label { font-size: var(--fs-small); }
+.line-pill { font-size: var(--fs-small); }
+.block-label { font-size: var(--fs-small); }
+.goal-item p { font-size: var(--fs-ui); }
+.attempt-step .step-label { font-size: var(--fs-label); }
+.attempt-step .step-detail { font-size: var(--fs-ui); }
+.attempt-step .step-note { font-size: var(--fs-small); }
+.attempt-arrow { font-size: var(--fs-body); }
+@media (max-width: 640px) { .stat-num, .rc-num { font-size: var(--fs-stat); } .facts-strip { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-s) var(--space-m); } .facts-strip .fact:nth-child(2) { grid-column: 1 / -1; } }
+.highlight { margin: var(--space-block) 0; }
+.case-main .measure.situation-intro { margin-bottom: var(--space-block); }
+.goal-grid { margin: var(--space-s) 0 0; padding-top: var(--space-m); gap: var(--space-l); }
+.case-main .highlight p { margin-bottom: 0; }
+.quote { margin: var(--space-block) 0; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: var(--space-m) var(--space-l); }
+.quote .qmark { font-size: var(--fs-h2); margin-bottom: var(--space-xs); }
+.case-main .quote p { font-size: var(--fs-lead); font-weight: 400; line-height: 1.5; margin-bottom: var(--space-s); }
+@media (max-width: 640px) { .quote { padding: var(--space-m); } }
+/* ===== /DS ===== */
+
+
 </style>
 </head>
 <body>
@@ -211,32 +371,32 @@
 <main id="main-content" style="display:none;">
 
   <div class="wrap hero-case">
+    <a href="index.html#work" class="back-link">← All case studies</a>
     <div class="eyebrow-case">
       <img src="assets/acrisure-logo.png" alt="Acrisure" class="invert-logo" style="height:14px;">
     </div>
     <h1 class="case-h1">Building a Client Portal's Foundation</h1>
     <p class="case-subhead">Designing a structure for hundreds of coverage types, then redesigning the navigation it launched on.</p>
-    <div class="hero-meta-row">
-      <div class="tag-row">
-        <span class="case-tag">Case Study</span>
-        <span class="case-tag">Insurance</span>
-        <span class="case-tag">Systems</span>
-      </div>
-      <div class="client-meta">
-        Senior Product Designer, one of two designers &middot; 2025&ndash;2026
-      </div>
+    <div class="facts-strip">
+      <div class="fact"><div class="fact-label">Company</div><div class="fact-value">Acrisure</div></div>
+      <div class="fact"><div class="fact-label">Role</div><div class="fact-value">Senior Product Designer, one of two designers</div></div>
+      <div class="fact"><div class="fact-label">Timeline</div><div class="fact-value">2025&ndash;2026</div></div>
+      <div class="fact"><div class="fact-label">Focus</div><div class="fact-value">Systems</div></div>
     </div>
+    
   </div>
 
   <div class="hero-panel">
     <img class="hero-img" src="assets/client-portal-hero-v3.png" alt="Client portal screens: an active Workers' Compensation policy card, its Policy Details panel, and the coverage breakdown for a People Centric archetype.">
   </div>
 
-  <div class="wrap">
-    <a href="index.html#work" class="back-pill">← All case studies</a>
-  </div>
-
   <div class="case-main">
+
+    <div class="result-block">
+      <div class="h-label"><span class="spark">✦</span> Result</div>
+      <div class="rb-num">5</div>
+      <div class="rb-line">archetypes to carry hundreds of coverage types. Employee Benefits launched later and slotted in with no new design work.</div>
+    </div>
 
     <h2>The Situation</h2>
     <p class="measure situation-intro">Acrisure had grown by rolling up <strong>more than 1,000 businesses</strong>, each bringing its own systems, data, and definition of what "client" even meant. The only client-facing option was a third-party tool with mixed adoption. No client, servicer, or business team had ever had one place to see everything a given client held.</p>
@@ -264,10 +424,7 @@
     <div class="block-label">The foundation</div>
     <p class="measure">The business also needed something shipped fast, and the only design system available to build from was acrisure.com's own: built for marketing pages, not for the structural weight a servicing portal needed to carry.</p>
 
-    <div class="highlight">
-      <div class="h-label"><span class="spark">✦</span> The tension</div>
-      <div class="h-line">I had to design for hundreds of coverage types, and inherit a foundation that was never built to hold what came next.</div>
-    </div>
+    <div class="decision-callout">I had to design for hundreds of coverage types, and inherit a foundation that was never built to hold what came next.</div>
 
 
     <h2>Decision One: Policy Archetype Models</h2>
@@ -293,16 +450,23 @@
       </div>
     </div>
 
+    <p class="fig-caption">The five policy archetypes, each with its underlying data structure</p>
+
     <div class="highlight">
       <div class="h-label"><span class="spark">✦</span> Proof it holds up</div>
-      <div class="h-line">Employee Benefits launched later and slotted directly into the People Centric archetype with no new design work required. It's the clearest evidence the model wasn't just built for what existed at the time.</div>
+      <div class="h-line">Employee Benefits launched later and slotted directly into the People Centric archetype with no new design work required.</div>
     </div>
+
+    <p>It's the clearest evidence the model wasn't just built for what existed at the time.</p>
 
     <h2>Decision Two: Borrowing the Navigation, Then Redesigning It</h2>
     <h3>The tradeoff</h3>
-    <p>Given the timeline, I launched on Acrisure's existing design system rather than build new navigation infrastructure. My manager and PM agreed with the call at the time, and given the deadline, it was the right one. It just meant <strong>the nav wasn't built for what came next</strong>.</p>
+    <p>Given the timeline, I launched on Acrisure's existing design system rather than build new navigation infrastructure. My manager and PM agreed with the call at the time, and given the deadline, it was the right one.</p>
+
+    <div class="decision-callout">It just meant the nav wasn't built for what came next.</div>
 
     <img class="screen-photo-wide" src="assets/Portal_Study_Body_003d.png" alt="The Acrisure client portal as it launched: the desktop dashboard (Welcome, John, personal products) with the slide-out navigation menu open, listing Account &amp; Privacy, Explore Personal Solutions, Explore Business Solutions, Acrisure.com, and Log Out.">
+    <p class="fig-caption wide">The portal at launch, with the borrowed slide-out navigation open</p>
 
     <h3>What broke after launch</h3>
     <p>Three things surfaced the cost of that tradeoff, close together in time:</p>
@@ -317,12 +481,14 @@
     <p>Before designing anything, I got the team aligned on shared language (what we meant by Portal User, Account, Product, and Access level) and set four design principles to hold every decision to.</p>
 
     <img class="screen-photo" src="assets/client-portal-principles.png" alt="Four design principles: Account-first (one account in view at a time, no cross-account confusion), Same identity, new context (topbar carries identity, sidebar carries account context), Content earns the nav (nothing placeholder or half-finished gets a nav slot), and Scalable by default (sidebar over tab bar, so it grows as new products are added).">
+    <p class="fig-caption">The four design principles every navigation decision was held to</p>
 
     <p>To test the structure, I used a scenario instead of reasoning about it in the abstract: Marcus Chen, a client juggling three businesses and a personal policy, all logging in on one Monday morning. The wealth manager persona fit the same model, one identity with several accounts underneath it, no new rule needed.</p>
 
     <p>What came out of it: a Portal User level that's always visible, with an account-scoped sidebar underneath.</p>
 
     <img class="screen-photo-wide" src="assets/Portal_Study_Body_003.png" alt="Annotated portal screen. A Portal User level that is always visible holds the account switcher, the notification bell and settings. Below it, the account-scoped sidebar holds Overview, Documents and Requests, plus Policies, Billing and Claims under Insurance, with support persistent at the bottom.">
+    <p class="fig-caption wide">The redesigned structure: a Portal User level on top, an account-scoped sidebar underneath</p>
 
     <div class="highlight">
       <div class="h-label"><span class="spark">✦</span> Field validation</div>
@@ -335,14 +501,16 @@
     <p>I presented this work at a leadership offsite about where the portal was headed. Afterward, our Head of Product told me directly:</p>
 
     <div class="quote">
-      <span class="qmark">"</span>
+      <span class="qmark">&ldquo;</span>
       <p>I was so impressed with the way you showed up in our offsite&hellip; I was so glad you were able to drive the kinds of conversations that needed to be had.</p>
       <cite>Head of Product, Acrisure</cite>
     </div>
 
     <h2>Reflection</h2>
     <div class="reflection">
-      <p>We launched on the existing design system to hit the deadline, and it got us live on time. I knew the borrowed nav would have limits. Looking back, I'd push back more and make a stronger case for an alternative before we committed. The archetype models held up. Employee Benefits fit into them with no new design work, and the new navigation covered both open product requests. The portal is still rolling out to user groups in stages, so adoption and ticket data aren't in yet.</p>
+      <p>We launched on the existing design system to hit the deadline, and it got us live on time. I knew the borrowed nav would have limits.</p>
+      <div class="decision-callout">Looking back, I'd push back more and make a stronger case for an alternative before we committed.</div>
+      <p>The archetype models held up. Employee Benefits fit into them with no new design work, and the new navigation covered both open product requests. The portal is still rolling out to user groups in stages, so adoption and ticket data aren't in yet.</p>
     </div>
 
   </div>

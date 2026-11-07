@@ -243,6 +243,145 @@
     background: var(--surface); border: 1px solid var(--line);
     border-radius: 100px; padding: 6px 14px; line-height: 1.3;
   }
+
+  /* ===== Design pass (preview): hierarchy for a 10-second scan ===== */
+  :root { --accent-text: var(--accent); }
+  body.dark { --accent-text: #8d94ff; }
+
+  h1.case-h1 { font-size: clamp(38px, 6.6vw, 64px); font-weight: 600; line-height: 1.05; letter-spacing: -0.02em; max-width: 16ch; margin-bottom: 24px; }
+  .case-subhead { font-size: clamp(18px, 2.2vw, 22px); line-height: 1.5; color: var(--ink-soft); max-width: 640px; margin-bottom: 32px; }
+
+  .facts-strip { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; column-gap: 56px; border-top: 1px solid var(--muted); padding-top: 18px; margin-bottom: 28px; max-width: 720px; }
+  .fact-label { font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 6px; }
+  .fact-value { font-size: 17px; font-weight: 500; color: var(--ink); }
+  .hero-meta-row { justify-content: flex-start; }
+
+  .case-main { max-width: 744px; counter-reset: sec; }
+  .case-main p { font-size: 18px; line-height: 1.65; margin-bottom: 20px; }
+  .case-main h2 { counter-increment: sec; font-size: clamp(28px, 4vw, 36px); font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; margin: 112px 0 16px; }
+  .case-main h2::before { content: counter(sec, decimal-leading-zero); display: block; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-text); margin-bottom: 14px; line-height: 1; }
+  .case-main .result-block + h2 { margin-top: 0; }
+
+  .result-block { margin: 96px 0; }
+  .result-block .h-label { font-size: 13px; color: var(--ink-soft); display: flex; align-items: center; gap: 6px; margin-bottom: 16px; }
+  .result-block .h-label .spark { color: var(--accent-text); }
+  .rb-num { font-size: clamp(56px, 12vw, 96px); font-weight: 700; line-height: 1; letter-spacing: -0.03em; color: var(--accent-text); }
+  .rb-line { font-size: 22px; line-height: 1.4; margin-top: 12px; color: var(--ink); }
+
+  .decision-callout { font-size: clamp(20px, 2.6vw, 24px); font-weight: 500; line-height: 1.4; border-left: 3px solid var(--accent); padding-left: 24px; margin: 40px 0; color: var(--ink); }
+  .result-callout .h-label { font-size: 13px; font-weight: 400; color: var(--ink-soft); display: flex; align-items: center; gap: 6px; margin-bottom: 10px; }
+  .result-callout .h-label .spark { color: var(--accent-text); }
+  .rc-num { font-size: 56px; font-weight: 700; line-height: 1; letter-spacing: -0.03em; color: var(--accent-text); margin-bottom: 14px; }
+
+  .case-main .screen-photo, .case-main .screen-photo-wrap, .case-main .industry-demo { max-width: 680px; margin-bottom: 0; }
+  .fig-caption, .case-main p.fig-caption { font-size: 14px; line-height: 1.5; color: var(--ink-soft); margin: 12px 0 36px; }
+
+  .line-pills { margin: 4px 0 32px; }
+
+  .quote { margin: 56px 0; }
+  .case-main .quote p { font-size: clamp(22px, 3vw, 28px); font-weight: 500; line-height: 1.35; margin-bottom: 16px; }
+  .quote cite { font-size: 14px; color: var(--ink-soft); }
+  .quote .qmark { color: var(--accent-text); }
+
+  .stat-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px; width: min(1000px, calc(100vw - 64px)); position: relative; left: 50%; transform: translateX(-50%); margin: 32px 0 36px; }
+  .stat { border-top: 1px solid var(--muted); padding-top: 20px; }
+  .stat-num { font-size: 56px; font-weight: 700; line-height: 1; letter-spacing: -0.03em; color: var(--accent-text); margin-bottom: 14px; }
+  .stat-label { font-size: 16px; line-height: 1.5; color: var(--ink); }
+  .case-main p.stat-extra { font-size: 18px; position: relative; padding-left: 20px; margin-bottom: 0; }
+  .stat-extra::before { content: ""; position: absolute; left: 2px; top: 0.62em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+
+  .case-main .reflection p { font-size: 18px; color: var(--ink-soft); margin-bottom: 0; }
+  .case-main .reflection .decision-callout { color: var(--ink); }
+
+  @media (max-width: 640px) {
+    .facts-strip { grid-template-columns: 1fr; row-gap: 16px; }
+    .case-main h2 { margin-top: 72px; }
+    .case-main .result-block + h2 { margin-top: 0; }
+    .result-block { margin: 72px 0; }
+    .stat-row { grid-template-columns: 1fr; gap: 36px; width: 100%; left: 0; transform: none; }
+    .stat-num, .rc-num { font-size: 56px; }
+  }
+/* ===== DS: site design system v2 (identical token block on every page; see design-system.md) ===== */
+:root {
+  --fs-h1: clamp(34px, 4.8vw, 48px);
+  --fs-h2: clamp(26px, 3.4vw, 32px);
+  --fs-h3: 22px;
+  --fs-lead: clamp(18px, 2vw, 20px);        /* subtitles, result line */
+  --fs-callout: clamp(20px, 2.4vw, 22px);
+  --fs-stat: 48px;
+  --fs-body: 18px;
+  --fs-ui: 16px;                            /* fact values, stat labels, card text, buttons */
+  --fs-small: 14px;                         /* nav, captions, chips, labels with words */
+  --fs-label: 12px;                         /* uppercase eyebrows, tiny meta */
+  /* spacing: 8-based scale. Inner gaps are always smaller than outer ones. */
+  --space-xs: 8px;       /* label to heading, caption to figure */
+  --space-s: 16px;       /* heading to its content */
+  --space-m: 24px;       /* paragraph to paragraph, header stack */
+  --space-l: 32px;
+  --space-block: 40px;   /* around callouts, quotes, figures */
+  --space-lead: 48px;    /* hero to result, result to first section */
+  --space-xl: 64px;      /* top of home and about */
+  --space-section: 96px; /* between numbered sections */
+}
+@media (max-width: 640px) { :root { --space-block: 32px; --space-lead: 40px; --space-xl: 48px; --space-section: 72px; } }
+
+/* shared chrome: header, footer, chips */
+.brand .name, .brand .mark { font-size: var(--fs-body); }
+nav a { font-size: var(--fs-small); }
+.icon-toggle { font-size: var(--fs-ui); }
+footer .connect-label { font-size: var(--fs-ui); }
+footer .links a { font-size: var(--fs-small); }
+.case-tag { font-size: var(--fs-small); }
+strong { font-weight: 600; }
+
+/* case studies */
+.back-link { display: inline-block; font-size: var(--fs-small); font-weight: 500; color: var(--ink-soft); text-decoration: none; margin: 4px 0 var(--space-m); }
+.back-link:hover { color: var(--ink); }
+.eyebrow-case { margin-bottom: var(--space-m); }
+h1.case-h1 { font-size: var(--fs-h1); line-height: 1.12; letter-spacing: -0.02em; max-width: 22ch; margin-bottom: var(--space-s); }
+.case-subhead { font-size: var(--fs-lead); line-height: 1.5; max-width: 640px; margin-bottom: var(--space-l); }
+.facts-strip { display: flex; flex-wrap: wrap; gap: var(--space-m) var(--space-lead); max-width: 860px; margin-bottom: var(--space-block); padding-top: var(--space-s); }
+.fact-label { font-size: var(--fs-label); }
+.fact-value { font-size: var(--fs-ui); }
+.case-main p { font-size: var(--fs-body); margin-bottom: var(--space-m); }
+.case-main h2 { font-size: var(--fs-h2); margin: var(--space-section) 0 var(--space-s); }
+.case-main h2::before { font-size: var(--fs-label); margin-bottom: var(--space-xs); }
+.case-main .result-block + h2 { margin-top: 0; }
+.case-main h3 { font-size: var(--fs-h3); line-height: 1.25; letter-spacing: -0.01em; margin: var(--space-lead) 0 var(--space-xs); }
+.case-main h2 + h3 { margin-top: 0; }
+.case-main h4, .goal-item h4 { font-size: var(--fs-body); font-weight: 600; }
+.case-main .result-block { margin: var(--space-lead) 0; }
+.result-block .h-label { margin-bottom: var(--space-s); }
+.rb-num { font-size: var(--fs-h1); font-weight: 600; line-height: 1.12; letter-spacing: -0.02em; }
+.rb-line { font-size: var(--fs-lead); line-height: 1.45; margin-top: var(--space-xs); }
+.decision-callout { font-size: var(--fs-callout); margin: var(--space-block) 0; }
+.rc-num, .stat-num { font-size: var(--fs-stat); }
+.stat-label { font-size: var(--fs-ui); }
+.fig-caption, .case-main p.fig-caption { font-size: var(--fs-small); margin: var(--space-xs) 0 var(--space-block); }
+.screen-caption { font-size: var(--fs-small); }
+.case-main .reflection p, .case-main p.stat-extra { font-size: var(--fs-body); }
+.stat-row { margin: var(--space-l) 0 var(--space-block); }
+.highlight .h-line { font-size: var(--fs-callout); }
+.h-label, .highlight .h-label, .result-callout .h-label, .result-block .h-label { font-size: var(--fs-small); }
+.line-pill { font-size: var(--fs-small); }
+.block-label { font-size: var(--fs-small); }
+.goal-item p { font-size: var(--fs-ui); }
+.attempt-step .step-label { font-size: var(--fs-label); }
+.attempt-step .step-detail { font-size: var(--fs-ui); }
+.attempt-step .step-note { font-size: var(--fs-small); }
+.attempt-arrow { font-size: var(--fs-body); }
+@media (max-width: 640px) { .stat-num, .rc-num { font-size: var(--fs-stat); } .facts-strip { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-s) var(--space-m); } .facts-strip .fact:nth-child(2) { grid-column: 1 / -1; } }
+.highlight { margin: var(--space-block) 0; }
+.case-main .measure.situation-intro { margin-bottom: var(--space-block); }
+.goal-grid { margin: var(--space-s) 0 0; padding-top: var(--space-m); gap: var(--space-l); }
+.case-main .highlight p { margin-bottom: 0; }
+.quote { margin: var(--space-block) 0; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: var(--space-m) var(--space-l); }
+.quote .qmark { font-size: var(--fs-h2); margin-bottom: var(--space-xs); }
+.case-main .quote p { font-size: var(--fs-lead); font-weight: 400; line-height: 1.5; margin-bottom: var(--space-s); }
+@media (max-width: 640px) { .quote { padding: var(--space-m); } }
+/* ===== /DS ===== */
+
+
 </style>
 </head>
 <body>
@@ -280,40 +419,45 @@
 <main id="main-content" style="display:none;">
 
   <div class="wrap hero-case">
+    <a href="index.html#work" class="back-link">← All case studies</a>
     <div class="eyebrow-case">
       <img src="assets/acrisure-logo.png" alt="Acrisure" class="invert-logo" style="height:14px;">
     </div>
     <h1 class="case-h1">Rebuilding a Multi-Carrier Insurance Platform</h1>
-    <p class="case-subhead">Redesigning small business insurance quoting across dozens of carrier rulesets.</p>
-    <div class="hero-meta-row">
-      <div class="tag-row">
-        <span class="case-tag">Case Study</span>
-        <span class="case-tag">Insurance</span>
-        <span class="case-tag">Conversion</span>
-      </div>
-      <div class="client-meta">
-        Sole Product Designer &middot; 2024&ndash;2025
-      </div>
+    <p class="case-subhead">Rebuilding quote-and-buy for six commercial insurance lines and thousands of industry codes, growing conversion over 30% YoY</p>
+    <div class="facts-strip">
+      <div class="fact"><div class="fact-label">Company</div><div class="fact-value">Acrisure</div></div>
+      <div class="fact"><div class="fact-label">Role</div><div class="fact-value">Sole Product Designer</div></div>
+      <div class="fact"><div class="fact-label">Timeline</div><div class="fact-value">2024&ndash;2025</div></div>
+      <div class="fact"><div class="fact-label">Focus</div><div class="fact-value">Conversion</div></div>
     </div>
-  </div>
+    </div>
 
   <div class="hero-panel">
-    <img class="hero-img" src="assets/qbs-hero-v2.png" alt="Coverage selection and Payroll Billing screens from the quoting platform, showing the product-line picker and a mid-flow carrier question.">
+    <video class="hero-img" width="760" height="520" autoplay muted loop playsinline preload="auto"
+           poster="assets/qbs-hero-poster.png?v=4"
+           aria-label="Industry selection and coverage selection flow from the quoting platform.">
+      <source src="assets/qbs-hero.webm?v=4" type="video/webm">
+      <source src="assets/qbs-hero.mp4?v=4" type="video/mp4">
+    </video>
   </div>
-
-  <div class="wrap">
-    <a href="index.html#work" class="back-pill">← All case studies</a>
-  </div>
+  <script>
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var heroVid = document.querySelector('.hero-panel video');
+      if (heroVid) { heroVid.removeAttribute('autoplay'); heroVid.pause(); }
+    }
+  </script>
 
   <div class="case-main">
 
-    <div class="highlight">
-      <div class="h-label"><span class="spark">✦</span> Highlight</div>
-      <div class="h-line">Over 30% year-over-year increase in conversion to bind</div>
+    <div class="result-block">
+      <div class="h-label"><span class="spark">✦</span> Result</div>
+      <div class="rb-num">Over 30%</div>
+      <div class="rb-line">year-over-year increase in conversion to bind</div>
     </div>
 
     <h2>The Situation</h2>
-    <p>Small businesses use this platform to quote and bind insurance across six product lines. It has to support fully digital, hybrid, and agent-assisted journeys at once. More than half of the traffic is mobile web, with no native app.</p>
+    <p>Small businesses use this platform to quote and bind insurance across six product lines. It has to support fully digital, hybrid, and agent-assisted journeys at once. More than half of the traffic is mobile web.</p>
 
     <div class="line-pills">
       <span class="line-pill">General Liability</span>
@@ -328,22 +472,29 @@
 
     <h2>The Constraint</h2>
     <p>Every product line depends on classifying a customer's industry correctly to determine eligibility and price, and there are thousands of possible codes with naming inconsistent enough to get strange (cleaning services alone split across half a dozen adjacent categories). Single-carrier competitors can offer a clean, curated list because they underwrite end to end.</p>
-    <p><strong>This platform works across many carriers at once, so that shortcut wasn't available.</strong> Consolidating the raw data into something friendlier would have taken engineering investment that was never prioritized. The design system was built for personal insurance, so I scaled it and added the components commercial needed.</p>
+
+    <div class="decision-callout">Thousands of industry codes, a different set of rules for every carrier, and no bandwidth to simplify either.</div>
+
+    <p>A multi-carrier platform can't take that shortcut. Consolidating the raw data into something friendlier would have taken engineering investment that was never prioritized. Legal reviewed every screen from start to finish. Their changes were to copy, and the flow held up.</p>
 
 
     <h2>Industry Classification</h2>
-    <p>Industry classification was the screen causing the most confusion after the September 2024 launch. High time-on-screen showed people struggling to find their category, made worse by the constraint above: thousands of inconsistent, carrier-specific codes with no budget to simplify them.</p>
+    <p>Industry classification was the screen causing the most confusion after launch. High time-on-screen showed people struggling to find their category, made worse by the constraint above: thousands of inconsistent, carrier-specific codes with no bandwidth to simplify them.</p>
 
     <img class="screen-photo" src="assets/qbs-industry-before.png" alt="Find your business class screen: a plain radio-button list of categories, with an unlabeled Type of Business search field below it.">
+    <p class="fig-caption">Before: radio-button list</p>
 
-    <p>The obvious answer was AI. Let a customer describe their business in plain language and have a model return the closest matches, with a manual fallback for low-confidence cases. We built it. Before it ever reached a customer, <strong>we tested it internally against real business data, and the match accuracy didn't clear the bar we needed.</strong></p>
+    <p>The obvious answer was AI. Let a customer describe their business in plain language and have a model return the closest matches. Engineering built the endpoint and my PM ran it against real business data. It was still returning wrong suggestions.</p>
 
     <div class="screen-photo-wrap">
       <img class="screen-photo" src="assets/qbs-industry-concept.png" alt="Describe your business in a few words screen: free-text input with AI-matched industry results ranked below it.">
       <div class="type-caret"></div>
     </div>
+    <p class="fig-caption">AI concept, tested internally, not shipped</p>
 
-    <p>We didn't ship it. In insurance, getting someone's industry wrong isn't cosmetic: it can misprice or misqualify a customer, and my team automatically weighs that risk on anything customer-facing. Walking away from the AI feature was the obvious call, even without a precise technical explanation for why the model underperformed.</p>
+    <p>We didn't ship it. Getting someone's industry wrong can lead to claim denials, back charges, higher premiums, and policy cancellation, and as the broker, we're the ones on the line. My team automatically weighs that risk on anything customer-facing.</p>
+
+    <div class="decision-callout">We dropped an AI industry search that still returned wrong suggestions, because a wrong industry can get a customer's claim denied.</div>
 
     <p>What shipped instead was a visual card grid: broad categories represented with icons and plain-language examples, so a customer could recognize their business instead of parsing formal category names. Selecting a category scopes both the visible list and the search field below it, so a short, ambiguous term like "cleaning" doesn't return unrelated matches across the full 2,000-code set. Anyone unsure can pick "Other" and search the full set.</p>
 
@@ -357,37 +508,47 @@
         </svg>
       </div>
     </div>
+    <p class="fig-caption">After: card grid, live today</p>
 
     <div class="highlight">
       <div class="h-label"><span class="spark">✦</span> Result</div>
-      <div class="h-line">This redesign produced a 3.7% increase in conversion on this step alone, with a corresponding drop in time-on-screen.</div>
+      <p>This redesign produced a 3.7% increase in conversion on this step alone, with a corresponding drop in time-on-screen.</p>
     </div>
 
     <h2>Sequencing Carrier Questions</h2>
 
-    <p>Every carrier asks its own underwriting questions, and they arrive from engineering as raw API fields like residential units or percentage of sales from alcohol. The goal was getting customers to a quote fast, but every carrier needs different questions answered before it can price, and customers don't need to know which. <strong>For every field, my first question was whether it had to come before the quote or could wait until after.</strong> The ones that gate the quote became plain-language questions a business owner could answer, placed up front. Everything else waits until after the customer picks a carrier.</p>
+    <p>Every carrier asks its own underwriting questions, and they arrive from engineering as raw API fields like residential units or percentage of sales from alcohol. The goal was getting customers to a quote fast, but every carrier needs different questions answered before it can price, and customers don't need to know which.</p>
 
-    <p>Those later questions live in the Coverage Hub, which I designed. Carriers also finish binding at very different speeds (one confirms almost instantly, another needs an e-signature and can take days), so each coverage gets its own thread and the customer can see where every one stands (in progress, complete, needs signature). The flow supports digital, hybrid, and agent-assisted journeys, so customers can finish digitally where possible and bring their context with them if they need an agent.</p>
+    <div class="decision-callout">For every field, my first question was whether it had to come before the quote or could wait until after.</div>
+
+    <p>The ones that gate the quote became plain-language questions a business owner could answer, placed up front. Everything else waits until after the customer picks a carrier.</p>
+
+    <p>Those later questions live in a hub-and-spoke layout I designed, with a spoke for each coverage. Carriers bind at very different speeds (one confirms almost instantly, another needs an e-signature and can take days), so each spoke shows where its coverage stands. The flow supports digital, hybrid, and agent-assisted journeys, so customers can finish digitally where possible and bring their context with them if they need an agent.</p>
+
 
     <img class="screen-photo" src="assets/qbs-coverage-hub-detail.png" alt="Coverage Hub showing two policies bound at once: a General Liability policy from The Hartford in progress, and a Professional Liability policy from Coterie flagged Agent Follow-Up Needed with call and contact options.">
+    <p class="fig-caption">Hub-and-spoke view with bind status per coverage</p>
 
     <div class="quote">
-      <span class="qmark">"</span>
+      <span class="qmark">&ldquo;</span>
       <p>This is one of the best user experiences we have seen in the customer-facing realm.</p>
       <cite>The Hartford, Carrier Partner</cite>
     </div>
 
-    <h2>Results</h2>
-    <ul class="decision-list accent-bullets">
-      <li><strong>Over 30%</strong> year-over-year increase in average conversion to bind</li>
-      <li><strong>5% more</strong> users went on to payment after we removed a confirmation modal that added hesitation at the last step.</li>
-      <li><strong>+3.7%</strong> conversion lift from the industry classification redesign</li>
-      <li>Reduced reliance on phone-only binding</li>
-    </ul>
+    <h2>Shipped and Measured</h2>
+    <p>After launch I watched where people dropped off in the funnel and changed what the data pointed to. The last step carried a message I had added, saying selections can't be edited once you move to payment. The data showed it made people hesitate. Nothing was hidden, since anyone who needed to change something could start over, so I removed it and 5% more users went on to payment.</p>
+
+    <div class="stat-row">
+      <div class="stat"><div class="stat-num">Over 30%</div><div class="stat-label">year-over-year increase in average conversion to bind</div></div>
+      <div class="stat"><div class="stat-num">5% more</div><div class="stat-label">users went on to payment after we removed a confirmation message that added hesitation at the last step</div></div>
+      <div class="stat"><div class="stat-num">3.7% more</div><div class="stat-label">users continued to product selection after the industry page redesign</div></div>
+    </div>
 
     <h2>Reflection</h2>
     <div class="reflection">
-      <p>Designing for scale turned out to be a different problem than designing to prove an idea works. <strong>The complexity of a multi-carrier platform never went away, so most of the work was deciding when the customer had to meet it:</strong> recognizing an industry instead of parsing a code, answering only what the quote needed, and saving the rest until a carrier was chosen.</p>
+      <p>Designing for scale turned out to be a different problem than designing to prove an idea works.</p>
+      <div class="decision-callout">The complexity of a multi-carrier platform never went away, so most of the work was deciding when the customer had to meet it.</div>
+      <p>I did it by recognizing an industry instead of parsing a code, answering only what the quote needed, and saving the rest until a carrier was chosen.</p>
     </div>
 
   </div>

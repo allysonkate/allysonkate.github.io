@@ -181,7 +181,7 @@
   /* row two */
   .row-two {
     display: grid;
-    grid-template-columns: 1fr 1.7fr;
+    grid-template-columns: 1.7fr 1fr;
     gap: 16px;
     margin-top: 16px;
   }
@@ -401,6 +401,54 @@
   @media (max-width: 640px) {
     nav { gap: 20px; }
   }
+
+/* ===== DS: site design system v2 (identical token block on every page; see design-system.md) ===== */
+:root {
+  --fs-h1: clamp(34px, 4.8vw, 48px);
+  --fs-h2: clamp(26px, 3.4vw, 32px);
+  --fs-h3: 22px;
+  --fs-lead: clamp(18px, 2vw, 20px);        /* subtitles, result line */
+  --fs-callout: clamp(20px, 2.4vw, 22px);
+  --fs-stat: 48px;
+  --fs-body: 18px;
+  --fs-ui: 16px;                            /* fact values, stat labels, card text, buttons */
+  --fs-small: 14px;                         /* nav, captions, chips, labels with words */
+  --fs-label: 12px;                         /* uppercase eyebrows, tiny meta */
+  /* spacing: 8-based scale. Inner gaps are always smaller than outer ones. */
+  --space-xs: 8px;       /* label to heading, caption to figure */
+  --space-s: 16px;       /* heading to its content */
+  --space-m: 24px;       /* paragraph to paragraph, header stack */
+  --space-l: 32px;
+  --space-block: 40px;   /* around callouts, quotes, figures */
+  --space-lead: 48px;    /* hero to result, result to first section */
+  --space-xl: 64px;      /* top of home and about */
+  --space-section: 96px; /* between numbered sections */
+}
+@media (max-width: 640px) { :root { --space-block: 32px; --space-lead: 40px; --space-xl: 48px; --space-section: 72px; } }
+
+/* shared chrome: header, footer, chips */
+.brand .name, .brand .mark { font-size: var(--fs-body); }
+nav a { font-size: var(--fs-small); }
+.icon-toggle { font-size: var(--fs-ui); }
+footer .connect-label { font-size: var(--fs-ui); }
+footer .links a { font-size: var(--fs-small); }
+.case-tag { font-size: var(--fs-small); }
+strong { font-weight: 600; }
+
+/* home */
+.intro { margin-top: var(--space-xl); }
+.intro h1 { font-size: var(--fs-h1); line-height: 1.12; letter-spacing: -0.02em; margin-bottom: var(--space-m); }
+.status-line { margin-bottom: var(--space-m); }
+.intro .meta-line { font-size: var(--fs-lead); line-height: 1.5; max-width: 520px; }
+.intro { margin-bottom: var(--space-section); }
+.row-three { margin-bottom: var(--space-section); }
+.case-card[class] h3, .view-all-card span.label { font-size: var(--fs-h3); }
+.case-card p { font-size: var(--fs-small); max-width: 92%; }
+.msg-bubble, .pill-btn { font-size: var(--fs-small); }
+.stat-shot .stat-number { font-size: var(--fs-h2); }
+.stat-shot .stat-label { font-size: var(--fs-label); }
+.status-line { font-size: var(--fs-small); }
+/* ===== /DS ===== */
 </style>
 </head>
 <body>
@@ -430,17 +478,6 @@
 
   <section class="row-two" id="work">
 
-    <a href="client-portal.html" class="case-card amber-fill" id="portal-card">
-      <img class="card-art-full" src="assets/client-portal-stack-v3.png" alt="Stacked policy, location, coverage, and building detail cards from the Client Portal">
-      <div class="tag-row">
-        <span class="case-tag">Case Study</span>
-        <span class="case-tag">Systems</span>
-        <div class="card-arrow"><span class="arrow-glyph a1">↗</span><span class="arrow-glyph a2">↗</span></div>
-      </div>
-      <h3>Building a Client Portal's Foundation</h3>
-      <p>Designing one structure for hundreds of coverage types, then redesigning the navigation it launched on.</p>
-    </a>
-
     <a href="qbs-commercial.html" class="case-card indigo-fill" id="qbs-card">
       <div class="qbs-visual">
         <img class="qbs-img" src="assets/qbs-coverage-hub-default.png" alt="Coverage Hub bind-status card showing a General Liability policy from The Hartford, in progress">
@@ -457,7 +494,18 @@
         <div class="card-arrow"><span class="arrow-glyph a1">↗</span><span class="arrow-glyph a2">↗</span></div>
       </div>
       <h3>Rebuilding a Multi-Carrier Insurance Platform</h3>
-      <p>Redesigning small business insurance quoting across dozens of carrier rulesets, growing conversion over 30% year over year.</p>
+      <p>Rebuilding quote-and-buy for six commercial insurance lines and thousands of industry codes, growing conversion over 30% YoY</p>
+    </a>
+
+    <a href="client-portal.html" class="case-card amber-fill" id="portal-card">
+      <img class="card-art-full" src="assets/client-portal-stack-v3.png" alt="Stacked policy, location, coverage, and building detail cards from the Client Portal">
+      <div class="tag-row">
+        <span class="case-tag">Case Study</span>
+        <span class="case-tag">Systems</span>
+        <div class="card-arrow"><span class="arrow-glyph a1">↗</span><span class="arrow-glyph a2">↗</span></div>
+      </div>
+      <h3>Building a Client Portal's Foundation</h3>
+      <p>Designing one structure for hundreds of coverage types, then redesigning the navigation it launched on.</p>
     </a>
 
   </section>
@@ -465,18 +513,18 @@
   <section class="row-three">
 
     <a href="magpie.html" class="case-card sky-fill">
-      <img class="card-art-full" src="assets/magpie-stack.png" alt="Authenticated Topps 1993 Derek Jeter SP card in the Vault, showing cost basis, current value, and gain.">
+      <img class="card-art-full" src="assets/magpie-card-v4.png" alt="Magpie Vault total value of $16,405, up 33.1%, with a chart of portfolio value over time.">
       <div class="tag-row">
         <span class="case-tag">Case Study</span>
-        <span class="case-tag">Growth</span>
+        <span class="case-tag">Research</span>
         <div class="card-arrow"><span class="arrow-glyph a1">↗</span><span class="arrow-glyph a2">↗</span></div>
       </div>
-      <h3>Pivoting a Fraud Tool Into a Collectibles Platform</h3>
+      <h3>Testing That Changed What We Built</h3>
       <p>Pivoting the product after research overturned its founding hypothesis.</p>
     </a>
 
     <a href="brod-trip.html" class="case-card purple-fill">
-      <img class="card-art-full" src="assets/brod-trip-stack.png" alt="A Wayback Machine snapshot calendar for July 16, 2016, the archived capture used to recover a lost Bro'd Trip post.">
+      <img class="card-art-full" src="assets/brod-trip-card.png" alt="A Claude chat titled Python HTTP server setup, with prompts to build a local page and send it to a Figma file.">
       <div class="tag-row">
         <span class="case-tag">Case Study</span>
         <span class="case-tag">AI Workflow</span>
