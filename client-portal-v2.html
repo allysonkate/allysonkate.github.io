@@ -334,7 +334,6 @@ h1.case-h1 { font-size: var(--fs-h1); line-height: 1.12; letter-spacing: -0.02em
 /* ===== /DS ===== */
 
 /* ===== TEMPORARY helper styles for client-portal-v2 (remove when copy and images are final) ===== */
-.todo { background: #fff3b0; color: #1a1a1a; padding: 1px 4px; border-radius: 3px; }
 .image-slot { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; box-sizing: border-box; min-height: 260px; padding: 24px; text-align: center; background: rgba(128,128,128,0.10); border: 2px dashed var(--muted); color: var(--ink-soft); }
 .image-slot .slot-label { font-size: 14px; font-weight: 600; color: var(--ink); }
 .image-slot code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; line-height: 1.4; word-break: break-all; }
@@ -448,21 +447,22 @@ h1.case-h1 { font-size: var(--fs-h1); line-height: 1.12; letter-spacing: -0.02em
     <!-- IMAGE SLOT: MVP edge case
          file: assets/client-portal-v2-mvp-edge-case.png
          capture: a screenshot of the first-version policy page showing either the 24 additional-interest cards or the $undefined per $100 payroll line. Redact any real client or policy data. Crop tight on the problem.
-         alt: The first version of a policy page showing [[describe what the screenshot shows]].
+         alt: The first version of a policy page showing 24 identical cards for additional interests.
          When the file is in assets/, replace the div below with an img using the same class names minus image-slot. -->
     <div class="image-slot screen-photo"><span class="slot-label">Image slot: MVP edge case</span><code>assets/client-portal-v2-mvp-edge-case.png</code></div>
 
     <h2>The next platform</h2>
-    <p>The business then moved the portal onto its next platform, which meant rebuilding from the ground up. This time we're building a new design system instead of borrowing one, and I'm one of two designers on it. I'm handling the top 20 policy types one by one, with a catch-all for the rest, so every decision on a policy page is made on purpose. <span class="todo">CONFIRM: say in one sentence what the one-by-one approach cost you, e.g. time or scope</span></p>
+    <p>Then the business moved the portal to a new platform, so we're rebuilding it from scratch. The first time, we borrowed a design system to hit a deadline. This time we're building our own, and there are two of us designing it.</p>
+    <p>I'm designing the top 20 policy types one at a time. Everything else falls into two catch-alls, one personal and one commercial.</p>
 
     <h2>The decision: how much should a policy page show?</h2>
     <h3>Two starting assumptions</h3>
     <p>Product's starting assumption was reasonable: if we have the data, show it. Ours was the opposite. The more a page shows, the more confused clients get, and the more they call.</p>
 
     <h3>What settled it</h3>
-    <p>The team had already built principles from research for the portal. The ones that mattered here were clarity over completeness, never leave users in the dark, and blank is not an answer. <span class="todo">CONFIRM: the research behind the principles. The 44% / 29% figures have no named source yet, so no statistic appears here until Al names one</span></p>
-    <p>Several operations leaders who explain coverage to clients told us they give the ABCs: the few things that matter, in plain terms. <span class="todo">CONFIRM: how you want to refer to the DOWE group publicly</span> We took those principles, that feedback, and a prototype with less data to the product team, along with edge cases that broke our own principles. Product changed course.</p>
-    <p>A competitive audit of <span class="todo">CONFIRM: number</span> insurer and insurtech portals gave us the wider baseline. <span class="todo">CONFIRM: that Al ran the audit, and which finding mattered to the PMs. Do NOT say the audit proved less data works. Its supported finding is "comprehension outweighs data volume," from J.D. Power 2025</span></p>
+    <p>The team had already built principles for the portal from our own research: surveys, research with servicers across the company, a handful of user interviews, and outside industry research. The ones that mattered here were clarity over completeness, never leave users in the dark, and blank is not an answer.</p>
+    <p>Several operations leaders who explain coverage to clients told us they give the ABCs: the few things that matter, in plain terms. We took those principles, that feedback, and a prototype with less data to the product team, along with edge cases that broke our own principles. Product changed course.</p>
+    <p>I ran a competitive audit of 20+ insurer and insurtech portals to set the wider baseline.</p>
 
     <!-- IMAGE SLOT: Audit
          file: assets/client-portal-v2-audit.png
@@ -495,7 +495,7 @@ h1.case-h1 { font-size: var(--fs-h1); line-height: 1.12; letter-spacing: -0.02em
     <p>A client who wants a sub-limit has to open the declarations page. Product's instinct was right that some clients want that detail. We kept it one step away instead of on every screen, and Contact us stays one step away too.</p>
 
     <h2>How I worked</h2>
-    <p>I built the prototypes and wrote up each decision with Claude: laying out header, action, and layout options side by side, stress-testing edge cases, and writing the rules down so the next policy type follows them. The decisions were mine and the team's. <span class="todo">CONFIRM: any one specific thing Claude did that you'd want named</span></p>
+    <p>I built the prototypes and wrote up each decision with Claude: laying out header, action, and layout options side by side, stress-testing edge cases, and writing the rules down so the next policy type follows them. The decisions were mine and the team's.</p>
 
     <!-- IMAGE SLOT: Options explored
          file: assets/client-portal-v2-explorations.png
