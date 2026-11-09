@@ -393,8 +393,7 @@ h1.case-h1 { font-size: var(--fs-h1); line-height: 1.12; letter-spacing: -0.02em
   </div>
 
   <div class="hero-panel">
-    <!-- Stand-in hero. When assets/client-portal-v2-hero.png exists (exported 1520 x 840, shown up to 760px wide), swap src to it and use alt="A policy details page showing the three headline coverage numbers for a homeowners policy." -->
-    <img class="hero-img" src="assets/client-portal-hero-v3.png" alt="Client portal screens: an active Workers' Compensation policy card, its Policy Details panel, and the coverage breakdown for a People Centric archetype.">
+    <img class="hero-img" src="assets/client-portal-v2-hero.png" alt="A workers' compensation policy details page with three headline coverage numbers: $1M each accident, $1M disease policy limit, and $1M disease for each employee.">
   </div>
 
   <div class="case-main">
@@ -474,22 +473,11 @@ h1.case-h1 { font-size: var(--fs-h1); line-height: 1.12; letter-spacing: -0.02em
     <h3>What a policy page shows now</h3>
     <p>Every policy page uses one layout, built from five zones that each do one job. The coverage zone answers the three questions clients ask first: how much am I covered for, what do I pay first, and what protects me if I'm liable. Anything more is one quiet button to the declarations page.</p>
 
-    <!-- IMAGE SLOT: Five zones
-         file: assets/client-portal-v2-zones.png
-         capture: the prototype's policy details page for one representative policy (Business Owners or Homeowners), with zones A to E labeled (Policy identity, Who and what is insured, What's covered, Actions, Supporting). Sample data only.
-         alt: A policy page divided into five labeled zones.
-         When the file is in assets/, replace the div below with an img using the same class names minus image-slot. -->
-    <div class="image-slot screen-photo-wide"><span class="slot-label">Image slot: Five zones</span><code>assets/client-portal-v2-zones.png</code></div>
+    <img class="screen-photo-wide" src="assets/client-portal-v2-zones.png" alt="A policy page divided into five labeled zones.">
 
     <p>The same rules generate every policy type. One number per row, with the first five showing. A value every row shares shows once. Requests live in the sidebar, not on policy pages. For homeowners, the page shows the dwelling limit, the deductible, and personal liability. For workers' comp, there's no dollar limit to show, so it shows the employers liability limits that clients and contracts ask about.</p>
     <p>Where the data didn't fit, I said so. Watercraft currently returns home fields, so it follows homeowners until the data team adds vessel fields.</p>
 
-    <!-- IMAGE SLOT: Rules per policy type
-         file: assets/client-portal-v2-rules.png
-         capture: from the Decisions tab of the explorations file, two policy cards side by side (for example Homeowners and General Liability), each showing We show / Why / Not showing.
-         alt: Two policy types with what each page shows, why, and what is left out.
-         When the file is in assets/, replace the div below with an img using the same class names minus image-slot. -->
-    <div class="image-slot screen-photo"><span class="slot-label">Image slot: Rules per policy type</span><code>assets/client-portal-v2-rules.png</code></div>
 
     <h3>The tradeoff</h3>
     <p>A client who wants a sub-limit has to open the declarations page. Product's instinct was right that some clients want that detail. We kept it one step away instead of on every screen, and Contact us stays one step away too.</p>
