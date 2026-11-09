@@ -333,11 +333,6 @@ h1.case-h1 { font-size: var(--fs-h1); line-height: 1.12; letter-spacing: -0.02em
 @media (max-width: 640px) { .quote { padding: var(--space-m); } }
 /* ===== /DS ===== */
 
-/* ===== TEMPORARY helper styles for client-portal-v2 (remove when copy and images are final) ===== */
-.image-slot { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; box-sizing: border-box; min-height: 260px; padding: 24px; text-align: center; background: rgba(128,128,128,0.10); border: 2px dashed var(--muted); color: var(--ink-soft); }
-.image-slot .slot-label { font-size: 14px; font-weight: 600; color: var(--ink); }
-.image-slot code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; line-height: 1.4; word-break: break-all; }
-/* ===== /TEMPORARY ===== */
 
 
 </style>
@@ -442,13 +437,6 @@ h1.case-h1 { font-size: var(--fs-h1); line-height: 1.12; letter-spacing: -0.02em
     <p class="fig-caption">The five policy archetypes, each with its underlying data structure</p>
 
     <p>What it didn't solve was what clients actually needed to see. The first version was organized around how the data is structured, and every field carried the same weight. One real policy showed 24 identical cards for additional interests. Showing everything also let insurance jargon through, including abbreviations that meant nothing to clients. With hundreds of policy types there were too many edge cases, and we couldn't hand-hold each one or explain every field. I had modeled the data. Clients needed answers.</p>
-
-    <!-- IMAGE SLOT: MVP edge case
-         file: assets/client-portal-v2-mvp-edge-case.png
-         capture: a screenshot of the first-version policy page showing the 24 identical additional-interest cards. Redact any real client or policy data. Crop tight on the problem.
-         alt: The first version of a policy page showing 24 identical cards for additional interests.
-         When the file is in assets/, replace the div below with an img using the same class names minus image-slot. -->
-    <div class="image-slot screen-photo"><span class="slot-label">Image slot: MVP edge case</span><code>assets/client-portal-v2-mvp-edge-case.png</code></div>
 
     <h2>The next platform</h2>
     <p>Then the business moved the portal to a new platform, so we're rebuilding it from scratch. The first time, we borrowed a design system to hit a deadline. This time we're building our own, and there are two of us designing it.</p>
