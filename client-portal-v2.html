@@ -393,7 +393,7 @@ h1.case-h1 { font-size: var(--fs-h1); line-height: 1.12; letter-spacing: -0.02em
   </div>
 
   <div class="hero-panel">
-    <img class="hero-img" src="assets/client-portal-v2-hero.png" alt="A workers' compensation policy details page with three headline coverage numbers: $1M each accident, $1M disease policy limit, and $1M disease for each employee.">
+    <img class="hero-img" src="assets/client-portal-v2-hero.png" alt="A workers' compensation policy details page showing the insurer, term, premium and three coverage limits.">
   </div>
 
   <div class="case-main">
@@ -463,18 +463,16 @@ h1.case-h1 { font-size: var(--fs-h1); line-height: 1.12; letter-spacing: -0.02em
     <p>Several operations leaders who explain coverage to clients told us they give the ABCs: the few things that matter, in plain terms. We took those principles, that feedback, and a prototype with less data to the product team, along with edge cases that broke our own principles. Product changed course.</p>
     <p>I ran a competitive audit of 20+ insurer and insurtech portals to set the wider baseline.</p>
 
-    <!-- IMAGE SLOT: Audit
-         file: assets/client-portal-v2-audit.png
-         capture: from the Figma competitive audit, the two text-only slides Policy Details (Commercial): Observations (slide 197) and Recommendations (slide 198), side by side in one image. Prefer these over any slide with competitor screenshots or logos. Check with legal or your manager before using competitor screens publicly.
-         alt: Competitive audit slides: observations and recommendations for commercial policy details.
-         When the file is in assets/, replace the div below with an img using the same class names minus image-slot. -->
-    <div class="image-slot screen-photo-wide"><span class="slot-label">Image slot: Audit</span><code>assets/client-portal-v2-audit.png</code></div>
-
     <h3>What a policy page shows now</h3>
     <p>Every policy page uses one layout, built from five zones that each do one job. The coverage zone answers the three questions clients ask first: how much am I covered for, what do I pay first, and what protects me if I'm liable. Anything more is one quiet button to the declarations page.</p>
 
     <img class="screen-photo-wide" src="assets/Portal_Study_Body_004.png" alt="A workers' compensation policy page in the new portal, showing the policy summary, three coverage limits of $1,000,000 each, and a list of insured class codes.">
+    <p class="fig-caption wide">A workers' comp policy page in the new portal.</p>
+
+    <p>Here is the same page with the five zones marked. Each one does one job.</p>
+
     <img class="screen-photo-wide" src="assets/Portal_Study_Body_005.png" alt="The same policy page divided into five labeled zones: policy identity, actions, what's covered, who and what's insured, and supporting documents.">
+    <p class="fig-caption wide">Policy identity, actions, what's covered, who and what is insured, and supporting documents.</p>
 
     <p>The same rules generate every policy type. One number per row, with the first five showing. A value every row shares shows once. Requests live in the sidebar, not on policy pages. For homeowners, the page shows the dwelling limit, the deductible, and personal liability. For workers' comp, there's no dollar limit to show, so it shows the employers liability limits that clients and contracts ask about.</p>
     <p>Where the data didn't fit, I said so. Watercraft currently returns home fields, so it follows homeowners until the data team adds vessel fields.</p>
@@ -485,13 +483,6 @@ h1.case-h1 { font-size: var(--fs-h1); line-height: 1.12; letter-spacing: -0.02em
 
     <h2>How I worked</h2>
     <p>I built the prototypes and wrote up each decision with Claude: laying out header, action, and layout options side by side, stress-testing edge cases, and writing the rules down so the next policy type follows them. The decisions were mine and the team's.</p>
-
-    <!-- IMAGE SLOT: Options explored
-         file: assets/client-portal-v2-explorations.png
-         capture: the Header & summary options tab, or the Action options tab, from the explorations file, showing at least three options on screen at once.
-         alt: Several layout options for the same policy header, shown side by side.
-         When the file is in assets/, replace the div below with an img using the same class names minus image-slot. -->
-    <div class="image-slot screen-photo-wide"><span class="slot-label">Image slot: Options explored</span><code>assets/client-portal-v2-explorations.png</code></div>
 
     <h2>Reflection</h2>
     <div class="reflection">
