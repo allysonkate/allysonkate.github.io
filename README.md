@@ -9,7 +9,8 @@ Source for my product design portfolio.
 - `index.html` — homepage
 - `about.html` — background and how I work
 - `qbs-commercial.html` — Rebuilding a Multi-Carrier Insurance Platform
-- `client-portal.html` — Building a Client Portal's Foundation
+- `client-portal-v2.html` — Creating One System for Hundreds of Coverage Types (live; linked from the homepage)
+- `client-portal.html` — Building a Client Portal's Foundation (previous version, no longer linked)
 - `magpie.html` — Pivoting a Fraud Tool Into a Collectibles Platform
 - `brod-trip.html` — Reviving a Lost Archive with AI
 
